@@ -3,7 +3,7 @@ Github repo voor het eerste project van OPT(Ontwerpen, Programmeren en Testen).
 
 Om te starten moet je eerst Git geinstalleerd hebben op je systeem. Maak daarna ergens op je systeem een folder aan waarin je de repo gaat zetten.
   1. In de folder dat je heb aangemaakt moet je rechts-klikken en op 'Git Bash here' klikken in het menu dat verschijnt.
-  2. In de git bash command line, voer het volgende in : git clone https://github.com/DKnightAnon/OPT-project-1.git . Met dit command kloon(download) je de repository.
+  2. In de git bash command line, voer het volgende in : git clone https://github.com/DKnightAnon/OPT-project-1.git . Met dit command kloon(download) je de main branch van de repository. Wil je een andere branch clonen, dan moet je op github naar die branch navigeren, op de 'code' knop drukken (staat naast 'Go to file' en 'Add file') waar je de url kan kopieren om te gebruiken met de git clone command.
   3. Om een branch aan te maken waarin je werkt zodat je de main code niet aanraakt, voer het volgende in de gitbash in : git checkout -b [jouw-branch-naam]
           Met 'git branch' kun je vervolgens checken op welke branch je zit en welke er zijn, en met git checkout (zonder de -b flag) en de naam van de branch kun je     
           naar de ingevoerde branch navigeren.
