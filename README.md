@@ -20,3 +20,7 @@ Om te starten moet je eerst Git geinstalleerd hebben op je systeem. Maak daarna 
 # Pull-requests aanmaken nadat je iets hebt gepusht naar Github
 
 Nadat je iets hebt gepusht met het git push command vanuit de branch dat je op je systeem hebt gemaakt, moet je nog naar de Github pagina gaan om daar een pull-request te maken. Github kijkt dan eerst of jouw branch samengevoegd kan worden met de main branch. Een pull-request moet eerst bekeken en goedgekeurd worden voordat het met de main branch samengevoegd kan worden. 
+
+# Project requirements
+
+Voor dit project moet er een applicatie gemaakt worden voor scheepsbouwers. Deze opdracht komt voor uit een behoefte van de opdrachtgever om het genereren van offertes te stroomlijnen. Deze applicatie moet (kennelijk) een CLI(Command Line Interface) applicatie zijn.
