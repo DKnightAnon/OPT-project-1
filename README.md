@@ -43,6 +43,7 @@ Sprint 0/1(Huidig)
     • De totaalprijs is duidelijk en begrijpelijk voor de klant.
     
   - Item 2 : User story 1 - “ Als scheepsbouwer wil ik een overzichtelijke lijst van essentiële en extra opties, zodat ik snel en gemakkelijk een offerte op maat kan maken voor mijn klant.” 
+  
     • Er is een optie voor milieu-kortingen per onderdeel beschikbaar voor de scheepsbouwer.
     
     • De optie is duidelijk omschreven en gemakkelijk te vinden in de applicatie.
