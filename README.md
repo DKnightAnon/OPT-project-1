@@ -24,3 +24,19 @@ Nadat je iets hebt gepusht met het git push command vanuit de branch dat je op j
 # Project requirements
 
 Voor dit project moet er een applicatie gemaakt worden voor scheepsbouwers. Deze opdracht komt voor uit een behoefte van de opdrachtgever om het genereren van offertes te stroomlijnen. Deze applicatie moet (kennelijk) een CLI(Command Line Interface) applicatie zijn.
+
+# Sprint planning
+
+Sprint 0/1(Huidig)
+  - Einddatum 19/3/2022
+  - Item 1 : User Story 4 - “ Als scheepsbouwer wil ik de totaalprijs van de offerte overzichtelijk en transparant weergeven, zodat mijn klanten precies weten waarvoor ze betalen.” 
+    • De totaalprijs van de offerte wordt overzichtelijk en transparant weergegeven.
+    • De totaalprijs wordt automatisch berekend op basis van de gekozen opties en klanttype.
+    • De totaalprijs is gemakkelijk te vinden en te begrijpen voor de klant. Definition of Done:
+    • De totaalprijs van de offerte is beschikbaar in de applicatie.
+    • De totaalprijs wordt automatisch berekend op basis van de gekozen opties en klanttype.
+    • De totaalprijs is duidelijk en begrijpelijk voor de klant.
+  - Item 2 : User story 1 - “ Als scheepsbouwer wil ik een overzichtelijke lijst van essentiële en extra opties, zodat ik snel en gemakkelijk een offerte op maat kan maken voor mijn klant.” 
+    • Er is een optie voor milieu-kortingen per onderdeel beschikbaar voor de scheepsbouwer.
+    • De optie is duidelijk omschreven en gemakkelijk te vinden in de applicatie.
+    • De kortingen worden nauwkeurig berekend en toegepast op de offerte. 
