@@ -17,7 +17,7 @@ Om te starten moet je eerst Git geinstalleerd hebben op je systeem. Maak daarna 
      Github pagina zal dit automatisch aangemaakt worden. 
   8. Om in de toekomst een branch vanaf je sytseem te pushen moet je veranderingen aanbrengen in een van de bestanden in de branch. Zoals eerder gezegd kun je het command git status gebruiken om te kijken welke bestanden gewijzigd zijn en welke niet toegevoegd zijn aan je commits(Dit zijn de 'untracked' bestanden.)
   
-#Git foutmeldingen
+# Git foutmeldingen
 
 Als je een foutmelding ziet in de command line dat er ongeveer zo uit ziet : "LF will be replaced by CRLF", kun je dit oplossen door het volgende command te runnen : git config --local core.autocrlf false
 Deze foutmelding gaat over de manier hoe Windows omgaat met line-endings. Met bovenstaande command configureer je dit op een lokaal niveau(project gebaseerd). 
