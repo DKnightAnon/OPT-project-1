@@ -37,6 +37,7 @@ Voor dit project moet er een applicatie gemaakt worden voor scheepsbouwers. Deze
 Sprint 0/1(Huidig)
   - Einddatum 19/3/2022
   - Item 1 : User Story 4 - “ Als scheepsbouwer wil ik de totaalprijs van de offerte overzichtelijk en transparant weergeven, zodat mijn klanten precies weten waarvoor ze betalen.” 
+  
     • De totaalprijs van de offerte wordt overzichtelijk en transparant weergegeven.
     
     • De totaalprijs wordt automatisch berekend op basis van de gekozen opties en klanttype.
