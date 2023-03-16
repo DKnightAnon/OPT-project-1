@@ -40,9 +40,7 @@ Sprint 0/1(Huidig)
   
     • De totaalprijs van de offerte wordt overzichtelijk en transparant weergegeven.
     
-    • De totaalprijs wordt automatisch berekend op basis van de gekozen opties en klanttype.
-    
-    • De totaalprijs is gemakkelijk te vinden en te begrijpen voor de klant. Definition of Done:
+    • De totaalprijs is gemakkelijk te vinden en te begrijpen voor de klant. 
     
     • De totaalprijs van de offerte is beschikbaar in de applicatie.
     
