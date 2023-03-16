@@ -26,11 +26,11 @@ class Product {
 public class Main {
     public static void main(String args[]) {
         ArrayList<Product> producten = new ArrayList<Product>();
-        Product product1 = new Product("product1", 24.55);
-        Product product2 = new Product("product2", 38.43);
-        Product product3 = new Product("product3", 96.12);
-        Product product4 = new Product("product4", 25.98);
-        Product product5 = new Product("product5", 47.66);
+        Product product1 = new Product("motor", 24.55);
+        Product product2 = new Product("mast", 38.43);
+        Product product3 = new Product("vrouw", 196.12);
+        Product product4 = new Product("zeil", 25.98);
+        Product product5 = new Product("anker", 47.66);
         producten.add(product1);
         producten.add(product2);
         producten.add(product3);
