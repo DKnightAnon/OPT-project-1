@@ -7,7 +7,7 @@ Om te starten moet je eerst Git geinstalleerd hebben op je systeem. Maak daarna 
   3. Om een branch aan te maken waarin je werkt zodat je de main code niet aanraakt, voer het volgende in de gitbash in : git checkout -b [jouw-branch-naam]
           Met 'git branch' kun je vervolgens checken op welke branch je zit en welke er zijn, en met git checkout (zonder de -b flag) en de naam van de branch kun je     
           naar de ingevoerde branch navigeren.
-  4. Nu kun je bestanden toevoegen in je branch. Als je dat hebt gedaan, voer dan het volgende in : git status . Hiermee kun je kijken welke bestanden er  
+  4. Nu kun je bestanden toevoegen in je branch. Dit doe je door in Windows Explorer bestanden naar de map waarin je werkt te verplaatsen. (Tip : Als je de folder ShipFlexCode in IntelliJ opent als project hoef je geen .java bestanden rond te slepen in Windows Explorer.) Als je dat hebt gedaan, voer dan het volgende in : git status . Hiermee kun je kijken welke bestanden er  
      geregistreerd zijn in een commit.
   5. Vevolgens kun je een bestand toevoegen aan je commits met het volgende command : git add [bestandnaam.bestandtype]. Wil je alle bestanden in je branch toevoegen, 
      dan doe je het volgende : 'git add .' De punt achter 'add' zorgt ervoor dat het command een 'add all' command wordt.
