@@ -30,6 +30,7 @@ Deze foutmelding gaat over de manier hoe Windows omgaat met line-endings. Met bo
 
 In het geval dat je een foutmelding krijgt waarin staat dat je geen toegang hebt tot de repo(Dit gebeurt meestal als je iets probeert te pushen), stuur mij dan een bericht. Deze foutmelding betekent namelijk dat je geen collaborator bent, en dat ik je toestemming moet geven om dingen te wijzigen in de repository. Om write-access te krijgen moet je toegevoegd worden als een collaborator. Je krijgt hiervoor een invite dat je moet accepteren.
 
+Als je een merge conflict hebt betekent het dat in een van de bestanden die je wilt mergen een verschil is tussen de base versie(het bestand op github) de lokale versie(die jij hebt aangemaakt) en de inkomende versie die je wilt mergen(van een andere branch). Als het goed is kun je dit bestand dan openen met IntelliJ als het een java file is, en zal IntelliJ ook aangeven dat er een conflict is. Je krijgt dan beide versies te zien van het bestand. Maak veranderingen aan en sla het op, en voer dan het git add command uit. Hiermee hoor je de merge opgelost te hebben.
   
 # Pull-requests aanmaken nadat je iets hebt gepusht naar Github
 
