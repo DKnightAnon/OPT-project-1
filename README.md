@@ -21,6 +21,7 @@ Om een andere branch op github te pullen kun je het volgende doen :
   1. git fetch
   2. git branch -r (Dit laat alle branches op github zien)
   3. git checkout [branch-name]
+  of je kan het command git merge origin [branch-name](Hiermee combineer je de branch waar je op zit met de branch waarvan je de naam opgeeft. Dit gebeurt alleen lokaal op je eigen computer.)
   
   
 # Git foutmeldingen
