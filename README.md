@@ -18,8 +18,9 @@ Om te starten moet je eerst Git geinstalleerd hebben op je systeem. Maak daarna 
   8. Om in de toekomst een branch vanaf je sytseem te pushen moet je veranderingen aanbrengen in een van de bestanden in de branch. Zoals eerder gezegd kun je het command git status gebruiken om te kijken welke bestanden gewijzigd zijn en welke niet toegevoegd zijn aan je commits(Dit zijn de 'untracked' bestanden.)
 
 Om een andere branch op github te pullen kun je het volgende doen : 
-  1. git branch -r (Dit laat alle branches op github zien)
-  2. git checkout [branch-name]
+  1. git fetch
+  2. git branch -r (Dit laat alle branches op github zien)
+  3. git checkout [branch-name]
   
   
 # Git foutmeldingen
@@ -29,6 +30,7 @@ Deze foutmelding gaat over de manier hoe Windows omgaat met line-endings. Met bo
 
 In het geval dat je een foutmelding krijgt waarin staat dat je geen toegang hebt tot de repo(Dit gebeurt meestal als je iets probeert te pushen), stuur mij dan een bericht. Deze foutmelding betekent namelijk dat je geen collaborator bent, en dat ik je toestemming moet geven om dingen te wijzigen in de repository. Om write-access te krijgen moet je toegevoegd worden als een collaborator. Je krijgt hiervoor een invite dat je moet accepteren.
 
+Als je een merge conflict hebt betekent het dat in een van de bestanden die je wilt mergen een verschil is tussen de base versie(het bestand op github) de lokale versie(die jij hebt aangemaakt) en de inkomende versie die je wilt mergen(van een andere branch). Als het goed is kun je dit bestand dan openen met IntelliJ als het een java file is, en zal IntelliJ ook aangeven dat er een conflict is. Je krijgt dan beide versies te zien van het bestand. Maak veranderingen aan en sla het op, en voer dan het git add command uit. Hiermee hoor je de merge opgelost te hebben.
   
 # Pull-requests aanmaken nadat je iets hebt gepusht naar Github
 
