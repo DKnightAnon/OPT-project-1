@@ -17,14 +17,18 @@ Om te starten moet je eerst Git geinstalleerd hebben op je systeem. Maak daarna 
      Github pagina zal dit automatisch aangemaakt worden. 
   8. Om in de toekomst een branch vanaf je sytseem te pushen moet je veranderingen aanbrengen in een van de bestanden in de branch. Zoals eerder gezegd kun je het command git status gebruiken om te kijken welke bestanden gewijzigd zijn en welke niet toegevoegd zijn aan je commits(Dit zijn de 'untracked' bestanden.)
 
-Om write-access te krijgen moet je toegevoegd worden als een collaborator. Je krijgt hiervoor een invite dat je moet accepteren.
+Om een andere branch op github te pullen kun je het volgende doen : 
+  1. git branch -r (Dit laat alle branches op github zien)
+  2. git checkout [branch-name]
+  
   
 # Git foutmeldingen
 
 Als je een foutmelding ziet in de command line dat er ongeveer zo uit ziet : "LF will be replaced by CRLF", kun je dit oplossen door het volgende command te runnen : git config --local core.autocrlf false
 Deze foutmelding gaat over de manier hoe Windows omgaat met line-endings. Met bovenstaande command configureer je dit op een lokaal niveau(project gebaseerd). 
 
-In het geval dat je een foutmelding krijgt waarin staat dat je geen toegang hebt tot de repo(Dit gebeurt meestal als je iets probeert te pushen), stuur mij dan een bericht. Deze foutmelding betekent namelijk dat je geen collaborator bent, en dat ik je toestemming moet geven om dingen te wijzigen in de repository.
+In het geval dat je een foutmelding krijgt waarin staat dat je geen toegang hebt tot de repo(Dit gebeurt meestal als je iets probeert te pushen), stuur mij dan een bericht. Deze foutmelding betekent namelijk dat je geen collaborator bent, en dat ik je toestemming moet geven om dingen te wijzigen in de repository. Om write-access te krijgen moet je toegevoegd worden als een collaborator. Je krijgt hiervoor een invite dat je moet accepteren.
+
   
 # Pull-requests aanmaken nadat je iets hebt gepusht naar Github
 
