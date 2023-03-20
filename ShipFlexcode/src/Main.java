@@ -24,6 +24,7 @@ class Product {
 }
 
 public class Main {
+<<<<<<< HEAD
     public static void main(String args[]) {
         ArrayList<Product> producten = new ArrayList<Product>();
         Product product1 = new Product("product1", 24.55);
@@ -45,5 +46,14 @@ public class Main {
         }
         System.out.println("-----------------------");
         System.out.printf("%-11s = €%8.2f%n", "totaalprijs", totaalprijs);
+=======
+<<<<<<< HEAD
+    public static void Main(String args[]){
+        System.out.println("Hi!");
+=======
+    public static void main(String[] args) {
+        System.out.println("test!");
+>>>>>>> origin/main
+>>>>>>> main
     }
 }
