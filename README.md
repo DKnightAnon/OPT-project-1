@@ -18,8 +18,9 @@ Om te starten moet je eerst Git geinstalleerd hebben op je systeem. Maak daarna 
   8. Om in de toekomst een branch vanaf je sytseem te pushen moet je veranderingen aanbrengen in een van de bestanden in de branch. Zoals eerder gezegd kun je het command git status gebruiken om te kijken welke bestanden gewijzigd zijn en welke niet toegevoegd zijn aan je commits(Dit zijn de 'untracked' bestanden.)
 
 Om een andere branch op github te pullen kun je het volgende doen : 
-  1. git branch -r (Dit laat alle branches op github zien)
-  2. git checkout [branch-name]
+  1. git fetch
+  2. git branch -r (Dit laat alle branches op github zien)
+  3. git checkout [branch-name]
   
   
 # Git foutmeldingen
