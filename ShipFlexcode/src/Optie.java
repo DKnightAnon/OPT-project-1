@@ -2,15 +2,17 @@ import java.util.ArrayList;
 
 class Optie  {
 
-    private String naam;
     private boolean isEssentieel;
+    private String naam;
+    private String beschrijving;
     private double prijs;
     private boolean miliuekorting;
     private double percentageMiliuekorting = 10;
 
-    public Optie(String naam,boolean isEssentieel, double prijs, boolean miliuekorting){
-        this.naam = naam;
+    public Optie(boolean isEssentieel, String naam, String beschrijving, double prijs, boolean miliuekorting){
         this.isEssentieel = isEssentieel;
+        this.naam = naam;
+        this.beschrijving = beschrijving;
         this.prijs = prijs;
         this.miliuekorting = miliuekorting;
     }
@@ -24,10 +26,15 @@ class Optie  {
     }
     public void setMiliuekorting(boolean miliuekorting) {this.miliuekorting = miliuekorting;}
 
+    public void setBeschrijving(String beschrijving) {this.beschrijving = beschrijving;}
+
     public String getNaam(){
         return naam;
     }
     public boolean getIsEssentieel() {return isEssentieel;}
+
+    public String getBeschrijving() {return beschrijving;}
+
     public double getPrijs() {
         if (this.miliuekorting) {
             return prijs * (1 - (percentageMiliuekorting / 100));
