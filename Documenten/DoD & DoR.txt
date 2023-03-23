@@ -3,7 +3,7 @@ DoD
 2. Code is getest(Handmatig of met JUnit) en werkt naar behoren.
 3. Aan alle eisen en wensen van de User Story zijn voldaan. Als dit niet zo is moet dit goed beargumenteerd zijn.
 4. Opgeleverd werk is gezien en nagekeken door tenminste 1 ander groeplid.
-5. Eventuele documentatie dat nodig is voor het goed functioneren van het opgeleverde werk of dat gebruikt is voor het realiseren van het werk is aanwezig en duidelijk benaamd in de Documents folder.
+5. Eventuele documentatie dat nodig is voor het goed functioneren van het opgeleverde werk of dat gebruikt is voor het realiseren van het werk is aanwezig en duidelijk benoemd in de Documents folder.
 
 DoR
 1. INVEST
