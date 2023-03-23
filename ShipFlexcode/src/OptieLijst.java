@@ -31,8 +31,16 @@ public class OptieLijst{
             System.out.println("Naam: " + optielijst.get(i).getNaam());
             System.out.println("Beschrijving: " + optielijst.get(i).getBeschrijving());
             System.out.println("Prijs: " + optielijst.get(i).getPrijs());
-            System.out.println("Essentieel: " + optielijst.get(i).getIsEssentieel());
-            System.out.println("Miliuekorting: " + optielijst.get(i).getMiliuekorting());
+            if (optielijst.get(i).getIsEssentieel()) {
+                System.out.println("Essentieel: Ja");
+            } else {
+                System.out.println("Essentieel: Nee");
+            }
+            if (optielijst.get(i).getMiliuekorting()) {
+                System.out.println("Miliuekorting: Ja");
+            } else {
+                System.out.println("Miliuekorting: Nee");
+            }
             System.out.println();
         }
     }
