@@ -1,0 +1,19 @@
+DoD
+1. alle code is geschreven
+2. code is getest en werkt zoals het zou moeten
+3. aan alle user story eisen zijn voldaan
+4. peer review is voldoende
+5. iedereen is ermee eens dat het goed is
+6. eventuele documentatie goed afgerond/goed gedocumenteerd
+
+DoR
+1. INVEST
+Independent – Onafhankelijk
+Negotiable – Onderhandelbaar
+Valuable – Waardevol
+Estimable – Inschatbaar
+Small – Klein
+Testable – Testbaar
+
+2. acceptatiecriteria zijn duidelijk
+3. goede benaming voor user story
