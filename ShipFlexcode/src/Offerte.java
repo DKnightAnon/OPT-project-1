@@ -1,7 +1,25 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 class Offerte {
     public ArrayList<Optie> geselecteerdeOpties = new ArrayList<Optie>();
+
+    public void voegOptieToe(Scanner scanner, String scan, OptieLijst optielijst) {
+        System.out.println("Welke optie wil u toevoegen?");
+        scan = scanner.nextLine();
+        int locatieOptie = -1;
+        for (int i = 0; i < optielijst.optielijst.size(); i++){
+            if (optielijst.optielijst.get(i).getNaam().equals(scan)){
+                locatieOptie = i;
+            }
+        }
+        if (locatieOptie == -1){
+            System.out.println("Deze optie bestaat niet.");
+        } else {
+            geselecteerdeOpties.add(optielijst.optielijst.get(locatieOptie));
+            System.out.println("Optie toegevoegd.");
+        }
+    }
 
     public void maakOfferte(){
         double prijs = 0;
