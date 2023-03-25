@@ -28,6 +28,10 @@ class Optie  {
 
     public void setBeschrijving(String beschrijving) {this.beschrijving = beschrijving;}
 
+    public void setPercentageMiliuekorting(double percentageMiliuekorting) {
+        this.percentageMiliuekorting = percentageMiliuekorting;
+    }
+
     public String getNaam(){
         return naam;
     }
@@ -35,12 +39,22 @@ class Optie  {
 
     public String getBeschrijving() {return beschrijving;}
 
+    public double getPercentageMiliuekorting() {
+        return percentageMiliuekorting;
+    }
+
     public double getPrijs() {
+
+        return prijs;
+    }
+
+    public double getPrijsMinKorting() {
         if (this.miliuekorting) {
             return prijs * (1 - (percentageMiliuekorting / 100));
         } else {
             return prijs;
         }
     }
+
     public boolean getMiliuekorting() {return miliuekorting;}
 }
