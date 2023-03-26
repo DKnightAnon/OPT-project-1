@@ -73,10 +73,12 @@ public class OptieLijst{
         boolean integer = false;
         while(integer == false) {
             System.out.print("€");
-            String optieScan = scanner.nextLine();
             if (scanner.hasNextInt()) {
+                String optieScan = scanner.nextLine();
                 integer = true;
                 optiePrijs = Integer.parseInt(optieScan);
+            } else {
+                String optieScan = scanner.nextLine();
             }
         }
         System.out.println("Heeft deze optie milieu korting?");
