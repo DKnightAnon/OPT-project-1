@@ -48,11 +48,16 @@ class Offerte {
             System.out.println(geselecteerdeOpties.get(i).getBeschrijving());
             System.out.println();
         }
-        System.out.println("----------------------------------------------");
-        korting = prijs - totaalprijs;
-        System.out.printf("%-33s =  €%8.2f%n", "Prijs", prijs);
-        System.out.printf("%-33s = -€%8.2f%n", "Korting", korting);
-        System.out.println("----------------------------------------------");
-        System.out.printf("%-33s =  €%8.2f%n", "Totaalprijs", totaalprijs);
+
+         if (geselecteerdeOpties.isEmpty()){
+             System.out.println("U heeft nog niks geselecteerd.");
+         } else {
+             System.out.println("----------------------------------------------");
+             korting = prijs - totaalprijs;
+             System.out.printf("%-33s =  €%8.2f%n", "Prijs", prijs);
+             System.out.printf("%-33s = -€%8.2f%n", "Korting", korting);
+             System.out.println("----------------------------------------------");
+             System.out.printf("%-33s =  €%8.2f%n", "Totaalprijs", totaalprijs);
+         }
     }
 }
