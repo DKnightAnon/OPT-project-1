@@ -5,13 +5,7 @@ public class Main {
         Offerte offerte1 = new Offerte();
         OptieLijst optielijst1 = new OptieLijst();
 
-        optielijst1.voegAlleOptiesToeAanLijst(optielijst1); // is handig om te houden in het geval je de List optielijst veranderd naar ArrayList
-
-        /*
-        offerte1.maakOfferte();
-        System.out.println();
-        optielijst1.printOptieLijst();
-         */
+        optielijst1.voegAlleOptiesToeAanLijst(optielijst1);
 
         Scanner scanner = new Scanner(System.in);
         boolean einde = false;
