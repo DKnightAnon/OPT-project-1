@@ -1,0 +1,18 @@
+DoD
+1. Alle benodigde code voor het realiseren van de functionaliteiten van de User Story zijn uitgewerkt.
+2. Code is getest(Handmatig of met JUnit) en werkt naar behoren.
+3. Aan alle eisen en wensen van de User Story zijn voldaan. Als dit niet zo is moet dit goed beargumenteerd zijn.
+4. Opgeleverd werk is gezien en nagekeken door tenminste 1 ander groeplid.
+5. Eventuele documentatie dat nodig is voor het goed functioneren van het opgeleverde werk of dat gebruikt is voor het realiseren van het werk is aanwezig en duidelijk benoemd in de Documents folder.
+
+DoR
+1. INVEST
+    Independent – Onafhankelijk : Voor zover het kan moet een User Story zo min mogelijk afhankelijk zijn van een andere User Story.
+    Negotiable – Onderhandelbaar : Er moet ruimte zijn voor verschillende interpretaties van de User Story. Er moeten niet zoveel eisen in zijn opgenomen dat het als ware een stap-voor-stap handleiding is voor wat er gebouwd moet worden.
+    Valuable – Waardevol : De User Story moet nuttig zijn voor de werking van het product.
+    Estimable – Inschatbaar : De eisen en wensen van de Stakeholder moet duidelijk genoeg zijn dat er ingeschat kan worden hoeveel tijd en moeite nodig is voor het realiseren van de User Story.
+    Small – Klein : De User Story moet in 1 sprint realiseerbaar zijn.
+    Testable – Testbaar : Aan de hand van de acceptatiecriteria moet er kunnen getest worden of het opgeleverde werk voldoet aan de eisen en wensen van de Stakeholder.
+
+2. In de User Story zijn acceptatiecriteria opgenomen zodat duidelijk is waar het opgeleverde werk aan moet voldoen.
+3. Aan de naam van een User Story moet het al grotendeels duidelijk zijn wat de wens/eis is dat moet worden uitgewerkt.
