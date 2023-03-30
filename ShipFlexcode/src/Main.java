@@ -10,7 +10,7 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
         boolean einde = false;
-        System.out.println("Type -help- voor meer informatie.");
+        System.out.println("Type 'help' voor meer informatie.");
         while(einde == false){
             String scan = scanner.nextLine();
             if (scan.equals("einde")){
@@ -31,7 +31,7 @@ public class Main {
             } else if (scan.equals("optie aanmaken")) {
                 optielijst1.maakOptieAan(scanner, scan);
             } else {
-                System.out.println("Type -help- voor meer informatie.");
+                System.out.println("Type 'help' voor meer informatie.");
             }
         }
     }
