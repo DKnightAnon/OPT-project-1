@@ -64,3 +64,23 @@ Sprint 0/1(Huidig)
     
     • De kortingen worden nauwkeurig berekend en toegepast op de offerte. 
     
+# Veelgebruikte git commands
+git init // repository initializeren
+
+git status // status bekijken
+
+git add gitbestand.txt // gitbestand.txt toevoegen
+
+git clone (url) // bestand clonen/downloaden
+
+git fetch // ophalen zonder merge
+
+git pull // ophalen met merge
+
+git commit -m "asdhaskjd" // soort van opslaan + comment "asdhaskjd" meegeven
+
+git checkout -b jasdk // nieuwe branch genaamd jasdk aanmaken
+
+git checkout offerte // overgaan naar een bestaande branch offerte
+
+git push origin offerte // branch offerte doorsturen naar github
