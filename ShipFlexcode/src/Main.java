@@ -1,8 +1,10 @@
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String args[]) {
+    public static void main(String args[]) throws FileNotFoundException {
         Offerte offerte1 = new Offerte();
         OptieLijst optielijst1 = new OptieLijst();
         Commands commands = new Commands();
@@ -14,8 +16,10 @@ public class Main {
         System.out.println();
         optielijst1.printOptieLijst();
          */
-
-        Scanner scanner = new Scanner(System.in);
+        //File directory = new File("./");
+        //System.out.println(directory.getAbsolutePath());
+        optielijst1.writeToCSV();
+        /*Scanner scanner = new Scanner(System.in);
         boolean einde = false;
         while(einde == false){
             String scan = scanner.nextLine();
@@ -39,7 +43,9 @@ public class Main {
             } else {
                 System.out.println("type -help- voor meer informatie.");
             }
-        }
+        }*/
     }
+
+
 
 }

@@ -1,7 +1,4 @@
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 public class OptieLijst{
@@ -32,6 +29,40 @@ public class OptieLijst{
     }
      */
 
+    //
+    public void writeToCSV() throws FileNotFoundException {
+        readFromCSV(); //Vul de arraylist eerst in zodat het csv bestand overschreven kan worden.
+        StringBuilder builder = new StringBuilder();
+        //PrintWriter pw = new PrintWriter(new File("../opties.csv"));
+        //File directory = new File("./opties.csv");
+        //System.out.println(directory.getAbsolutePath());
+        try {
+            for (int i = 0; i < optielijst.size(); i++) {
+                builder.append(optielijst.get(i).getIsEssentieel());
+                builder.append(",");
+                builder.append(optielijst.get(i).getNaam());
+                builder.append(",");
+                builder.append(optielijst.get(i).getBeschrijving());
+                builder.append(",");
+                builder.append(optielijst.get(i).getPrijs());
+                builder.append(",");
+                builder.append(optielijst.get(i).getMiliuekorting());
+                builder.append("\n");
+            }
+            //pw.write(String.valueOf(builder));
+            //pw.flush();
+            //pw.close();
+            System.out.println(builder);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+
+
+    }
+
+    //Deze methode leest dingen uit een csv bestand en maakt hiermee objecten van het type Optie aan.
     public void readFromCSV(){
         String file = "src\\CSV_Files\\opties.csv";
         BufferedReader reader = null;
