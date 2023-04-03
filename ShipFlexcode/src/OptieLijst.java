@@ -33,10 +33,10 @@ public class OptieLijst{
     public void writeToCSV() throws FileNotFoundException {
         readFromCSV(); //Vul de arraylist eerst in zodat het csv bestand overschreven kan worden.
         StringBuilder builder = new StringBuilder();
-        //PrintWriter pw = new PrintWriter(new File("../opties.csv"));
-        //File directory = new File("./opties.csv");
-        //System.out.println(directory.getAbsolutePath());
-        try {
+        //PrintWriter pw = new PrintWriter(new File("CSV_Files/opties.csv"));
+        File directory = new File("CSV_Files/opties.csv");
+        System.out.println(directory.getAbsolutePath());
+        /*try {
             for (int i = 0; i < optielijst.size(); i++) {
                 builder.append(optielijst.get(i).getIsEssentieel());
                 builder.append(",");
@@ -56,6 +56,8 @@ public class OptieLijst{
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+         */
 
 
 
