@@ -15,6 +15,8 @@ public class OptieLijst{
     // is handig om te houden in het geval je de List optielijst veranderd naar ArrayList
     public ArrayList<Optie> optielijst = new ArrayList<Optie>();
 
+
+
     public void voegAlleOptiesToeAanLijst(OptieLijst optielijst){
         optielijst.optielijst.add(Navigatiesysteem);
         optielijst.optielijst.add(Motor);

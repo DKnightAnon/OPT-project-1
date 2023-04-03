@@ -5,6 +5,7 @@ public class Main {
     public static void main(String args[]) {
         Offerte offerte1 = new Offerte();
         OptieLijst optielijst1 = new OptieLijst();
+        Commands commands = new Commands();
 
         optielijst1.voegAlleOptiesToeAanLijst(optielijst1); // is handig om te houden in het geval je de List optielijst veranderd naar ArrayList
 
@@ -26,11 +27,11 @@ public class Main {
                 offerte1.maakOfferte();
             } else if (scan.equals("help")) {
                 System.out.println("U kunt kiezen uit:");
-                System.out.println("optie lijst");
-                System.out.println("optie aanmaken");
-                System.out.println("offerte");
-                System.out.println("optie toevoegen");
-                System.out.println("einde");
+                System.out.printf("%s\n%s\n%s\n%s\n",
+                        commands.optieLijst,
+                        commands.optieToevoegen,
+                        commands.optieAanmaken,
+                        commands.offerteMaken);
             } else if (scan.equals("optie toevoegen")) {
                 offerte1.voegOptieToe(scanner, scan, optielijst1);
             } else if (scan.equals("optie aanmaken")) {
