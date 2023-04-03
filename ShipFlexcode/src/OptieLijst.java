@@ -1,5 +1,7 @@
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Scanner;
 public class OptieLijst{
@@ -18,12 +20,39 @@ public class OptieLijst{
     public ArrayList<Optie> optielijst = new ArrayList<Optie>();
 
 
+    /*
     public void readFromCSV() throws FileNotFoundException {
-        Scanner sc = new Scanner(new File("ShipFlexcode/src/CSV_Files/opties.csv"));
+        Scanner sc = new Scanner(new File("src\\CSV_Files\\opties.csv"));
         sc.useDelimiter(",");   //sets the delimiter pattern
         while (sc.hasNext())  //returns a boolean value
         {
+            //optielijst.add();
             System.out.print(sc.next());  //find and returns the next complete token from this scanner
+        }
+    }
+     */
+
+    public void readFromCSV(){
+        String file = "src\\CSV_Files\\opties.csv";
+        BufferedReader reader = null;
+        String line = "";
+        try {
+            reader = new BufferedReader(new FileReader(file));
+            while ((line = reader.readLine()) != null) {
+                String[] row = line.split(",");
+
+                for (String index : row) {
+                    //optielijst.add(new Optie());
+                    for (int i=0;i<row.length;i++) {
+                        optielijst.add(new Optie(row[0],row[1],row[2],row[3],row[4]));
+                    }
+
+                }
+
+            }
+
+        }catch (Exception e) {
+
         }
     }
 

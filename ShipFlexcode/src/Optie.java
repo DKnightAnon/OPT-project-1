@@ -17,6 +17,24 @@ class Optie  {
         this.miliuekorting = miliuekorting;
     }
 
+    //Deze constructor wordt gebruikt in Optielijst om Opties aan te maken met waardes dat uit een csv file worden gelezen.
+    public Optie(String isEssentieel, String naam, String beschrijving, String prijs, String milieukorting){
+        if (isEssentieel.equals("true") || isEssentieel.equals("True")){
+            this.isEssentieel = true;
+        } else {
+            this.isEssentieel = false;
+        }
+        this.naam = naam;
+        this.beschrijving = beschrijving;
+        Double Prijs =  Double.parseDouble(prijs);
+        if (milieukorting.equals("True") || milieukorting.equals("true")) {
+            this.miliuekorting = true;
+        } else {
+            this.miliuekorting = false;
+        }
+
+    }
+
     public void setNaam(String naam) {
         this.naam = naam;
     }
