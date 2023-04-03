@@ -1,5 +1,5 @@
-import org.junit.jupiter.api.Assertions;
 import java.util.Scanner;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 public class TestClass {
     OptieLijst optielijstTest;
     Offerte offerteTest;
@@ -11,18 +11,18 @@ public class TestClass {
         //Act
         optielijstTest.voegAlleOptiesToeAanLijst(optielijstTest);
         //Assert
-        AssertEquals(8, optielijstTest.optielijst.size());
+        assertEquals(8, optielijstTest.optielijst.size());
     }
     public void testMaakOptieAan(){
         //@Test
         //Arrange
         optielijstTest = new OptieLijst();
         scanner = new Scanner(System.in);
-        String scan = scanner.nextLine()
+        String scan = scanner.nextLine();
         //Act
         optielijstTest.maakOptieAan(scanner, scan);
         //Assert
-        AssertEquals(1, optielijstTest.optielijst.size());
+        assertEquals(1, optielijstTest.optielijst.size());
     }
     public void testVoegOptieToe(){
         //@Test
@@ -34,6 +34,6 @@ public class TestClass {
         offerteTest.voegOptieToe(scanner, "Roer", optielijstTest);
         offerteTest.voegOptieToe(scanner, "Anker", optielijstTest);
         //Assert
-        AssertEquals(2, offerteTest.geselecteerdeOpties.size());
+        assertEquals(2, offerteTest.geselecteerdeOpties.size());
     }
 }

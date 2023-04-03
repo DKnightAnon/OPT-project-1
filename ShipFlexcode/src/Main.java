@@ -6,16 +6,11 @@ public class Main {
         Offerte offerte1 = new Offerte();
         OptieLijst optielijst1 = new OptieLijst();
 
-        optielijst1.voegAlleOptiesToeAanLijst(optielijst1); // is handig om te houden in het geval je de List optielijst veranderd naar ArrayList
-
-        /*
-        offerte1.maakOfferte();
-        System.out.println();
-        optielijst1.printOptieLijst();
-         */
+        optielijst1.voegAlleOptiesToeAanLijst(optielijst1);
 
         Scanner scanner = new Scanner(System.in);
         boolean einde = false;
+        System.out.println("Type 'help' voor meer informatie.");
         while(einde == false){
             String scan = scanner.nextLine();
             if (scan.equals("einde")){
@@ -36,7 +31,7 @@ public class Main {
             } else if (scan.equals("optie aanmaken")) {
                 optielijst1.maakOptieAan(scanner, scan);
             } else {
-                System.out.println("type -help- voor meer informatie.");
+                System.out.println("Type 'help' voor meer informatie.");
             }
         }
     }
