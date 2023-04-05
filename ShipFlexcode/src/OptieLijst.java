@@ -29,13 +29,15 @@ public class OptieLijst{
     }
      */
 
-    //
+    String csvPath = "CSV_Files/opties.csv";
+    String Path2 = "ShipFlexcode/src/CSV_Files/opties.csv";
+    //Bovenstaande path is een relatief path naar de juiste plek voor het bestand. Dit betekent dat de code op elk andere computer hoort te werken.
     public void writeToCSV() throws FileNotFoundException {
         readFromCSV(); //Vul de arraylist eerst in zodat het csv bestand overschreven kan worden.
         StringBuilder builder = new StringBuilder();
-        //PrintWriter pw = new PrintWriter(new File("../opties.csv"));
-        //File directory = new File("./opties.csv");
-        //System.out.println(directory.getAbsolutePath());
+        File csv = new File(Path2);
+        PrintWriter pw = new PrintWriter(csv);
+
         try {
             for (int i = 0; i < optielijst.size(); i++) {
                 builder.append(optielijst.get(i).getIsEssentieel());
@@ -49,10 +51,10 @@ public class OptieLijst{
                 builder.append(optielijst.get(i).getMiliuekorting());
                 builder.append("\n");
             }
-            //pw.write(String.valueOf(builder));
-            //pw.flush();
-            //pw.close();
-            System.out.println(builder);
+            pw.write(String.valueOf(builder));
+            pw.flush();
+            pw.close();
+            //System.out.println(builder);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -64,11 +66,11 @@ public class OptieLijst{
 
     //Deze methode leest dingen uit een csv bestand en maakt hiermee objecten van het type Optie aan.
     public void readFromCSV(){
-        String file = "src\\CSV_Files\\opties.csv";
+        optielijst.clear();
         BufferedReader reader = null;
         String line = "";
         try {
-            reader = new BufferedReader(new FileReader(file));
+            reader = new BufferedReader(new FileReader(Path2));
             while ((line = reader.readLine()) != null) {
                 String[] row = line.split(",");
 
@@ -85,6 +87,21 @@ public class OptieLijst{
         }catch (Exception e) {
 
         }
+        //for (int i = 0; i<optielijst.size();i++) {
+            System.out.println(
+                    optielijst.get(1).getIsEssentieel() +
+                    "," +
+                    optielijst.get(1).getNaam() +
+                    "," +
+                    optielijst.get(1).getBeschrijving() +
+                    "," +
+                    optielijst.get(1).getPrijs() +
+                    "," +
+                    optielijst.get(1).getMiliuekorting()
+            );
+
+      //  }
+
     }
 
     public void voegAlleOptiesToeAanLijst(OptieLijst optielijst){

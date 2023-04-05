@@ -18,7 +18,11 @@ public class Main {
          */
         //File directory = new File("./");
         //System.out.println(directory.getAbsolutePath());
-        optielijst1.writeToCSV();
+        //optielijst1.writeToCSV();
+        optielijst1.readFromCSV();
+        //Double string = Double.parseDouble("60.0");
+        //System.out.println(string);
+
         /*Scanner scanner = new Scanner(System.in);
         boolean einde = false;
         while(einde == false){

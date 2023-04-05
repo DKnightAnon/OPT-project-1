@@ -27,6 +27,7 @@ class Optie  {
         this.naam = naam;
         this.beschrijving = beschrijving;
         Double Prijs =  Double.parseDouble(prijs);
+        this.prijs = Prijs;
         if (milieukorting.equals("True") || milieukorting.equals("true")) {
             this.miliuekorting = true;
         } else {
