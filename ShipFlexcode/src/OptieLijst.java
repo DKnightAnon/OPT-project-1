@@ -66,41 +66,33 @@ public class OptieLijst{
 
     //Deze methode leest dingen uit een csv bestand en maakt hiermee objecten van het type Optie aan.
     public void readFromCSV(){
-        optielijst.clear();
+
         BufferedReader reader = null;
         String line = "";
         try {
             reader = new BufferedReader(new FileReader(Path2));
-            while ((line = reader.readLine()) != null) {
+            optielijst.clear();
+            while ((line = reader.readLine()) != null)
+            {
                 String[] row = line.split(",");
-
-                for (String index : row) {
-                    //optielijst.add(new Optie());
-                    for (int i=0;i<row.length;i++) {
-                        optielijst.add(new Optie(row[0],row[1],row[2],row[3],row[4]));
-                    }
-
-                }
-
+                optielijst.add(new Optie(row[0],row[1],row[2],row[3],row[4]));
             }
-
         }catch (Exception e) {
-
         }
-        //for (int i = 0; i<optielijst.size();i++) {
+        for (int i = 0; i<optielijst.size();i++) {
             System.out.println(
-                    optielijst.get(1).getIsEssentieel() +
+                    optielijst.get(i).getIsEssentieel() +
                     "," +
-                    optielijst.get(1).getNaam() +
+                    optielijst.get(i).getNaam() +
                     "," +
-                    optielijst.get(1).getBeschrijving() +
+                    optielijst.get(i).getBeschrijving() +
                     "," +
-                    optielijst.get(1).getPrijs() +
+                    optielijst.get(i).getPrijs() +
                     "," +
-                    optielijst.get(1).getMiliuekorting()
+                    optielijst.get(i).getMiliuekorting()
             );
 
-      //  }
+        }
 
     }
 
@@ -116,6 +108,7 @@ public class OptieLijst{
     }
     // tot hier
     public void printOptieLijst() {
+        /*
         for (int i = 0; i < optielijst.size(); i++){
             System.out.println("Naam: " + optielijst.get(i).getNaam());
             System.out.println("Beschrijving: " + optielijst.get(i).getBeschrijving());
@@ -131,6 +124,42 @@ public class OptieLijst{
                 System.out.println("Miliuekorting: Nee");
             }
             System.out.println();
+        }
+
+         */
+
+        System.out.printf("%-20s %-20s %-100s %-10s %-25s%n",
+                "Essentiele optie",
+                "Naam",
+                "Beschrijving",
+                "Prijs",
+                "Milieukorting"
+        );
+        for (int i = 0; i<167;i++) {
+            System.out.print("-");
+        }
+            System.out.println();
+        for (int i = 0;i<optielijst.size();i++) {
+            String prijs = String.valueOf(optielijst.get(i).getPrijs()); //Dit was eerst 'doubleprijs'
+            //String prijs = "\u20ac" + doubleprijs; //De bedoeling hiervan was om een eurosymbool te printen, maar dat lijkt niet te werken met printf
+            if (optielijst.get(i).getIsEssentieel()) {
+                System.out.printf("%-20s %-20s %-100s %-10s %-25s%n",
+                        optielijst.get(i).getIsEssentieel(),
+                        optielijst.get(i).getNaam(),
+                        optielijst.get(i).getBeschrijving(),
+                        optielijst.get(i).getPrijs(),
+                        optielijst.get(i).getMiliuekorting()
+                );
+            }
+            if (!optielijst.get(i).getIsEssentieel()) {
+                System.out.printf("%-20s %-20s %-100s %-10s %-25s%n",
+                        optielijst.get(i).getIsEssentieel(),
+                        optielijst.get(i).getNaam(),
+                        optielijst.get(i).getBeschrijving(),
+                        optielijst.get(i).getPrijs(),
+                        optielijst.get(i).getMiliuekorting()
+                );
+            }
         }
     }
     public void maakOptieAan(Scanner scanner, String scan){
