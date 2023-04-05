@@ -165,7 +165,24 @@ public class OptieLijst{
             }
         }
     }
-    public void maakOptieAan(Scanner scanner, String scan){
+
+    public void nieuweOptie(String isEssentieel,
+                            String naam,
+                            String beschrijving,
+                            String prijs,
+                            String milieukorting) throws FileNotFoundException {
+        optielijst.add(
+                new Optie(
+                            isEssentieel,
+                            naam,
+                            beschrijving,
+                            prijs,
+                            milieukorting)
+        );
+        writeToCSV();
+
+    }
+    /*public void maakOptieAan(Scanner scanner, String scan){
         System.out.println("Is de optie essentieel?");
         boolean optieIsEssentieel = false;
         String optieNaam;
@@ -227,4 +244,5 @@ public class OptieLijst{
         Optie nieuweOptie = new Optie(optieIsEssentieel, optieNaam, optieBeschrijving, optiePrijs, optieMilieukorting);
         optielijst.add(nieuweOptie);
     }
+     */
 }

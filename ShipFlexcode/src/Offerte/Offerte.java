@@ -1,4 +1,7 @@
-package Opties;
+package Offerte;
+
+import Opties.Optie;
+import Opties.OptieLijst;
 
 import java.util.ArrayList;
 import java.util.Scanner;

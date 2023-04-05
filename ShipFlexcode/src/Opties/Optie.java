@@ -21,7 +21,7 @@ public class Optie  {
 
     //Deze constructor wordt gebruikt in Optielijst om Opties aan te maken met waardes dat uit een csv file worden gelezen.
     public Optie(String isEssentieel, String naam, String beschrijving, String prijs, String milieukorting){
-        if (isEssentieel.equals("true") || isEssentieel.equals("True")){
+        if (isEssentieel.equals("true") || isEssentieel.equals("True") || isEssentieel.equals("j")){
             this.isEssentieel = true;
         } else {
             this.isEssentieel = false;
@@ -30,7 +30,7 @@ public class Optie  {
         this.beschrijving = beschrijving;
         Double Prijs =  Double.parseDouble(prijs);
         this.prijs = Prijs;
-        if (milieukorting.equals("True") || milieukorting.equals("true")) {
+        if (milieukorting.equals("True") || milieukorting.equals("true") || milieukorting.equals("j") ){
             this.miliuekorting = true;
         } else {
             this.miliuekorting = false;
