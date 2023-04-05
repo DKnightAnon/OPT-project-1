@@ -4,9 +4,9 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class SystemInterface {
-    Commands commands = new Commands();
-    OptieLijst standardOpties = new OptieLijst();
-    boolean running = true;
+    private Commands commands = new Commands();
+    private OptieLijst standardOpties = new OptieLijst();
+    private boolean running = true;
 
 
     private String welcomeMessage = "Welkom bij ShipFlex!\nVoer 'help' in voor een overzicht van alle commands.";
@@ -32,22 +32,26 @@ public class SystemInterface {
                 || input.equals(Commands.optieLijst.optieLijstCommandJoinedLowerCase)
                 || input.equals(Commands.optieLijst.optieLijstCommandJoinedAllcaps)
             ){
-                standardOpties.printOptieLijst();
+                printOptieLijst();
             }
             else if (
-                    input.equals(Commands.optieAanmaken.optieAanmakenCommand)
-                    || input.equals(Commands.optieAanmaken.optieAanmakenCommandJoined)
-                    || input.equals(Commands.optieAanmaken.optieAanmakenCommandLowerCase)
-                    || input.equals(Commands.optieAanmaken.optieAanmakenCommandJoinedLowerCase)
-                    || input.equals(Commands.optieAanmaken.optieAanmakenCommandJoinedFirstUpperCase)
-                    || input.equals(Commands.optieAanmaken.optieAanmakenCommandJoinedLastUpperCase)
+                   input.equals(Commands.optieAanmaken.optieAanmakenCommand)
+                || input.equals(Commands.optieAanmaken.optieAanmakenCommandJoined)
+                || input.equals(Commands.optieAanmaken.optieAanmakenCommandLowerCase)
+                || input.equals(Commands.optieAanmaken.optieAanmakenCommandJoinedLowerCase)
+                || input.equals(Commands.optieAanmaken.optieAanmakenCommandJoinedFirstUpperCase)
+                || input.equals(Commands.optieAanmaken.optieAanmakenCommandJoinedLastUpperCase)
             ){
                 optieAanmaken(scanner, input);
             }
-            else if (input.equals(Commands.sluitApplicatie.sluitApplicatieCommand)) {
+            else if (
+                    input.equals(Commands.sluitApplicatie.sluitApplicatieCommand)
+                 || input.equals(Commands.sluitApplicatie.sluitApplicatieCommandLowerCase)
+                 || input.equals(Commands.sluitApplicatie.sluitApplicatieCommandAllCaps)
+            ) {
                 exitSystem();
             }else {
-                System.out.println(commands.commandError);
+                commandError();
             }
 
         }
@@ -115,5 +119,12 @@ public class SystemInterface {
         }
     }
 
+    private void printOptieLijst(){
+        standardOpties.printOptieLijst();
 
+    }
+
+    private void commandError(){
+        System.out.println(commands.commandError);
+    }
 }

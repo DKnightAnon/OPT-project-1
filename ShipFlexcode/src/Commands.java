@@ -39,6 +39,7 @@ public class Commands {
         static String sluitApplicatie = "Afsluiten - Sluit de applicatie af.";
         static String sluitApplicatieCommand = "Afsluiten";
         static String sluitApplicatieCommandLowerCase = "afsluiten";
+        static String sluitApplicatieCommandAllCaps = "AFSLUITEN";
     }
 
     public class help {
