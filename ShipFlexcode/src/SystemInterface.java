@@ -1,5 +1,6 @@
 import Opties.OptieLijst;
 
+import java.io.Console;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
@@ -42,7 +43,7 @@ public class SystemInterface {
                 || input.equals(Commands.optieAanmaken.optieAanmakenCommandJoinedFirstUpperCase)
                 || input.equals(Commands.optieAanmaken.optieAanmakenCommandJoinedLastUpperCase)
             ){
-                optieAanmaken(scanner, input);
+                optieAanmaken();
             }
             else if (
                     input.equals(Commands.sluitApplicatie.sluitApplicatieCommand)
@@ -74,7 +75,8 @@ public class SystemInterface {
         Commands.initializeCommands();
     }
 
-    private void optieAanmaken(Scanner scanner, String Input) throws FileNotFoundException {
+    private void optieAanmaken() throws FileNotFoundException {
+
 
         boolean finished = false;
         String essentieel = "";
@@ -82,33 +84,32 @@ public class SystemInterface {
         String beschrijving = "";
         String prijs = "";
         String korting = "";
-        System.out.println("Is de nieuwe optie een essentiele optie? j/n");
+
         while (!finished) {
-             String input = System.console().readLine();
-
-
+            Console console = System.console();
+            String input = console.readLine("Is de nieuwe optie een essentiele optie? j/n");
             if (input.equals("j")) {
                 essentieel = "true";
             } else {
                 essentieel = "false";
             }
 
-            System.out.println("Wat is de naam van deze optie?");
+            input = console.readLine("Wat is de naam van deze optie?");
             if (!input.equals("")) {
                 naam = input;
             }
 
-            System.out.println("Wat is de beschrijving voor deze optie?");
+            input = console.readLine("Wat is de beschrijving voor deze optie?");
             if (!input.isEmpty()) {
                 beschrijving = input;
             }
 
-            System.out.println("Voer de prijs van de nieuwe optie in : (Heel getal of een decimaal getal waarmee de decimalen achter een ' . '(punt)  staan) ");
+            input = console.readLine("Voer de prijs van de nieuwe optie in : (Heel getal of een decimaal getal waarmee de decimalen achter een ' . '(punt)  staan) ");
             if (!input.isEmpty()) {
                 prijs = input;
             }
 
-            System.out.println("Heeft deze optie milieukorting? j/n");
+            input = console.readLine("Heeft deze optie milieukorting? j/n");
             if (input.equals("j")) {
                 korting = "true";
             }else {
@@ -116,6 +117,7 @@ public class SystemInterface {
             }
 
             standardOpties.nieuweOptie(essentieel, naam, beschrijving, prijs, korting);
+            finished = true;
         }
     }
 
