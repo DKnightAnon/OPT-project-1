@@ -36,6 +36,7 @@ Als je een merge conflict hebt betekent het dat in een van de bestanden die je w
 In het geval dat je de volgende warning krijgt in git :
 "warning: in the working copy of 'out/production/OPT-project-1/CSV_Files/opties.csv', LF will be replaced by CRLF the next time Git touches it"
 betekent het dat het teken waarmee het einde van een regel door git verandert zal worden. LF staat voor 'line feed', en CRLF staat voor 'carriage return line feed'. Dit is pas van belang wanneer je developers hebt die niet op een windows systeem werken.
+
 Als je met alleen windows computer aan een project werkt kun je deze waarschuwing uitzetten met het volgende command : "git config core.autocrlf true"
 Als je op een Mac of Linux systeem werkt, gebruik dan het volgende command : '$ git config --global core.autocrlf input'
 
@@ -48,29 +49,7 @@ Nadat je iets hebt gepusht met het git push command vanuit de branch dat je op j
 
 Voor dit project moet er een applicatie gemaakt worden voor scheepsbouwers. Deze opdracht komt voor uit een behoefte van de opdrachtgever om het genereren van offertes te stroomlijnen. Deze applicatie moet (kennelijk) een CLI(Command Line Interface) applicatie zijn.
 
-# Sprint planning
 
-Sprint 0/1(Huidig)
-  - Einddatum 19/3/2022
-  - User story 3 : “ Als scheepsbouwer wil ik de mogelijkheid hebben om verschillende klanttypes te selecteren, zodat ik de juiste kortingen kan toepassen en de prijs nauwkeuriger kan bepalen.”
-
-    • Er zijn verschillende klanttypes beschikbaar voor de scheepsbouwer, zoals particulieren, bedrijven en overheden.
-
-
-    • De klanttypes zijn gemakkelijk te selecteren en te wijzigen in de applicatie.
-
-
-    • Elk klanttype heeft zijn eigen kortingen, die nauwkeurig worden berekend en toegepast op de offerte.
-
-
-  - Item 2 : User story 1 - “ Als scheepsbouwer wil ik een overzichtelijke lijst van essentiële en extra opties, zodat ik snel en gemakkelijk een offerte op maat kan maken voor mijn klant.” 
-  
-    • Er is een optie voor milieu-kortingen per onderdeel beschikbaar voor de scheepsbouwer.
-    
-    • De optie is duidelijk omschreven en gemakkelijk te vinden in de applicatie.
-    
-    • De kortingen worden nauwkeurig berekend en toegepast op de offerte. 
-    
 # Veelgebruikte git commands
 git init // repository initializeren
 
