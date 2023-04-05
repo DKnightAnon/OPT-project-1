@@ -38,6 +38,7 @@ In het geval dat je de volgende warning krijgt in git :
 betekent het dat het teken waarmee het einde van een regel door git verandert zal worden. LF staat voor 'line feed', en CRLF staat voor 'carriage return line feed'. Dit is pas van belang wanneer je developers hebt die niet op een windows systeem werken.
 
 Als je met alleen windows computer aan een project werkt kun je deze waarschuwing uitzetten met het volgende command : "git config core.autocrlf true"
+
 Als je op een Mac of Linux systeem werkt, gebruik dan het volgende command : '$ git config --global core.autocrlf input'
 
   

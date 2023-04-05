@@ -81,7 +81,8 @@ public class OptieLijst{
             }
         }catch (Exception e) {
         }
-        for (int i = 0; i<optielijst.size();i++) {
+       /*Testing purposes, redundant
+       or (int i = 0; i<optielijst.size();i++) {
             System.out.println(
                     optielijst.get(i).getIsEssentieel() +
                     "," +
@@ -94,7 +95,7 @@ public class OptieLijst{
                     optielijst.get(i).getMiliuekorting()
             );
 
-        }
+        }        */
 
     }
 
@@ -110,25 +111,6 @@ public class OptieLijst{
     }
     // tot hier
     public void printOptieLijst() {
-        /*
-        for (int i = 0; i < optielijst.size(); i++){
-            System.out.println("Naam: " + optielijst.get(i).getNaam());
-            System.out.println("Beschrijving: " + optielijst.get(i).getBeschrijving());
-            System.out.println("Prijs: " + optielijst.get(i).getPrijs());
-            if (optielijst.get(i).getIsEssentieel()) {
-                System.out.println("Essentieel: Ja");
-            } else {
-                System.out.println("Essentieel: Nee");
-            }
-            if (optielijst.get(i).getMiliuekorting()) {
-                System.out.println("Miliuekorting: Ja");
-            } else {
-                System.out.println("Miliuekorting: Nee");
-            }
-            System.out.println();
-        }
-
-         */
         readFromCSV();
 
         System.out.printf("%-20s %-20s %-100s %-10s %-25s%n",
@@ -182,6 +164,7 @@ public class OptieLijst{
         writeToCSV();
 
     }
+
     /*public void maakOptieAan(Scanner scanner, String scan){
         System.out.println("Is de optie essentieel?");
         boolean optieIsEssentieel = false;
