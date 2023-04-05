@@ -1,3 +1,5 @@
+package Opties;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -11,7 +13,7 @@ public class OptieLijst{
     Optie Sonar = new Optie(false,"Sonar", "Dit is een test beschrijving om te kijken hoe het reageert op meerdere characters",20, false);
     Optie ExtraPKs = new Optie(false,"ExtraPKs", "Dit is een test beschrijving om te kijken hoe het reageert op meerdere characters",20, false);
 
-    //public List<Optie> optielijst = List.of(optie1, optie2, optie3, optie4, optie5, optie6, optie7, optie8); // is voor List
+    //public List<Opties.Optie> optielijst = List.of(optie1, optie2, optie3, optie4, optie5, optie6, optie7, optie8); // is voor List
 
     // is handig om te houden in het geval je de List optielijst veranderd naar ArrayList
     public ArrayList<Optie> optielijst = new ArrayList<Optie>();
@@ -64,7 +66,7 @@ public class OptieLijst{
 
     }
 
-    //Deze methode leest dingen uit een csv bestand en maakt hiermee objecten van het type Optie aan.
+    //Deze methode leest dingen uit een csv bestand en maakt hiermee objecten van het type Opties.Optie aan.
     public void readFromCSV(){
 
         BufferedReader reader = null;
@@ -127,6 +129,7 @@ public class OptieLijst{
         }
 
          */
+        readFromCSV();
 
         System.out.printf("%-20s %-20s %-100s %-10s %-25s%n",
                 "Essentiele optie",
@@ -220,7 +223,7 @@ public class OptieLijst{
         System.out.println("met prijs: "+optiePrijs);
         System.out.println("en heeft wel of niet miliuekorting: "+optieMilieukorting);
         System.out.println();
-        System.out.println("Optie aangemaakt.");
+        System.out.println("Opties.Optie aangemaakt.");
         Optie nieuweOptie = new Optie(optieIsEssentieel, optieNaam, optieBeschrijving, optiePrijs, optieMilieukorting);
         optielijst.add(nieuweOptie);
     }

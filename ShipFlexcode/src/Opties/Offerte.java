@@ -1,7 +1,9 @@
+package Opties;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
-class Offerte {
+public class Offerte {
     public ArrayList<Optie> geselecteerdeOpties = new ArrayList<Optie>();
 
     public void voegOptieToe(Scanner scanner, String scan, OptieLijst optielijst) {
@@ -17,7 +19,7 @@ class Offerte {
             System.out.println("Deze optie bestaat niet.");
         } else {
             geselecteerdeOpties.add(optielijst.optielijst.get(locatieOptie));
-            System.out.println("Optie toegevoegd.");
+            System.out.println("Opties.Optie toegevoegd.");
         }
     }
 

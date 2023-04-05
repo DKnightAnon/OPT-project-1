@@ -1,6 +1,8 @@
+package Opties;
+
 import java.util.ArrayList;
 
-class Optie  {
+public class Optie  {
 
     private boolean isEssentieel;
     private String naam;
