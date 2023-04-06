@@ -45,6 +45,9 @@ public class SystemInterface {
             ){
                 optieAanmaken();
             }
+            else if (input.equals(Commands.offerteMaken.offerteMakenCommand)) {
+
+            }
             else if (
                     input.equals(Commands.sluitApplicatie.sluitApplicatieCommand)
                  || input.equals(Commands.sluitApplicatie.sluitApplicatieCommandLowerCase)
@@ -76,7 +79,11 @@ public class SystemInterface {
     }
 
     private void optieAanmaken() throws FileNotFoundException {
-
+        //Deze method gooit een foutmelding in de IDE omdat er een console wordt gebruikt.
+        //Om deze foutmeldingen te vermijden moet main.java via de Command Interface aangeroepen worden.
+        //Navigeer naar de folder waar Main.java in staat , en gebruik het command javac 'Main.java'
+        //Gebruik vervolgens het command 'java Main'
+        //Momenteel wordt er nog een error gegooid omdat opties.csv dan niet gevonden kan worden.
 
         boolean finished = false;
         String essentieel = "";

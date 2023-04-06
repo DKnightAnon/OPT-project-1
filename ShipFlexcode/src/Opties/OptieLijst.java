@@ -31,14 +31,13 @@ public class OptieLijst{
     }
      */
 
-    String csvPath = "CSV_Files/opties.csv";
-    String Path2 = "ShipFlexcode/src/CSV_Files/opties.csv";
+    String Path = "ShipFlexcode/src/CSV_Files/opties.csv";
     //Bovenstaande path is een relatief path naar de juiste plek voor het bestand. Dit betekent dat de code op elk andere computer hoort te werken.
     public void writeToCSV() throws FileNotFoundException {
         readFromCSV(); //Vul de arraylist eerst in zodat het csv bestand overschreven kan worden.
         StringBuilder builder = new StringBuilder();
 
-        File csv = new File(Path2);
+        File csv = new File(Path);
         PrintWriter pw = new PrintWriter(csv);
 
         try {
@@ -75,7 +74,7 @@ public class OptieLijst{
         BufferedReader reader = null;
         String line = "";
         try {
-            reader = new BufferedReader(new FileReader(Path2));
+            reader = new BufferedReader(new FileReader(Path));
             optielijst.clear();
             while ((line = reader.readLine()) != null)
             {
