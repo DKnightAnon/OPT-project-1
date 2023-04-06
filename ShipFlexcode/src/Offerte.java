@@ -4,7 +4,11 @@ import java.util.Scanner;
 class Offerte {
     public ArrayList<Optie> geselecteerdeOpties = new ArrayList<Optie>();
 
-    public void voegOptieToe(Scanner scanner, String scan, OptieLijst optielijst) {
+    public void voegOptieToe(Optie optie){
+        geselecteerdeOpties.add(optie);
+    }
+
+    public void voegOptieToeScanner(Scanner scanner, String scan, OptieLijst optielijst) {
         System.out.println("Welke optie wil u toevoegen?");
         scan = scanner.nextLine();
         int locatieOptie = -1;
@@ -16,7 +20,7 @@ class Offerte {
         if (locatieOptie == -1){
             System.out.println("Deze optie bestaat niet.");
         } else {
-            geselecteerdeOpties.add(optielijst.optielijst.get(locatieOptie));
+            voegOptieToe(optielijst.optielijst.get(locatieOptie));
             System.out.println("Optie toegevoegd.");
         }
     }

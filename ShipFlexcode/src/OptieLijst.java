@@ -44,7 +44,11 @@ public class OptieLijst{
             System.out.println();
         }
     }
-    public void maakOptieAan(Scanner scanner, String scan){
+    public void maakOptieAan(boolean optieIsEssentieel,String optieNaam, String optieBeschrijving, int optiePrijs, boolean optieMilieukorting){
+        Optie nieuweOptie = new Optie(optieIsEssentieel, optieNaam, optieBeschrijving, optiePrijs, optieMilieukorting);
+        optielijst.add(nieuweOptie);
+    }
+    public void maakOptieAanScanner(Scanner scanner, String scan){
         System.out.println("Is de optie essentieel?");
         boolean optieIsEssentieel = false;
         String optieNaam;
@@ -103,7 +107,6 @@ public class OptieLijst{
         System.out.println("en heeft wel of niet miliuekorting: "+optieMilieukorting);
         System.out.println();
         System.out.println("Optie aangemaakt.");
-        Optie nieuweOptie = new Optie(optieIsEssentieel, optieNaam, optieBeschrijving, optiePrijs, optieMilieukorting);
-        optielijst.add(nieuweOptie);
+        maakOptieAan(optieIsEssentieel, optieNaam, optieBeschrijving, optiePrijs, optieMilieukorting);
     }
 }

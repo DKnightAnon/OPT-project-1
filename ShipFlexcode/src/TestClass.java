@@ -29,8 +29,8 @@ public class TestClass {
         Scanner scanner = new Scanner(System.in);
         OptieLijst optielijstTest = new OptieLijst();
         //Act
-        offerteTest.voegOptieToe(scanner, "Roer", optielijstTest);
-        offerteTest.voegOptieToe(scanner, "Anker", optielijstTest);
+        offerteTest.voegOptieToeScanner(scanner, "Roer", optielijstTest);
+        offerteTest.voegOptieToeScanner(scanner, "Anker", optielijstTest);
         //Assert
         assertEquals(2, offerteTest.geselecteerdeOpties.size());
     }

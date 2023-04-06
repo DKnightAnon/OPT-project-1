@@ -28,9 +28,9 @@ public class Main {
                 System.out.println("optie toevoegen");
                 System.out.println("einde");
             } else if (scan.equals("optie toevoegen")) {
-                offerte1.voegOptieToe(scanner, scan, optielijst1);
+                offerte1.voegOptieToeScanner(scanner, scan, optielijst1);
             } else if (scan.equals("optie aanmaken")) {
-                optielijst1.maakOptieAan(scanner, scan);
+                optielijst1.maakOptieAanScanner(scanner, scan);
             } else {
                 System.out.println("Type 'help' voor meer informatie.");
             }
