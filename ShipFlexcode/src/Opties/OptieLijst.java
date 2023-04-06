@@ -1,3 +1,5 @@
+package Opties;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -11,7 +13,7 @@ public class OptieLijst{
     Optie Sonar = new Optie(false,"Sonar", "Dit is een test beschrijving om te kijken hoe het reageert op meerdere characters",20, false);
     Optie ExtraPKs = new Optie(false,"ExtraPKs", "Dit is een test beschrijving om te kijken hoe het reageert op meerdere characters",20, false);
 
-    //public List<Optie> optielijst = List.of(optie1, optie2, optie3, optie4, optie5, optie6, optie7, optie8); // is voor List
+    //public List<Opties.Optie> optielijst = List.of(optie1, optie2, optie3, optie4, optie5, optie6, optie7, optie8); // is voor List
 
     // is handig om te houden in het geval je de List optielijst veranderd naar ArrayList
     public ArrayList<Optie> optielijst = new ArrayList<Optie>();
@@ -29,14 +31,17 @@ public class OptieLijst{
     }
      */
 
-    //
+    String csvPath = "CSV_Files/opties.csv";
+    String Path2 = "ShipFlexcode/src/CSV_Files/opties.csv";
+    //Bovenstaande path is een relatief path naar de juiste plek voor het bestand. Dit betekent dat de code op elk andere computer hoort te werken.
     public void writeToCSV() throws FileNotFoundException {
         readFromCSV(); //Vul de arraylist eerst in zodat het csv bestand overschreven kan worden.
         StringBuilder builder = new StringBuilder();
-        //PrintWriter pw = new PrintWriter(new File("CSV_Files/opties.csv"));
-        File directory = new File("CSV_Files/opties.csv");
-        System.out.println(directory.getAbsolutePath());
-        /*try {
+
+        File csv = new File(Path2);
+        PrintWriter pw = new PrintWriter(csv);
+
+        try {
             for (int i = 0; i < optielijst.size(); i++) {
                 builder.append(optielijst.get(i).getIsEssentieel());
                 builder.append(",");
@@ -49,44 +54,52 @@ public class OptieLijst{
                 builder.append(optielijst.get(i).getMiliuekorting());
                 builder.append("\n");
             }
-            //pw.write(String.valueOf(builder));
-            //pw.flush();
-            //pw.close();
-            System.out.println(builder);
+            pw.write(String.valueOf(builder));
+            pw.flush();
+            pw.close();
+            //System.out.println(builder);
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-         */
+
 
 
 
 
     }
 
-    //Deze methode leest dingen uit een csv bestand en maakt hiermee objecten van het type Optie aan.
+    //Deze methode leest dingen uit een csv bestand en maakt hiermee objecten van het type Opties.Optie aan.
     public void readFromCSV(){
-        String file = "src\\CSV_Files\\opties.csv";
+
         BufferedReader reader = null;
         String line = "";
         try {
-            reader = new BufferedReader(new FileReader(file));
-            while ((line = reader.readLine()) != null) {
+            reader = new BufferedReader(new FileReader(Path2));
+            optielijst.clear();
+            while ((line = reader.readLine()) != null)
+            {
                 String[] row = line.split(",");
-
-                for (String index : row) {
-                    //optielijst.add(new Optie());
-                    for (int i=0;i<row.length;i++) {
-                        optielijst.add(new Optie(row[0],row[1],row[2],row[3],row[4]));
-                    }
-
-                }
-
+                optielijst.add(new Optie(row[0],row[1],row[2],row[3],row[4]));
             }
-
         }catch (Exception e) {
-
         }
+       /*Testing purposes, redundant
+       or (int i = 0; i<optielijst.size();i++) {
+            System.out.println(
+                    optielijst.get(i).getIsEssentieel() +
+                    "," +
+                    optielijst.get(i).getNaam() +
+                    "," +
+                    optielijst.get(i).getBeschrijving() +
+                    "," +
+                    optielijst.get(i).getPrijs() +
+                    "," +
+                    optielijst.get(i).getMiliuekorting()
+            );
+
+        }        */
+
     }
 
     public void voegAlleOptiesToeAanLijst(OptieLijst optielijst){
@@ -101,24 +114,61 @@ public class OptieLijst{
     }
     // tot hier
     public void printOptieLijst() {
-        for (int i = 0; i < optielijst.size(); i++){
-            System.out.println("Naam: " + optielijst.get(i).getNaam());
-            System.out.println("Beschrijving: " + optielijst.get(i).getBeschrijving());
-            System.out.println("Prijs: " + optielijst.get(i).getPrijs());
-            if (optielijst.get(i).getIsEssentieel()) {
-                System.out.println("Essentieel: Ja");
-            } else {
-                System.out.println("Essentieel: Nee");
-            }
-            if (optielijst.get(i).getMiliuekorting()) {
-                System.out.println("Miliuekorting: Ja");
-            } else {
-                System.out.println("Miliuekorting: Nee");
-            }
+        readFromCSV();
+
+        System.out.printf("%-20s %-20s %-100s %-10s %-25s%n",
+                "Essentiele optie",
+                "Naam",
+                "Beschrijving",
+                "Prijs",
+                "Milieukorting"
+        );
+        for (int i = 0; i<167;i++) {
+            System.out.print("-");
+        }
             System.out.println();
+        for (int i = 0;i<optielijst.size();i++) {
+            String prijs = String.valueOf(optielijst.get(i).getPrijs()); //Dit was eerst 'doubleprijs'
+            //String prijs = "\u20ac" + doubleprijs; //De bedoeling hiervan was om een eurosymbool te printen, maar dat lijkt niet te werken met printf
+            if (optielijst.get(i).getIsEssentieel()) {
+                System.out.printf("%-20s %-20s %-100s %-10s %-25s%n",
+                        optielijst.get(i).getIsEssentieel(),
+                        optielijst.get(i).getNaam(),
+                        optielijst.get(i).getBeschrijving(),
+                        optielijst.get(i).getPrijs(),
+                        optielijst.get(i).getMiliuekorting()
+                );
+            }
+            if (!optielijst.get(i).getIsEssentieel()) {
+                System.out.printf("%-20s %-20s %-100s %-10s %-25s%n",
+                        optielijst.get(i).getIsEssentieel(),
+                        optielijst.get(i).getNaam(),
+                        optielijst.get(i).getBeschrijving(),
+                        optielijst.get(i).getPrijs(),
+                        optielijst.get(i).getMiliuekorting()
+                );
+            }
         }
     }
-    public void maakOptieAan(Scanner scanner, String scan){
+
+    public void nieuweOptie(String isEssentieel,
+                            String naam,
+                            String beschrijving,
+                            String prijs,
+                            String milieukorting) throws FileNotFoundException {
+        optielijst.add(
+                new Optie(
+                            isEssentieel,
+                            naam,
+                            beschrijving,
+                            prijs,
+                            milieukorting)
+        );
+        writeToCSV();
+
+    }
+
+    /*public void maakOptieAan(Scanner scanner, String scan){
         System.out.println("Is de optie essentieel?");
         boolean optieIsEssentieel = false;
         String optieNaam;
@@ -176,8 +226,9 @@ public class OptieLijst{
         System.out.println("met prijs: "+optiePrijs);
         System.out.println("en heeft wel of niet miliuekorting: "+optieMilieukorting);
         System.out.println();
-        System.out.println("Optie aangemaakt.");
+        System.out.println("Opties.Optie aangemaakt.");
         Optie nieuweOptie = new Optie(optieIsEssentieel, optieNaam, optieBeschrijving, optiePrijs, optieMilieukorting);
         optielijst.add(nieuweOptie);
     }
+     */
 }

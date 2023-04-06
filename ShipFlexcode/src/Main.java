@@ -1,15 +1,18 @@
 
-import java.io.File;
+import Offerte.Offerte;
+import Opties.OptieLijst;
+
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class Main {
+    static SystemInterface system = new SystemInterface();
     public static void main(String args[]) throws FileNotFoundException {
-        Offerte offerte1 = new Offerte();
-        OptieLijst optielijst1 = new OptieLijst();
-        Commands commands = new Commands();
+        //Offerte offerte1 = new Offerte();
+        //OptieLijst optielijst1 = new OptieLijst();
+        //Commands commands = new Commands();
 
-        optielijst1.voegAlleOptiesToeAanLijst(optielijst1); // is handig om te houden in het geval je de List optielijst veranderd naar ArrayList
+        //optielijst1.voegAlleOptiesToeAanLijst(optielijst1); // is handig om te houden in het geval je de List optielijst veranderd naar ArrayList
 
         /*
         offerte1.maakOfferte();
@@ -18,7 +21,12 @@ public class Main {
          */
         //File directory = new File("./");
         //System.out.println(directory.getAbsolutePath());
-        optielijst1.writeToCSV();
+        //optielijst1.writeToCSV();
+        //optielijst1.readFromCSV();
+        //Double string = Double.parseDouble("60.0");
+        //System.out.println(string);
+        //optielijst1.printOptieLijst();
+
         /*Scanner scanner = new Scanner(System.in);
         boolean einde = false;
         while(einde == false){
@@ -43,7 +51,10 @@ public class Main {
             } else {
                 System.out.println("type -help- voor meer informatie.");
             }
-        }*/
+        }
+         */
+        system.Runtime();
+
     }
 
 
