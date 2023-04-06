@@ -1,59 +1,41 @@
-import java.util.ArrayList;
-class Product {
-    private String naam;
-    private double prijs;
 
-    public Product(String naam, double prijs){
-        this.naam = naam;
-        this.prijs = prijs;
-    }
-
-    public void setNaam(String naam) {
-        this.naam = naam;
-    }
-    public void setPrijs(double prijs) {
-        this.prijs = prijs;
-    }
-
-    public String getNaam(){
-        return naam;
-    }
-    public double getPrijs(){
-        return prijs;
-    }
-}
+import java.util.Scanner;
 
 public class Main {
-<<<<<<< HEAD
+
     public static void main(String args[]) {
-        ArrayList<Product> producten = new ArrayList<Product>();
-        Product product1 = new Product("product1", 24.55);
-        Product product2 = new Product("product2", 38.43);
-        Product product3 = new Product("product3", 96.12);
-        Product product4 = new Product("product4", 25.98);
-        Product product5 = new Product("product5", 47.66);
-        producten.add(product1);
-        producten.add(product2);
-        producten.add(product3);
-        producten.add(product4);
-        producten.add(product5);
+        Offerte offerte1 = new Offerte();
+        OptieLijst optielijst1 = new OptieLijst();
 
-        double totaalprijs = 0;
+        optielijst1.voegAlleOptiesToeAanLijst(optielijst1);
 
-        for (int i = 0; i < producten.size(); i++) {
-            System.out.printf("%-11s = €%8.2f%n", producten.get(i).getNaam() , producten.get(i).getPrijs());
-            totaalprijs += producten.get(i).getPrijs();
+        Scanner scanner = new Scanner(System.in);
+        boolean einde = false;
+        System.out.println("Type 'help' voor meer informatie.");
+        while(einde == false){
+            String scan = scanner.nextLine();
+            if (scan.equals("einde")){
+                einde = true;
+            } else if (scan.equals("optie lijst")) {
+                optielijst1.printOptieLijst();
+            } else if (scan.equals("offerte")) {
+                offerte1.maakOfferte();
+            } else if (scan.equals("help")) {
+                System.out.println("U kunt kiezen uit:");
+                System.out.println("optie lijst");
+                System.out.println("optie aanmaken");
+                System.out.println("offerte");
+                System.out.println("optie toevoegen");
+                System.out.println("einde");
+            } else if (scan.equals("optie toevoegen")) {
+                offerte1.voegOptieToe(scanner, scan, optielijst1);
+            } else if (scan.equals("optie aanmaken")) {
+                optielijst1.maakOptieAan(scanner, scan);
+            } else {
+                System.out.println("Type 'help' voor meer informatie.");
+            }
         }
-        System.out.println("-----------------------");
-        System.out.printf("%-11s = €%8.2f%n", "totaalprijs", totaalprijs);
-=======
-<<<<<<< HEAD
-    public static void Main(String args[]){
-        System.out.println("Hi!");
-=======
-    public static void main(String[] args) {
-        System.out.println("test!");
->>>>>>> origin/main
->>>>>>> main
+
     }
+
 }

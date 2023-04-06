@@ -1,0 +1,17 @@
+---------------
+class alleOpties
+---------------
+-opties:ArrayList<optie>
+-essentieleOpties:ArrayList<essentieleOptie>
+---------------
+getters & setters
+
+
+-------------
+class optie
+-------------
+-naam:String
+-beschrijving:String
+-essentieel:boolean
+-------------
+getters & setters
