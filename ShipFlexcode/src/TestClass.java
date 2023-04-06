@@ -15,10 +15,8 @@ public class TestClass {
     public void testMaakOptieAan(){
         //Arrange
         OptieLijst optielijstTest = new OptieLijst();
-        Scanner scanner = new Scanner(System.in);
-        String scan = scanner.nextLine();
         //Act
-        optielijstTest.maakOptieAan(scanner, scan);
+        optielijstTest.maakOptieAan(true,"Anker", "Dit is een test beschrijving om te kijken hoe het reageert op meerdere characters", 50, false);
         //Assert
         assertEquals(1, optielijstTest.optielijst.size());
     }
@@ -26,11 +24,10 @@ public class TestClass {
     public void testVoegOptieToe(){
         //Arrange
         Offerte offerteTest = new Offerte();
-        Scanner scanner = new Scanner(System.in);
         OptieLijst optielijstTest = new OptieLijst();
         //Act
-        offerteTest.voegOptieToeScanner(scanner, "Roer", optielijstTest);
-        offerteTest.voegOptieToeScanner(scanner, "Anker", optielijstTest);
+        offerteTest.voegOptieToe(optielijstTest.Anker);
+        offerteTest.voegOptieToe(optielijstTest.Brandstoftank);
         //Assert
         assertEquals(2, offerteTest.geselecteerdeOpties.size());
     }
