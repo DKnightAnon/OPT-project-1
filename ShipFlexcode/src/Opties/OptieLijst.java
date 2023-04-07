@@ -156,7 +156,7 @@ public class OptieLijst{
 //                            milieukorting)
 //        );
         readFromCSV();
-
+        optielijst.add(nieuweOptie);
         writeToCSV();
 
     }

@@ -53,8 +53,8 @@ public class Main {
             }
         }
          */
-        //system.Runtime();
-        optielijst1.nieuweOptie("j","testing","testingnieuweoptiehardcoded","13.68","n");
+        system.Runtime();
+        //optielijst1.nieuweOptie("j","testing","testingnieuweoptiehardcoded","13.68","n");
 
     }
 
