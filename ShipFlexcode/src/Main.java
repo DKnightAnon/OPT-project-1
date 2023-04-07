@@ -9,7 +9,7 @@ public class Main {
     static SystemInterface system = new SystemInterface();
     public static void main(String args[]) throws FileNotFoundException {
         //Offerte offerte1 = new Offerte();
-        //OptieLijst optielijst1 = new OptieLijst();
+        OptieLijst optielijst1 = new OptieLijst();
         //Commands commands = new Commands();
 
         //optielijst1.voegAlleOptiesToeAanLijst(optielijst1); // is handig om te houden in het geval je de List optielijst veranderd naar ArrayList
@@ -53,7 +53,8 @@ public class Main {
             }
         }
          */
-        system.Runtime();
+        //system.Runtime();
+        optielijst1.nieuweOptie("j","testing","testingnieuweoptiehardcoded","13.68","n");
 
     }
 

@@ -18,23 +18,10 @@ public class OptieLijst{
     // is handig om te houden in het geval je de List optielijst veranderd naar ArrayList
     public ArrayList<Optie> optielijst = new ArrayList<Optie>();
 
-
-    /*
-    public void readFromCSV() throws FileNotFoundException {
-        Scanner sc = new Scanner(new File("src\\CSV_Files\\opties.csv"));
-        sc.useDelimiter(",");   //sets the delimiter pattern
-        while (sc.hasNext())  //returns a boolean value
-        {
-            //optielijst.add();
-            System.out.print(sc.next());  //find and returns the next complete token from this scanner
-        }
-    }
-     */
-
     String Path = "ShipFlexcode/src/CSV_Files/opties.csv";
     //Bovenstaande path is een relatief path naar de juiste plek voor het bestand. Dit betekent dat de code op elk andere computer hoort te werken.
     public void writeToCSV() throws FileNotFoundException {
-        readFromCSV(); //Vul de arraylist eerst in zodat het csv bestand overschreven kan worden.
+        //readFromCSV(); //Vul de arraylist eerst in zodat het csv bestand overschreven kan worden.
         StringBuilder builder = new StringBuilder();
 
         File csv = new File(Path);
@@ -115,7 +102,8 @@ public class OptieLijst{
     public void printOptieLijst() {
         readFromCSV();
 
-        System.out.printf("%-20s %-20s %-100s %-10s %-25s%n",
+        System.out.printf("%-15s %-20s %-20s %-100s %-10s %-25s%n",
+                "Optie nr.",
                 "Essentiele optie",
                 "Naam",
                 "Beschrijving",
@@ -130,7 +118,8 @@ public class OptieLijst{
             String prijs = String.valueOf(optielijst.get(i).getPrijs()); //Dit was eerst 'doubleprijs'
             //String prijs = "\u20ac" + doubleprijs; //De bedoeling hiervan was om een eurosymbool te printen, maar dat lijkt niet te werken met printf
             if (optielijst.get(i).getIsEssentieel()) {
-                System.out.printf("%-20s %-20s %-100s %-10s %-25s%n",
+                System.out.printf("%-15d %-20s %-20s %-100s %-10s %-25s%n",
+                        i+1,
                         optielijst.get(i).getIsEssentieel(),
                         optielijst.get(i).getNaam(),
                         optielijst.get(i).getBeschrijving(),
@@ -139,7 +128,8 @@ public class OptieLijst{
                 );
             }
             if (!optielijst.get(i).getIsEssentieel()) {
-                System.out.printf("%-20s %-20s %-100s %-10s %-25s%n",
+                System.out.printf("%-15d %-20s %-20s %-100s %-10s %-25s%n",
+                        i+1,
                         optielijst.get(i).getIsEssentieel(),
                         optielijst.get(i).getNaam(),
                         optielijst.get(i).getBeschrijving(),
@@ -155,14 +145,18 @@ public class OptieLijst{
                             String beschrijving,
                             String prijs,
                             String milieukorting) throws FileNotFoundException {
-        optielijst.add(
-                new Optie(
-                            isEssentieel,
-                            naam,
-                            beschrijving,
-                            prijs,
-                            milieukorting)
-        );
+        Optie nieuweOptie = new Optie(isEssentieel, naam, beschrijving, prijs, milieukorting);
+
+//        optielijst.add(
+//                new Optie(
+//                            isEssentieel,
+//                            naam,
+//                            beschrijving,
+//                            prijs,
+//                            milieukorting)
+//        );
+        readFromCSV();
+
         writeToCSV();
 
     }

@@ -8,12 +8,12 @@ public class SystemInterface {
     private Commands commands = new Commands();
     private OptieLijst standardOpties = new OptieLijst();
     private boolean running = true;
-
+    Scanner scanner = new Scanner(System.in);
 
     private String welcomeMessage = "Welkom bij ShipFlex!\nVoer 'help' in voor een overzicht van alle commands.";
 
     public void Runtime() throws FileNotFoundException {
-        Scanner scanner = new Scanner(System.in);
+
         System.out.printf(welcomeMessage+"\n");
         initialize();
         while (running) {
@@ -81,7 +81,7 @@ public class SystemInterface {
     private void optieAanmaken() throws FileNotFoundException {
         //Deze method gooit een foutmelding in de IDE omdat er een console wordt gebruikt.
         //Om deze foutmeldingen te vermijden moet main.java via de Command Interface aangeroepen worden.
-        //Navigeer naar de folder waar Main.java in staat , en gebruik het command javac 'Main.java'
+        //Navigeer naar de folder waar Main.java in staat, en gebruik het command javac 'Main.java'
         //Gebruik vervolgens het command 'java Main'
         //Momenteel wordt er nog een error gegooid omdat opties.csv dan niet gevonden kan worden.
 
@@ -92,40 +92,78 @@ public class SystemInterface {
         String prijs = "";
         String korting = "";
 
-        while (!finished) {
-            Console console = System.console();
-            String input = console.readLine("Is de nieuwe optie een essentiele optie? j/n");
-            if (input.equals("j")) {
-                essentieel = "true";
-            } else {
-                essentieel = "false";
-            }
-
-            input = console.readLine("Wat is de naam van deze optie?");
-            if (!input.equals("")) {
-                naam = input;
-            }
-
-            input = console.readLine("Wat is de beschrijving voor deze optie?");
-            if (!input.isEmpty()) {
-                beschrijving = input;
-            }
-
-            input = console.readLine("Voer de prijs van de nieuwe optie in : (Heel getal of een decimaal getal waarmee de decimalen achter een ' . '(punt)  staan) ");
-            if (!input.isEmpty()) {
-                prijs = input;
-            }
-
-            input = console.readLine("Heeft deze optie milieukorting? j/n");
-            if (input.equals("j")) {
-                korting = "true";
-            }else {
-                korting = "false";
-            }
-
-            standardOpties.nieuweOptie(essentieel, naam, beschrijving, prijs, korting);
-            finished = true;
-        }
+        standardOpties.nieuweOptie("j","testing","testingnieuweoptiehardcodedvanuitSystemInterface","13.68","n");
+        System.out.println("Optie hoort aangemaakt te zijn. U kunt nu verder met andere commands.");
+//        while (!finished) {
+//            Console console = System.console();
+//            String input = scanner.nextLine();
+//
+//            System.out.println("Is de nieuwe optie een essentiele optie? j/n");
+//            if (input.equals("j")) {
+//                essentieel = "true";
+//
+//                        String input1 = scanner.nextLine();
+//                        System.out.println("Wat is de naam van deze optie?");
+//                        if (!input.equals("")) {
+//                            naam = input;
+//                        }
+//
+//                        String input2 = scanner.nextLine();
+//                        System.out.println("Wat is de beschrijving voor deze optie?");
+//                        if (!input.isEmpty()) {
+//                            beschrijving = input;
+//                        }
+//
+//                        String input3 = scanner.nextLine();
+//                        System.out.println("Voer de prijs van de nieuwe optie in : (Heel getal of een decimaal getal waarmee de decimalen achter een ' . '(punt)  staan) ");
+//                        if (!input.isEmpty()) {
+//                            prijs = input;
+//                        }
+//
+//                        String input4 = scanner.nextLine();
+//                        System.out.println("Heeft deze optie milieukorting? j/n");
+//                        if (input.equals("j")) {
+//                            korting = "true";
+//                        }else {
+//                            korting = "false";
+//                        }
+//
+//                standardOpties.nieuweOptie(essentieel, naam, beschrijving, prijs, korting);
+//                        finished = true;
+//            } else {
+//                essentieel = "false";
+//                        String input1 = scanner.nextLine();
+//                        System.out.println("Wat is de naam van deze optie?");
+//                        if (!input.equals("")) {
+//                            naam = input;
+//                        }
+//
+//                        String input2 = scanner.nextLine();
+//                        System.out.println("Wat is de beschrijving voor deze optie?");
+//                        if (!input.isEmpty()) {
+//                            beschrijving = input;
+//                        }
+//
+//                        String input3 = scanner.nextLine();
+//                        System.out.println("Voer de prijs van de nieuwe optie in : (Heel getal of een decimaal getal waarmee de decimalen achter een ' . '(punt)  staan) ");
+//                        if (!input.isEmpty()) {
+//                            prijs = input;
+//                        }
+//
+//                        String input4 = scanner.nextLine();
+//                        System.out.println("Heeft deze optie milieukorting? j/n");
+//                        if (input.equals("j")) {
+//                            korting = "true";
+//                        }else {
+//                            korting = "false";
+//                        }
+//                standardOpties.nieuweOptie(essentieel, naam, beschrijving, prijs, korting);
+//                        finished = true;
+//            }
+//
+//
+//
+//        }
     }
 
     private void printOptieLijst(){
