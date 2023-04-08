@@ -91,79 +91,87 @@ public class SystemInterface {
         String beschrijving = "";
         String prijs = "";
         String korting = "";
+        System.out.println("Is de nieuwe optie een essentiele optie? (j/n)");
 
-        standardOpties.nieuweOptie("j","testing","testingnieuweoptiehardcodedvanuitSystemInterface","13.68","n");
+//        standardOpties.nieuweOptie("j","testing","testingnieuweoptiehardcodedvanuitSystemInterface","13.68","n");
+        while (!finished) {
+            Console console = System.console();
+            String input = scanner.nextLine();
+
+            if (input.equals("j")) {
+                essentieel = "true";
+
+                        System.out.println("Wat is de naam van deze optie?");
+                        String input1 = scanner.nextLine();
+
+                        if (!input1.equals("")) {
+                            naam = input1;
+                        }
+
+                        System.out.println("Wat is de beschrijving voor deze optie?");
+                        String input2 = scanner.nextLine();
+
+                        if (!input2.isEmpty()) {
+                            beschrijving = input2;
+                        }
+
+
+                        System.out.println("Voer de prijs van de nieuwe optie in : (Heel getal of een decimaal getal waarmee de decimalen achter een ' . '(punt)  staan) ");
+                        String input3 = scanner.nextLine();
+                        if (!input3.isEmpty()) {
+                            prijs = input3;
+                        }
+
+                        System.out.println("Heeft deze optie milieukorting? (j/n)");
+                        String input4 = scanner.nextLine();
+                        if (input4.equals("j")) {
+                            korting = "true";
+                        }else {
+                            korting = "false";
+                        }
+
+                standardOpties.nieuweOptie(essentieel, naam, beschrijving, prijs, korting);
+                        finished = true;
+            } else {
+                essentieel = "false";
+                        System.out.println("Wat is de naam van deze optie?");
+                        String input1 = scanner.nextLine();
+
+                        if (!input1.equals("")) {
+                            naam = input1;
+                        }
+
+
+                        System.out.println("Wat is de beschrijving voor deze optie?");
+                        String input2 = scanner.nextLine();
+                        if (!input2.isEmpty()) {
+                            beschrijving = input2;
+                        }
+
+
+                        System.out.println("Voer de prijs van de nieuwe optie in : (Heel getal of een decimaal getal waarmee de decimalen achter een ' . '(punt)  staan) ");
+                        String input3 = scanner.nextLine();
+                        if (!input3.isEmpty()) {
+                            prijs = input3;
+                        }
+
+
+                        System.out.println("Heeft deze optie milieukorting? (j/n)");
+                        String input4 = scanner.nextLine();
+                        if (input4.equals("j")) {
+                            korting = "true";
+                        }else {
+                            korting = "false";
+                        }
+                standardOpties.nieuweOptie(essentieel, naam, beschrijving, prijs, korting);
+                        finished = true;
+            }
+
+
+
+        }
         System.out.println("Optie hoort aangemaakt te zijn. U kunt nu verder met andere commands.");
-//        while (!finished) {
-//            Console console = System.console();
-//            String input = scanner.nextLine();
-//
-//            System.out.println("Is de nieuwe optie een essentiele optie? j/n");
-//            if (input.equals("j")) {
-//                essentieel = "true";
-//
-//                        String input1 = scanner.nextLine();
-//                        System.out.println("Wat is de naam van deze optie?");
-//                        if (!input.equals("")) {
-//                            naam = input;
-//                        }
-//
-//                        String input2 = scanner.nextLine();
-//                        System.out.println("Wat is de beschrijving voor deze optie?");
-//                        if (!input.isEmpty()) {
-//                            beschrijving = input;
-//                        }
-//
-//                        String input3 = scanner.nextLine();
-//                        System.out.println("Voer de prijs van de nieuwe optie in : (Heel getal of een decimaal getal waarmee de decimalen achter een ' . '(punt)  staan) ");
-//                        if (!input.isEmpty()) {
-//                            prijs = input;
-//                        }
-//
-//                        String input4 = scanner.nextLine();
-//                        System.out.println("Heeft deze optie milieukorting? j/n");
-//                        if (input.equals("j")) {
-//                            korting = "true";
-//                        }else {
-//                            korting = "false";
-//                        }
-//
-//                standardOpties.nieuweOptie(essentieel, naam, beschrijving, prijs, korting);
-//                        finished = true;
-//            } else {
-//                essentieel = "false";
-//                        String input1 = scanner.nextLine();
-//                        System.out.println("Wat is de naam van deze optie?");
-//                        if (!input.equals("")) {
-//                            naam = input;
-//                        }
-//
-//                        String input2 = scanner.nextLine();
-//                        System.out.println("Wat is de beschrijving voor deze optie?");
-//                        if (!input.isEmpty()) {
-//                            beschrijving = input;
-//                        }
-//
-//                        String input3 = scanner.nextLine();
-//                        System.out.println("Voer de prijs van de nieuwe optie in : (Heel getal of een decimaal getal waarmee de decimalen achter een ' . '(punt)  staan) ");
-//                        if (!input.isEmpty()) {
-//                            prijs = input;
-//                        }
-//
-//                        String input4 = scanner.nextLine();
-//                        System.out.println("Heeft deze optie milieukorting? j/n");
-//                        if (input.equals("j")) {
-//                            korting = "true";
-//                        }else {
-//                            korting = "false";
-//                        }
-//                standardOpties.nieuweOptie(essentieel, naam, beschrijving, prijs, korting);
-//                        finished = true;
-//            }
-//
-//
-//
-//        }
+
     }
 
     private void printOptieLijst(){

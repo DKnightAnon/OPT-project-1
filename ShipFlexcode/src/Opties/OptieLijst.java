@@ -69,22 +69,8 @@ public class OptieLijst{
                 optielijst.add(new Optie(row[0],row[1],row[2],row[3],row[4]));
             }
         }catch (Exception e) {
-        }
-       /*Testing purposes, redundant
-       or (int i = 0; i<optielijst.size();i++) {
-            System.out.println(
-                    optielijst.get(i).getIsEssentieel() +
-                    "," +
-                    optielijst.get(i).getNaam() +
-                    "," +
-                    optielijst.get(i).getBeschrijving() +
-                    "," +
-                    optielijst.get(i).getPrijs() +
-                    "," +
-                    optielijst.get(i).getMiliuekorting()
-            );
 
-        }        */
+        }
 
     }
 
@@ -102,7 +88,11 @@ public class OptieLijst{
     public void printOptieLijst() {
         readFromCSV();
 
-        System.out.printf("%-15s %-20s %-20s %-100s %-10s %-25s%n",
+        for (int i = 0; i<202;i++) {
+            System.out.print("-");
+        }
+        System.out.println();
+        System.out.printf("|%-15s| %-20s| %-20s| %-100s| %-10s| %-25s|%n",
                 "Optie nr.",
                 "Essentiele optie",
                 "Naam",
@@ -110,16 +100,16 @@ public class OptieLijst{
                 "Prijs",
                 "Milieukorting"
         );
-        for (int i = 0; i<167;i++) {
+        for (int i = 0; i<202;i++) {
             System.out.print("-");
         }
             System.out.println();
-        for (int i = 0;i<optielijst.size();i++) {
+        for (int i = 1;i<optielijst.size();i++) {
             String prijs = String.valueOf(optielijst.get(i).getPrijs()); //Dit was eerst 'doubleprijs'
             //String prijs = "\u20ac" + doubleprijs; //De bedoeling hiervan was om een eurosymbool te printen, maar dat lijkt niet te werken met printf
             if (optielijst.get(i).getIsEssentieel()) {
-                System.out.printf("%-15d %-20s %-20s %-100s %-10s %-25s%n",
-                        i+1,
+                System.out.printf("|%-15d| %-20s| %-20s| %-100s| %-10s| %-25s|%n",
+                        optielijst.indexOf(optielijst.get(i)),
                         optielijst.get(i).getIsEssentieel(),
                         optielijst.get(i).getNaam(),
                         optielijst.get(i).getBeschrijving(),
@@ -127,9 +117,12 @@ public class OptieLijst{
                         optielijst.get(i).getMiliuekorting()
                 );
             }
+
+        }
+        for (int i = 1;i<optielijst.size();i++) {
             if (!optielijst.get(i).getIsEssentieel()) {
-                System.out.printf("%-15d %-20s %-20s %-100s %-10s %-25s%n",
-                        i+1,
+                System.out.printf("|%-15d| %-20s| %-20s| %-100s| %-10s| %-25s|%n",
+                        optielijst.indexOf(optielijst.get(i)),
                         optielijst.get(i).getIsEssentieel(),
                         optielijst.get(i).getNaam(),
                         optielijst.get(i).getBeschrijving(),
@@ -138,6 +131,10 @@ public class OptieLijst{
                 );
             }
         }
+        for (int i = 0; i<202;i++) {
+            System.out.print("-");
+        }
+        System.out.println();
     }
 
     public void nieuweOptie(String isEssentieel,
@@ -147,81 +144,10 @@ public class OptieLijst{
                             String milieukorting) throws FileNotFoundException {
         Optie nieuweOptie = new Optie(isEssentieel, naam, beschrijving, prijs, milieukorting);
 
-//        optielijst.add(
-//                new Optie(
-//                            isEssentieel,
-//                            naam,
-//                            beschrijving,
-//                            prijs,
-//                            milieukorting)
-//        );
         readFromCSV();
         optielijst.add(nieuweOptie);
         writeToCSV();
 
     }
 
-    /*public void maakOptieAan(Scanner scanner, String scan){
-        System.out.println("Is de optie essentieel?");
-        boolean optieIsEssentieel = false;
-        String optieNaam;
-        String optieBeschrijving;
-        int optiePrijs = 0;
-        boolean optieMilieukorting = false;
-        boolean slechtAntwoord = true;
-        while(slechtAntwoord) {
-            String optieScan = scanner.nextLine();
-            if (optieScan.equals("ja") || optieScan.equals("nee")) {
-                slechtAntwoord = false;
-                if (optieScan.equals("ja")) {
-                    optieIsEssentieel = true;
-                } else if (optieScan.equals("nee")) {
-                    optieIsEssentieel = false;
-                }
-            } else {
-                System.out.println("ja of nee");
-            }
-        }
-        System.out.println("Hoe heet deze optie?");
-        optieNaam = scanner.nextLine();
-        System.out.println("Geef een beschrijving van het object:");
-        optieBeschrijving = scanner.nextLine();
-        System.out.println("Wat is de prijs voor deze optie?");
-        boolean integer = false;
-        while(integer == false) {
-            System.out.print("€");
-            if (scanner.hasNextInt()) {
-                String optieScan = scanner.nextLine();
-                integer = true;
-                optiePrijs = Integer.parseInt(optieScan);
-            } else {
-                String optieScan = scanner.nextLine();
-            }
-        }
-        System.out.println("Heeft deze optie milieu korting?");
-        boolean slechtAntwoord2 = true;
-        while(slechtAntwoord2) {
-            String optieScan2 = scanner.nextLine();
-            if (optieScan2.equals("ja") || optieScan2.equals("nee")) {
-                slechtAntwoord2 = false;
-                if (optieScan2.equals("ja")) {
-                    optieMilieukorting = true;
-                } else if (optieScan2.equals("nee")) {
-                    optieMilieukorting = false;
-                }
-            } else {
-                System.out.println("ja of nee");
-            }
-        }
-        System.out.println("De optie: "+optieNaam);
-        System.out.println("is wel of niet essentieel: "+optieIsEssentieel);
-        System.out.println("met beschrijving: "+optieBeschrijving);
-        System.out.println("met prijs: "+optiePrijs);
-        System.out.println("en heeft wel of niet miliuekorting: "+optieMilieukorting);
-        System.out.println();
-        System.out.println("Opties.Optie aangemaakt.");
-        Optie nieuweOptie = new Optie(optieIsEssentieel, optieNaam, optieBeschrijving, optiePrijs, optieMilieukorting);
-        optielijst.add(nieuweOptie);
-    }
-     */
 }

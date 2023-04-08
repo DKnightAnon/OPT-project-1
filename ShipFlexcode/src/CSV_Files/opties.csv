@@ -1,3 +1,4 @@
+true,placeholder,dit is een placeholder entry zodat tellen in lijsten kan beginnen vanaf index 1 ipv 0,0.0,false
 true,Navigatiesysteem,Dit is een test beschrijving om te kijken hoe het reageert op meerdere characters,50.0,false
 true,Motor,Dit is een test beschrijving om te kijken hoe het reageert op meerdere characters,50.0,true
 true,Roer,Dit is een test beschrijving om te kijken hoe het reageert op meerdere characters,50.0,false
@@ -9,3 +10,8 @@ false,ExtraPKs,Dit is een test beschrijving om te kijken hoe het reageert op mee
 false,test,test,121.45,false
 true,testing,testingnieuweoptiehardcoded,13.68,false
 true,testing,testingnieuweoptiehardcodedvanuitSystemInterface,13.68,false
+true,testing,testingnieuweoptiehardcodedvanuitSystemInterface,13.68,false
+true,testing,testingnieuweoptiehardcodedvanuitSystemInterface,13.68,false
+true,testing,testingnieuweoptiehardcodedvanuitSystemInterface,13.68,false
+true,test,testing,12.34,false
+false,test,testingfalse,43.21,true

@@ -6,10 +6,11 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class Main {
-    static SystemInterface system = new SystemInterface();
+
     public static void main(String args[]) throws FileNotFoundException {
         //Offerte offerte1 = new Offerte();
         OptieLijst optielijst1 = new OptieLijst();
+         SystemInterface system = new SystemInterface();
         //Commands commands = new Commands();
 
         //optielijst1.voegAlleOptiesToeAanLijst(optielijst1); // is handig om te houden in het geval je de List optielijst veranderd naar ArrayList
