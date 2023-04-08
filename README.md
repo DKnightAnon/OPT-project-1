@@ -71,3 +71,15 @@ git checkout -b jasdk // nieuwe branch genaamd jasdk aanmaken
 git checkout offerte // overgaan naar een bestaande branch offerte
 
 git push origin offerte // branch offerte doorsturen naar github
+
+# Afbeeldingen van de applicatie in werking
+
+Applicatie start
+![Start](https://user-images.githubusercontent.com/127386817/230741076-76257ac5-6a7e-4fd6-8c78-c45f7be92ead.jpg)
+
+Uitleg van de beschikbare commands
+![Uitleg commands](https://user-images.githubusercontent.com/127386817/230741084-0387310c-03f2-4e47-871a-d50ffdf0dab5.jpg)
+
+Optielijst command
+![Optielijst](https://user-images.githubusercontent.com/127386817/230741081-e7b116a6-59c5-4637-825c-c01e95d07a54.jpg)
+
