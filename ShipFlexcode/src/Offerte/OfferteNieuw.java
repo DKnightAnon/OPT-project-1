@@ -38,6 +38,7 @@ public class OfferteNieuw {
         for (int i = 0; i<202;i++) {
             System.out.print("-");
         }
+        System.out.println();
 
     }
 
