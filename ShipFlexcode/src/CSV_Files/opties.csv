@@ -15,3 +15,5 @@ true,testing,testingnieuweoptiehardcodedvanuitSystemInterface,13.68,false
 true,testing,testingnieuweoptiehardcodedvanuitSystemInterface,13.68,false
 true,test,testing,12.34,false
 false,test,testingfalse,43.21,true
+false,testing,testingColoredConsoleText,11.11,false
+true,testing,testingColoredText2,12.34,false

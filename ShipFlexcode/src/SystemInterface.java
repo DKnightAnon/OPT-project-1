@@ -1,14 +1,18 @@
+import Commands.Commands;
+import Commands.TextColors;
 import Opties.OptieLijst;
 
 import java.io.Console;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
+
 public class SystemInterface {
     private Commands commands = new Commands();
     private OptieLijst standardOpties = new OptieLijst();
     private boolean running = true;
     Scanner scanner = new Scanner(System.in);
+
 
     private String welcomeMessage = "Welkom bij ShipFlex!\nVoer 'help' in voor een overzicht van alle commands.";
 
@@ -54,18 +58,22 @@ public class SystemInterface {
                  || input.equals(Commands.sluitApplicatie.sluitApplicatieCommandAllCaps)
             ) {
                 exitSystem();
-            }else {
-                commandError();
+            }else if (input.equals(Commands.Test.testColorTextCommand)) {
+                testColoredTextPrint();
+            }else
+                {
+                    commandError();
+                }
             }
 
         }
 
-    }
+
 
     private void help() {
         System.out.println("U kunt kiezen uit de volgende commando's :");
-       for (int i = 0;i<commands.commandExplantions.size();i++) {
-           System.out.println(commands.commandExplantions.get(i));
+       for (int i = 0;i<commands.commandExplanations.size();i++) {
+           System.out.println(commands.commandExplanations.get(i));
        }
     }
 
@@ -170,12 +178,23 @@ public class SystemInterface {
 
 
         }
-        System.out.println("Optie hoort aangemaakt te zijn. U kunt nu verder met andere commands.");
+        System.out.println(
+                TextColors.Text.ANSI_YELLOW+
+                "Optie hoort aangemaakt te zijn. U kunt nu verder met andere commands."+
+                TextColors.Text.ANSI_RESET);
 
     }
 
     private void printOptieLijst(){
         standardOpties.printOptieLijst();
+
+    }
+
+
+    private void testColoredTextPrint() {
+        System.out.println(TextColors.Text.ANSI_YELLOW
+                + "This text is yellow"
+                + TextColors.Text.ANSI_RESET);
 
     }
 
