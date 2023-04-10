@@ -107,10 +107,8 @@ public class SystemInterface {
 
         }
 
-
         private void voegOptieToeAanOfferte(){
         boolean optiesToevoegenFinished = false;
-
         System.out.println("Voer de optienummer in van de optie dat u wilt toevoegen aan de offerte.");
             while (!optiesToevoegenFinished) {
                 int index = scanner.nextInt();

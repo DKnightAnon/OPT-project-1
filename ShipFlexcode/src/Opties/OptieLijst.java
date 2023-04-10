@@ -18,7 +18,7 @@ public class OptieLijst{
     // is handig om te houden in het geval je de List optielijst veranderd naar ArrayList
     public ArrayList<Optie> optielijst = new ArrayList<Optie>();
 
-    String Path = "ShipFlexcode/src/CSV_Files/opties.csv";
+    private String Path = "ShipFlexcode/src/CSV_Files/opties.csv";
     //Bovenstaande path is een relatief path naar de juiste plek voor het bestand. Dit betekent dat de code op elk andere computer hoort te werken.
     public void writeToCSV() throws FileNotFoundException {
         //readFromCSV(); //Vul de arraylist eerst in zodat het csv bestand overschreven kan worden.
@@ -47,12 +47,6 @@ public class OptieLijst{
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-
-
-
-
-
     }
 
     //Deze methode leest dingen uit een csv bestand en maakt hiermee objecten van het type Opties.Optie aan.
