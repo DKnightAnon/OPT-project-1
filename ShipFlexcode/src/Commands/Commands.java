@@ -13,6 +13,7 @@ public class Commands {
         public static String offerteMaken = "Offerte maken - Maakt een offerte aan en toont het op het scherm.";
         public static String sluitApplicatie = "Afsluiten - Sluit de applicatie af.";
         public static String optieToevoegen = "Optie toevoegen - Voegt een optie toe aan de offerte.";
+        public static String optieVerwijderen = "Optie verwijderen - Verwijdert een optie uit de offerte.";
 
     }
 
@@ -52,6 +53,14 @@ public class Commands {
         public static String offerteMakenCommandJoinedFirstUpperCase = "Offertemaken";
     }
 
+    public class optieVerwijderen{
+        public static String optieVerwijderenCommand = "Optie verwijderen";
+        public static String optieVerwijderenCommandLowerCase = "optie verwijderen";
+        public static String optieVerwijderenCommandLastUpperCase = "optie Verwijderen";
+        public static String optieVerwijderenCommandJoined = "Optieverwijderen";
+        public static String optieVerwijderenCommandJoinedLowerCase = "optieverwijderen";
+        public static String optieverwijderenCommandJoinedLastUpperCase = "optieVerwijderen";
+    }
     public class optieToevoegen {
         public static String optieToevoegenCommand = "Optie toevoegen";
         public static String optieToevoegenCommandLowerCase = "optie toevoegen";
@@ -89,6 +98,7 @@ public class Commands {
         commandExplanations.add(CommandExplanations.offerteMaken);
         commandExplanations.add(CommandExplanations.sluitApplicatie);
         commandExplanations.add(CommandExplanations.offerteTonen);
+        commandExplanations.add(CommandExplanations.optieVerwijderen);
     }
 
 }

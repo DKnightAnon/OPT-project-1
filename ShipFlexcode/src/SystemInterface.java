@@ -1,6 +1,7 @@
 import Commands.Commands;
 import Commands.TextColors;
 import Offerte.OfferteNieuw;
+import Opties.Optie;
 import Opties.OptieLijst;
 
 import java.io.Console;
@@ -58,6 +59,17 @@ public class SystemInterface {
 
             }
             else if (
+                  input.equals(Commands.optieVerwijderen.optieVerwijderenCommand)
+                ||input.equals(Commands.optieVerwijderen.optieVerwijderenCommandLowerCase)
+                ||input.equals(Commands.optieVerwijderen.optieVerwijderenCommandLastUpperCase)
+                ||input.equals(Commands.optieVerwijderen.optieVerwijderenCommandJoined)
+                ||input.equals(Commands.optieVerwijderen.optieVerwijderenCommandJoinedLowerCase)
+                ||input.equals(Commands.optieVerwijderen.optieverwijderenCommandJoinedLastUpperCase)
+                    )
+            {
+                verwijderOptieVanOfferte();
+            }
+            else if (
                   input.equals(Commands.optieToevoegen.optieToevoegenCommand)
                 ||input.equals(Commands.optieToevoegen.optieToevoegenCommandLowerCase)
                 ||input.equals(Commands.optieToevoegen.optieToevoegenCommandJoined)
@@ -100,11 +112,11 @@ public class SystemInterface {
         boolean optiesToevoegenFinished = false;
 
         System.out.println("Voer de optienummer in van de optie dat u wilt toevoegen aan de offerte.");
-        while (!optiesToevoegenFinished) {
-            int index = scanner.nextInt();
-            voegOptieToe(index);
-            optiesToevoegenFinished = true;
-        }
+            while (!optiesToevoegenFinished) {
+                int index = scanner.nextInt();
+                voegOptieToe(index);
+                optiesToevoegenFinished = true;
+            }
 ////        while (!optiesToevoegenFinished) {
 //            int index = scanner.nextInt();
 //            voegOptieToe(index);
@@ -121,11 +133,22 @@ public class SystemInterface {
 ////                optiesToevoegenFinished = true;
 ////            }
 //        }
+        }
+    private void verwijderOptieVanOfferte(){
+        boolean optiesVerwijderenFinished = false;
+        System.out.println("Voer de optienummer in van de optie dat u wilt verwijderen van de offerte.\n"
+                + TextColors.Text.ANSI_YELLOW
+                + "     Let erop dat u het optienummer kiest dat vermeldt staat in de offerte."
+                + TextColors.Text.ANSI_RESET
+        );
 
-
-
+        while (!optiesVerwijderenFinished) {
+            int index = scanner.nextInt();
+            verwijderOptie(index);
+            optiesVerwijderenFinished = true;
         }
 
+    }
         private void voegOptieToe(int index) {
             huidigeOfferte.geselecteerdeOpties.add(
                     standardOpties.optielijst.get(index)
@@ -133,6 +156,11 @@ public class SystemInterface {
             System.out.println(
                     standardOpties.optielijst.get(index).getNaam()
             );
+        }
+
+        private void verwijderOptie(int index) {
+        System.out.println(huidigeOfferte.geselecteerdeOpties.get(index).getNaam() + "verwijderd!");
+        huidigeOfferte.geselecteerdeOpties.remove(index);
         }
 
     private void help() {
@@ -151,6 +179,13 @@ public class SystemInterface {
     private void initialize(){
         Commands.initializeCommands();
         standardOpties.readFromCSV();
+        huidigeOfferte.geselecteerdeOpties.add(
+                new Optie(false,
+                        "placeHolder",
+                        "Placeholder zodat index vanaf 1 kan beginnen",
+                        00.00,
+                        false)
+        );
     }
 
     private void optieAanmaken() throws FileNotFoundException {

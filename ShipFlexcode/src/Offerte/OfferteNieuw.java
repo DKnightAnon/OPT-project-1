@@ -25,7 +25,7 @@ public class OfferteNieuw {
             System.out.print("-");
         }
         System.out.println();
-        for (int i = 0;i<geselecteerdeOpties.size();i++) {
+        for (int i = 1;i<geselecteerdeOpties.size();i++) {
             System.out.printf("|%-15d| %-20s| %-20s| %-100s| %-10s| %-25s|%n",
                     i+1,
                     geselecteerdeOpties.get(i).getIsEssentieel(),
