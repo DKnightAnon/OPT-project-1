@@ -113,6 +113,12 @@ public class SystemInterface {
                 klantTypeAanmaken();
             }
             else if (
+                    input.equals(Commands.KlantTypesTonen.klantTypesTonenCommand)
+                    ||input.equals(Commands.KlantTypesTonen.klantTypesTonenCommandLowerCase)
+            ) {
+                klantTypesTonen();
+            }
+            else if (
                     input.equals(Commands.sluitApplicatie.sluitApplicatieCommand)
                  || input.equals(Commands.sluitApplicatie.sluitApplicatieCommandLowerCase)
                  || input.equals(Commands.sluitApplicatie.sluitApplicatieCommandAllCaps)
@@ -321,7 +327,11 @@ public class SystemInterface {
 
     }
 
-    private void klantTypeAanmaken(){
+    private void klantTypesTonen(){
+        standardKlanten.printKlantTypes();
+    }
+
+    private void klantTypeAanmaken() throws FileNotFoundException {
         boolean finished = false;
         double klantkorting;
         String klantsoort;

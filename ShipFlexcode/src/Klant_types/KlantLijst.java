@@ -53,7 +53,7 @@ public class KlantLijst {
             throw new RuntimeException(e);
         }
     }
-        private void writeToKlantLijst() throws FileNotFoundException {
+    private void writeToKlantLijst() throws FileNotFoundException {
         StringBuilder builder = new StringBuilder();
 
         File csv = new File(KlantPath);
@@ -106,8 +106,11 @@ public class KlantLijst {
         KlantenLijst.add(nieuweKlant);
     }
 
-    public void nieuweKlantSoort(Double klantkorting, String klantsoort){
+    public void nieuweKlantSoort(Double klantkorting, String klantsoort) throws FileNotFoundException {
         KlantType nieuwKlantType = new KlantType(klantkorting, klantsoort);
+        readFromKlantSoort();
+        KlantTypes.add(nieuwKlantType);
+        writeToKlantSoort();
 
     }
 
@@ -148,5 +151,44 @@ public class KlantLijst {
         }
         System.out.println();
 
+    }
+
+    public void printKlantTypes(){
+
+        for (int i = 0;i<37;i++){
+            System.out.print("-");
+        }
+        System.out.println();
+        System.out.printf("|%-20s| %-10s|\n",
+                "Klant type",
+                "Klant korting"
+        );
+        for (int i = 0;i<37;i++){
+            System.out.print("-");
+        }
+        System.out.println();
+        if (KlantTypes.isEmpty()){
+            System.out.print("|");
+            for (int i = 0;i<35;i++){
+                System.out.print(" ");
+            }
+            System.out.println("|");
+            for (int i = 0;i<37;i++){
+                System.out.print("-");
+            }
+            System.out.println();
+        }else {
+            for (int i = 0; i<KlantTypes.size();i++) {
+                System.out.printf(
+                        "|%-20s| %-13.2f|\n",
+                        KlantTypes.get(i).getKlantSoort(),
+                        KlantTypes.get(i).getKlantKorting()
+                        );
+            }
+            for (int i = 0;i<37;i++){
+                System.out.print("-");
+            }
+            System.out.println();
+        }
     }
 }

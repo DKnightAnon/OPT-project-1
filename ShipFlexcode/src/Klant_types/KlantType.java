@@ -10,10 +10,11 @@ public class KlantType {
         this.klantSoort = klantSoort;
     }
 
-    public KlantType(String klantKorting, String klantSoort) {
+    public KlantType(String klantSoort, String klantKorting) {
         this.klantKorting = Double.valueOf(klantKorting);
         this.klantSoort = klantSoort;
     }
+
 
     public double getKlantKorting() {
         return klantKorting;
