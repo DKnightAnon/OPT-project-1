@@ -18,7 +18,8 @@ public class KlantLijst {
     }
 
     public void readFromCSV(){
-
+        readFromKlantLijst();
+        readFromKlantSoort();
     }
 
     private void readFromKlantLijst(){
@@ -110,4 +111,42 @@ public class KlantLijst {
 
     }
 
+    public void printKlantenLijst(){
+        readFromCSV();
+
+        for (int i = 0; i<54;i++){
+            System.out.print("-");
+        }
+        System.out.println();
+        System.out.printf("|%-15s| %-20s| %-10s|\n",
+                "Klantnaam",
+                "Klant type",
+                "Klant korting"
+        );
+        for (int i = 0; i<54;i++){
+            System.out.print("-");
+        }
+        System.out.println();
+        if (KlantenLijst.isEmpty()){
+            System.out.print("|");
+            for (int i = 0;i<52;i++){
+                System.out.print(" ");
+            }
+            System.out.println("|");
+        }else {
+            for (int i = 0; i < KlantenLijst.size(); i++) {
+                System.out.printf(
+                        "|%-15s| %-20s| %-10s|",
+                        KlantenLijst.get(i).getKlantNaam(),
+                        KlantenLijst.get(i).getKlantSoort().getKlantSoort(),
+                        KlantenLijst.get(i).getKlantSoort().getKlantKorting()
+                );
+            }
+        }
+        for (int i = 0; i<54;i++){
+            System.out.print("-");
+        }
+        System.out.println();
+
+    }
 }

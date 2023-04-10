@@ -14,7 +14,33 @@ public class Commands {
         public static String sluitApplicatie = "Afsluiten - Sluit de applicatie af.";
         public static String optieToevoegen = "Optie toevoegen - Voegt een optie toe aan de offerte.";
         public static String optieVerwijderen = "Optie verwijderen - Verwijdert een optie uit de offerte.";
+        public static String KlantenTonen = "Toon klanten - Print een lijst met alle geregistreerde klanten.";
+        public static String KlantAanmaken = "Klant aanmaken - Registreert een nieuwe klant.";
+        public static String KlantTypesTonen = "Klanttypes tonen - Print een lijst met alle geregistreerde klanttypes.";
+        public static String KlantTypeAanmaken = "Klanttype aanmaken - Maakt een nieuw type klant aan.";
+        public static String KlantToewijzen = "Klant toewijzen - Wijst een klant toe aan de huidige offerte.";
+    }
 
+    public class KlantAanmaken{
+        public static String klantAanmakenCommand = "Klant aanmaken";
+        public static String klantAanmakenCommandLowerCase = "klant aanmaken";
+    }
+    public class klantenTonen{
+        public static String klantTonenCommand = "Toon klanten";
+        public static String klantTonenCommandLowerCase = "toon klanten";
+        public static String klantTonenCommandJoined = "Toonklanten";
+        public static String klantTonenCommandJoinedLowerCase = "toonklanten";
+    }
+
+
+    public class KlantTypeAanmaken{
+        public static String klantTypeAanmakenCommand = "Klanttype aanmaken";
+        public static String klantTypeAanmakenCommandLowerCase = "klanttype aanmaken";
+    }
+
+    public class KlantTypesTonen{
+        public static String klantTypesTonenCommand = "Klanttypes tonen";
+        public static String klantTypesTonenCommandLowerCase = "klanttypes tonen";
     }
 
     public class optieLijst {
@@ -99,6 +125,11 @@ public class Commands {
         commandExplanations.add(CommandExplanations.sluitApplicatie);
         commandExplanations.add(CommandExplanations.offerteTonen);
         commandExplanations.add(CommandExplanations.optieVerwijderen);
+        commandExplanations.add(CommandExplanations.KlantenTonen);
+        commandExplanations.add(CommandExplanations.KlantAanmaken);
+        commandExplanations.add(CommandExplanations.KlantTypeAanmaken);
+        commandExplanations.add(CommandExplanations.KlantToewijzen);
+        commandExplanations.add(CommandExplanations.KlantTypesTonen);
     }
 
 }

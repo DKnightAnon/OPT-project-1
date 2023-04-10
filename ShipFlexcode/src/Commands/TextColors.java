@@ -1,6 +1,21 @@
 package Commands;
 
+import java.util.ArrayList;
+
 public class TextColors {
+
+    public static ArrayList<String> TextColors = new ArrayList<>();
+
+    public static void initialize(){
+        TextColors.add(Text.ANSI_BLACK);
+        TextColors.add(Text.ANSI_RED);
+        TextColors.add(Text.ANSI_GREEN);
+        TextColors.add(Text.ANSI_YELLOW);
+        TextColors.add(Text.ANSI_BLUE);
+        TextColors.add(Text.ANSI_PURPLE);
+        TextColors.add(Text.ANSI_CYAN);
+        TextColors.add(Text.ANSI_WHITE);
+    }
 
     public class Text {
         public static String ANSI_RESET = "\u001B[0m";

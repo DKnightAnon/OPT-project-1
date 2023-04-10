@@ -1,5 +1,6 @@
 import Commands.Commands;
 import Commands.TextColors;
+import Klant_types.KlantLijst;
 import Offerte.OfferteNieuw;
 import Opties.Optie;
 import Opties.OptieLijst;
@@ -14,6 +15,7 @@ public class SystemInterface {
     private Commands commands = new Commands();
     private OptieLijst standardOpties = new OptieLijst();
     private OfferteNieuw huidigeOfferte = new OfferteNieuw();
+    private KlantLijst standardKlanten = new KlantLijst();
 
     private boolean running = true;
     Scanner scanner = new Scanner(System.in);
@@ -56,7 +58,7 @@ public class SystemInterface {
                 optieAanmaken();
             }
             else if (input.equals(Commands.offerteMaken.offerteMakenCommand)) {
-
+                WIP();
             }
             else if (
                   input.equals(Commands.optieVerwijderen.optieVerwijderenCommand)
@@ -87,9 +89,28 @@ public class SystemInterface {
                 ||input.equals(Commands.offerteTonen.offerteTonenCommandJoinedLowerCase)
                 ||input.equals(Commands.offerteTonen.offerteTonenCommandJoinedFirstUpperCase)
                 ||input.equals(Commands.offerteTonen.offerteTonenCommandJoinedLastUpperCase)
-            )
-            {
+            ) {
              huidigeOfferte.printGeselecteerdeOpties();
+            }
+            else if (
+                    input.equals(Commands.klantenTonen.klantTonenCommand)
+                ||input.equals(Commands.klantenTonen.klantTonenCommandLowerCase)
+                ||input.equals(Commands.klantenTonen.klantTonenCommandJoined)
+                ||input.equals(Commands.klantenTonen.klantTonenCommandJoinedLowerCase)
+            ){
+                standardKlanten.printKlantenLijst();
+            }
+            else if (
+                    input.equals(Commands.KlantAanmaken.klantAanmakenCommand)
+                ||input.equals(Commands.KlantAanmaken.klantAanmakenCommandLowerCase)
+            ){
+                WIP();
+            }
+            else if (
+                    input.equals(Commands.KlantTypeAanmaken.klantTypeAanmakenCommand)
+                ||input.equals(Commands.KlantTypeAanmaken.klantTypeAanmakenCommandLowerCase))
+            {
+                klantTypeAanmaken();
             }
             else if (
                     input.equals(Commands.sluitApplicatie.sluitApplicatieCommand)
@@ -98,8 +119,12 @@ public class SystemInterface {
             ) {
                 exitSystem();
             }else if (input.equals(Commands.Test.testCommand)) {
-                Test();
-            }else
+                AvailableTests();
+            }
+            else if (input.equals(Commands.Test.coloredText.testColorTextCommand)){
+                testColoredTextPrint();
+            }
+            else
                 {
                     commandError();
                 }
@@ -184,6 +209,7 @@ public class SystemInterface {
                         00.00,
                         false)
         );
+        standardKlanten.readFromCSV();
     }
 
     private void optieAanmaken() throws FileNotFoundException {
@@ -204,7 +230,6 @@ public class SystemInterface {
 
 //        standardOpties.nieuweOptie("j","testing","testingnieuweoptiehardcodedvanuitSystemInterface","13.68","n");
         while (!finished) {
-            Console console = System.console();
             String input = scanner.nextLine();
 
             if (input.equals("j")) {
@@ -225,7 +250,11 @@ public class SystemInterface {
                         }
 
 
-                        System.out.println("Voer de prijs van de nieuwe optie in : (Heel getal of een decimaal getal waarmee de decimalen achter een ' . '(punt)  staan) ");
+                        System.out.println("Voer de prijs van de nieuwe optie in : " +
+                                TextColors.Text.ANSI_YELLOW +
+                                "(Heel getal of een decimaal getal waarmee de decimalen achter een ' . '(punt)  staan) " +
+                                TextColors.Text.ANSI_RESET
+                        );
                         String input3 = scanner.nextLine();
                         if (!input3.isEmpty()) {
                             prijs = input3;
@@ -292,9 +321,42 @@ public class SystemInterface {
 
     }
 
+    private void klantTypeAanmaken(){
+        boolean finished = false;
+        double klantkorting;
+        String klantsoort;
+
+        System.out.println("Vul in wat voor soort klant dit is.\n" +
+                TextColors.Text.ANSI_YELLOW +
+                "(Bijv. Overheid of Particulier)" +
+                TextColors.Text.ANSI_RESET
+        );
+
+        while (!finished){
+            String input = scanner.nextLine();
+            klantsoort = input;
+
+            System.out.println("Voer de prijs van het nieuwe klant type in : " +
+                    TextColors.Text.ANSI_YELLOW +
+                    "(Heel getal of een decimaal getal waarmee de decimalen achter een ' . '(punt)  staan) " +
+                    TextColors.Text.ANSI_RESET
+            );
+            input = scanner.nextLine();
+            klantkorting = Double.valueOf(input);
+
+            standardKlanten.nieuweKlantSoort(klantkorting,klantsoort);
+            finished = true;
+        }
+
+
+    }
 
 
 
+
+    private void WIP(){
+        System.out.println("Dit moet nog afgemaakt worden.");
+    }
     private void commandError(){
         System.out.println(commands.commandError);
         promptText();
@@ -309,12 +371,17 @@ public class SystemInterface {
         );
     }
     private void testColoredTextPrint() {
-        System.out.println(TextColors.Text.ANSI_YELLOW
-                + "This text is yellow"
-                + TextColors.Text.ANSI_RESET);
+        TextColors.initialize();
+        for (int i = 0;i<TextColors.TextColors.size();i++){
+            System.out.println(
+                    TextColors.TextColors.get(i) +
+                            "This text is colored!" +
+                            TextColors.Text.ANSI_RESET
+            );
+        }
 
     }
-    private void Test(){
+    private void AvailableTests(){
         boolean testFinished = false;
         ArrayList<String> availableTests = new ArrayList<>();
         availableTests.add("placeholder, index of 0");
