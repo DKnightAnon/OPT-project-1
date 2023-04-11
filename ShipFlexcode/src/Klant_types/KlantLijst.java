@@ -100,10 +100,11 @@ public class KlantLijst {
 
     }
 
-    public void nieuweKlant(String naam, int Index){
+    public void nieuweKlant(String naam, int Index) throws FileNotFoundException {
         Klant nieuweKlant = new Klant(naam,KlantTypes.get(Index));
         readFromKlantLijst();
         KlantenLijst.add(nieuweKlant);
+        writeToCSV();
     }
 
     public void nieuweKlantSoort(Double klantkorting, String klantsoort) throws FileNotFoundException {
@@ -117,36 +118,38 @@ public class KlantLijst {
     public void printKlantenLijst(){
         readFromCSV();
 
-        for (int i = 0; i<54;i++){
+        for (int i = 0; i<92;i++){
             System.out.print("-");
         }
         System.out.println();
-        System.out.printf("|%-15s| %-20s| %-10s|\n",
+        System.out.printf("| %-15s| %-30s| %-20s| %-16s|\n",
+                "Klantnummer",
                 "Klantnaam",
                 "Klant type",
-                "Klant korting"
+                "Klant korting in %"
         );
-        for (int i = 0; i<54;i++){
+        for (int i = 0; i<92;i++){
             System.out.print("-");
         }
         System.out.println();
         if (KlantenLijst.isEmpty()){
             System.out.print("|");
-            for (int i = 0;i<52;i++){
+            for (int i = 0;i<90;i++){
                 System.out.print(" ");
             }
             System.out.println("|");
         }else {
             for (int i = 0; i < KlantenLijst.size(); i++) {
                 System.out.printf(
-                        "|%-15s| %-20s| %-10s|",
+                        "| %-15d| %-30s| %-20s| %-10s|",
+                        KlantenLijst.indexOf(KlantenLijst.get(i)),
                         KlantenLijst.get(i).getKlantNaam(),
                         KlantenLijst.get(i).getKlantSoort().getKlantSoort(),
                         KlantenLijst.get(i).getKlantSoort().getKlantKorting()
                 );
             }
         }
-        for (int i = 0; i<54;i++){
+        for (int i = 0; i<92;i++){
             System.out.print("-");
         }
         System.out.println();
@@ -155,37 +158,39 @@ public class KlantLijst {
 
     public void printKlantTypes(){
 
-        for (int i = 0;i<37;i++){
+        for (int i = 0;i<57;i++){
             System.out.print("-");
         }
         System.out.println();
-        System.out.printf("|%-20s| %-10s|\n",
+        System.out.printf("| %-15s| %-20s| %-10s|\n",
+                "Klanttype nr.",
                 "Klant type",
-                "Klant korting"
+                "Klant korting %"
         );
-        for (int i = 0;i<37;i++){
+        for (int i = 0;i<57;i++){
             System.out.print("-");
         }
         System.out.println();
         if (KlantTypes.isEmpty()){
             System.out.print("|");
-            for (int i = 0;i<35;i++){
+            for (int i = 0;i<55;i++){
                 System.out.print(" ");
             }
             System.out.println("|");
-            for (int i = 0;i<37;i++){
+            for (int i = 0;i<57;i++){
                 System.out.print("-");
             }
             System.out.println();
         }else {
             for (int i = 0; i<KlantTypes.size();i++) {
                 System.out.printf(
-                        "|%-20s| %-13.2f|\n",
+                        "| %-15d| %-20s| %-15s|\n",
+                        KlantTypes.indexOf(KlantTypes.get(i)),
                         KlantTypes.get(i).getKlantSoort(),
                         KlantTypes.get(i).getKlantKorting()
                         );
             }
-            for (int i = 0;i<37;i++){
+            for (int i = 0;i<57;i++){
                 System.out.print("-");
             }
             System.out.println();

@@ -20,6 +20,9 @@ public class SystemInterface {
     private boolean running = true;
     Scanner scanner = new Scanner(System.in);
 
+    //ANSI_BLUE for prompts
+    //ANSI_YELLOW for additional information
+    //ANSI_PURPLE for Command explanations
 
     private String welcomeMessage = "Welkom bij ShipFlex!\nVoer 'help' in voor een overzicht van alle commands.";
 
@@ -37,6 +40,7 @@ public class SystemInterface {
                  || input.equals(Commands.help.helpCommandAllCaps)
             ){
                 help();
+                promptText();
             }
             else if (
                    input.equals(Commands.optieLijst.optieLijstCommand)
@@ -46,6 +50,7 @@ public class SystemInterface {
                 || input.equals(Commands.optieLijst.optieLijstCommandJoinedAllcaps)
             ){
                 printOptieLijst();
+                promptText();
             }
             else if (
                    input.equals(Commands.optieAanmaken.optieAanmakenCommand)
@@ -56,9 +61,11 @@ public class SystemInterface {
                 || input.equals(Commands.optieAanmaken.optieAanmakenCommandJoinedLastUpperCase)
             ){
                 optieAanmaken();
+                promptText();
             }
             else if (input.equals(Commands.offerteMaken.offerteMakenCommand)) {
                 WIP();
+                promptText();
             }
             else if (
                   input.equals(Commands.optieVerwijderen.optieVerwijderenCommand)
@@ -70,6 +77,7 @@ public class SystemInterface {
                     )
             {
                 verwijderOptieVanOfferte();
+                promptText();
             }
             else if (
                   input.equals(Commands.optieToevoegen.optieToevoegenCommand)
@@ -80,6 +88,7 @@ public class SystemInterface {
                 ||input.equals(Commands.optieToevoegen.optieToevoegenCommandJoinedLastUpperCase)
             ) {
                 voegOptieToeAanOfferte();
+                promptText();
             }
             else if (
                     input.equals(Commands.offerteTonen.offerteTonenCommand)
@@ -91,6 +100,7 @@ public class SystemInterface {
                 ||input.equals(Commands.offerteTonen.offerteTonenCommandJoinedLastUpperCase)
             ) {
              huidigeOfferte.printGeselecteerdeOpties();
+                promptText();
             }
             else if (
                     input.equals(Commands.klantenTonen.klantTonenCommand)
@@ -99,24 +109,28 @@ public class SystemInterface {
                 ||input.equals(Commands.klantenTonen.klantTonenCommandJoinedLowerCase)
             ){
                 standardKlanten.printKlantenLijst();
+                promptText();
             }
             else if (
                     input.equals(Commands.KlantAanmaken.klantAanmakenCommand)
                 ||input.equals(Commands.KlantAanmaken.klantAanmakenCommandLowerCase)
             ){
                 WIP();
+                promptText();
             }
             else if (
                     input.equals(Commands.KlantTypeAanmaken.klantTypeAanmakenCommand)
                 ||input.equals(Commands.KlantTypeAanmaken.klantTypeAanmakenCommandLowerCase))
             {
                 klantTypeAanmaken();
+                promptText();
             }
             else if (
                     input.equals(Commands.KlantTypesTonen.klantTypesTonenCommand)
                     ||input.equals(Commands.KlantTypesTonen.klantTypesTonenCommandLowerCase)
             ) {
                 klantTypesTonen();
+                promptText();
             }
             else if (
                     input.equals(Commands.sluitApplicatie.sluitApplicatieCommand)
@@ -126,9 +140,11 @@ public class SystemInterface {
                 exitSystem();
             }else if (input.equals(Commands.Test.testCommand)) {
                 AvailableTests();
+                promptText();
             }
             else if (input.equals(Commands.Test.coloredText.testColorTextCommand)){
                 testColoredTextPrint();
+                promptText();
             }
             else
                 {
@@ -361,6 +377,29 @@ public class SystemInterface {
 
     }
 
+    private void klantAanmaken() throws FileNotFoundException {
+        boolean finished = false;
+        String klantNaam;
+        int index;
+
+
+        while (!finished){
+            System.out.println("Vul de naam van de nieuwe klant in.");
+            String input = scanner.nextLine();
+            klantNaam = input;
+            System.out.println("Voer het nummer in van het klanttype waar de nieuwe klant bij hoort.");
+            int inputint = scanner.nextInt();
+            index = inputint;
+            standardKlanten.nieuweKlant(
+                    klantNaam,
+                    index
+            );
+
+            System.out.println();
+            finished = true;
+        }
+    }
+
 
 
 
@@ -412,6 +451,7 @@ public class SystemInterface {
 
             if (chosenTest == 1) {
                 testColoredTextPrint();
+                testFinished=true;
             }
 
         }
