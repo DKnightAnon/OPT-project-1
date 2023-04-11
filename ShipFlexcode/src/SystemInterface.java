@@ -158,6 +158,7 @@ public class SystemInterface {
     private void toonOfferte(){
         huidigeOfferte.printKlant();
         huidigeOfferte.printGeselecteerdeOpties();
+        huidigeOfferte.printPrijsBerekening();
 
     }
     private void voegOptieToeAanOfferte(){

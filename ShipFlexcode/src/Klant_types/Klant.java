@@ -32,4 +32,13 @@ public class Klant {
     public void setKlantSoort(KlantType klantSoort) {
         this.klantSoort = klantSoort;
     }
+
+    public boolean isEmpty(){
+        if (this.klantSoort == null && this.klantNaam == null){
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
 }
