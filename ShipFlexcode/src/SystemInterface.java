@@ -23,6 +23,7 @@ public class SystemInterface {
     //ANSI_BLUE for prompts
     //ANSI_YELLOW for additional information
     //ANSI_PURPLE for Command explanations
+    //ANSI_RED for notifications
 
     private String welcomeMessage = "Welkom bij ShipFlex!\nVoer 'help' in voor een overzicht van alle commands.";
 
@@ -120,8 +121,8 @@ public class SystemInterface {
             }
             else if (
                     input.equals(Commands.KlantTypeAanmaken.klantTypeAanmakenCommand)
-                ||input.equals(Commands.KlantTypeAanmaken.klantTypeAanmakenCommandLowerCase))
-            {
+                ||input.equals(Commands.KlantTypeAanmaken.klantTypeAanmakenCommandLowerCase)
+            ){
                 klantTypeAanmaken();
                 promptText();
             }
@@ -146,9 +147,9 @@ public class SystemInterface {
                 testColoredTextPrint();
                 promptText();
             }
-            else
-                {
-                    commandError();
+            else {
+                commandError();
+                promptText();
                 }
             }
 
@@ -337,13 +338,10 @@ public class SystemInterface {
 
     private void printOptieLijst(){
         standardOpties.printOptieLijst();
-
     }
 
     private void klantTypesTonen(){
-
         standardKlanten.printKlantTypes();
-
     }
 
     private void klantTypeAanmaken() throws FileNotFoundException {
@@ -361,9 +359,9 @@ public class SystemInterface {
             String input = scanner.nextLine();
             klantsoort = input;
 
-            System.out.println("Voer de prijs van het nieuwe klant type in : " +
+            System.out.println("Voer de korting dat de klantsoort krijgt in als procenten: \n" +
                     TextColors.Text.ANSI_YELLOW +
-                    "(Heel getal of een decimaal getal waarmee de decimalen achter een ' . '(punt)  staan) " +
+                    "   (Heel getal of een decimaal getal waarmee de decimalen achter een ' . '(punt)  staan) " +
                     TextColors.Text.ANSI_RESET
             );
             input = scanner.nextLine();
@@ -381,20 +379,18 @@ public class SystemInterface {
         String klantNaam;
         int index;
 
+        System.out.println("Vul de naam van de nieuwe klant in.");
+        while (!finished){
 
-        if (!finished){
-            System.out.println("Vul de naam van de nieuwe klant in.");
             String input = scanner.nextLine();
             klantNaam = input;
+
             System.out.println("Voer het nummer in van het klanttype waar de nieuwe klant bij hoort.");
-            int inputint = scanner.nextInt();
-            index = inputint;
+            index = Integer.valueOf(scanner.nextLine());
             standardKlanten.nieuweKlant(
                     klantNaam,
                     index
             );
-
-            System.out.println();
             finished = true;
         }
     }
@@ -407,7 +403,6 @@ public class SystemInterface {
     }
     private void commandError(){
         System.out.println(commands.commandError);
-        promptText();
     }
 
     private void promptText(){

@@ -182,7 +182,7 @@ public class KlantLijst {
             }
             System.out.println();
         }else {
-            for (int i = 0; i<KlantTypes.size();i++) {
+            for (int i = 1; i<KlantTypes.size();i++) {
                 System.out.printf(
                         "| %-15d| %-20s| %-15s|\n",
                         KlantTypes.indexOf(KlantTypes.get(i)),
