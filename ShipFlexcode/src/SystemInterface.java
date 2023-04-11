@@ -100,7 +100,7 @@ public class SystemInterface {
                 ||input.equals(Commands.offerteTonen.offerteTonenCommandJoinedFirstUpperCase)
                 ||input.equals(Commands.offerteTonen.offerteTonenCommandJoinedLastUpperCase)
             ) {
-             huidigeOfferte.printGeselecteerdeOpties();
+                toonOfferte();
                 promptText();
             }
             else if (
@@ -155,11 +155,16 @@ public class SystemInterface {
 
         }
 
+    private void toonOfferte(){
+        huidigeOfferte.printKlant();
+        huidigeOfferte.printGeselecteerdeOpties();
+
+    }
     private void voegOptieToeAanOfferte(){
         boolean optiesToevoegenFinished = false;
         System.out.println("Voer de optienummer in van de optie dat u wilt toevoegen aan de offerte.");
             while (!optiesToevoegenFinished) {
-                int index = scanner.nextInt();
+                int index = Integer.valueOf(scanner.nextLine());
                 voegOptieToe(index);
                 optiesToevoegenFinished = true;
             }
@@ -197,7 +202,7 @@ public class SystemInterface {
         );
 
         while (!optiesVerwijderenFinished) {
-            int index = scanner.nextInt();
+            int index = Integer.valueOf(scanner.nextLine());
             verwijderOptie(index);
             optiesVerwijderenFinished = true;
         }
