@@ -141,7 +141,7 @@ public class KlantLijst {
         }else {
             for (int i = 0; i < KlantenLijst.size(); i++) {
                 System.out.printf(
-                        "| %-15d| %-30s| %-20s| %-10s|",
+                        "| %-15s| %-30s| %-20s| %-18s|\n",
                         KlantenLijst.indexOf(KlantenLijst.get(i)),
                         KlantenLijst.get(i).getKlantNaam(),
                         KlantenLijst.get(i).getKlantSoort().getKlantSoort(),

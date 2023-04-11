@@ -115,7 +115,7 @@ public class SystemInterface {
                     input.equals(Commands.KlantAanmaken.klantAanmakenCommand)
                 ||input.equals(Commands.KlantAanmaken.klantAanmakenCommandLowerCase)
             ){
-                WIP();
+                klantAanmaken();
                 promptText();
             }
             else if (
@@ -154,7 +154,7 @@ public class SystemInterface {
 
         }
 
-        private void voegOptieToeAanOfferte(){
+    private void voegOptieToeAanOfferte(){
         boolean optiesToevoegenFinished = false;
         System.out.println("Voer de optienummer in van de optie dat u wilt toevoegen aan de offerte.");
             while (!optiesToevoegenFinished) {
@@ -179,6 +179,14 @@ public class SystemInterface {
 ////            }
 //        }
         }
+        private void voegOptieToe(int index) {
+        huidigeOfferte.geselecteerdeOpties.add(
+                standardOpties.optielijst.get(index)
+        );
+        System.out.println(
+                standardOpties.optielijst.get(index).getNaam()
+        );
+    }
     private void verwijderOptieVanOfferte(){
         boolean optiesVerwijderenFinished = false;
         System.out.println("Voer de optienummer in van de optie dat u wilt verwijderen van de offerte.\n"
@@ -194,15 +202,6 @@ public class SystemInterface {
         }
 
     }
-        private void voegOptieToe(int index) {
-            huidigeOfferte.geselecteerdeOpties.add(
-                    standardOpties.optielijst.get(index)
-            );
-            System.out.println(
-                    standardOpties.optielijst.get(index).getNaam()
-            );
-        }
-
         private void verwijderOptie(int index) {
         System.out.println(huidigeOfferte.geselecteerdeOpties.get(index).getNaam() + "verwijderd!");
         huidigeOfferte.geselecteerdeOpties.remove(index);
@@ -213,7 +212,6 @@ public class SystemInterface {
        for (int i = 0;i<commands.commandExplanations.size();i++) {
            System.out.println(TextColors.Text.ANSI_PURPLE + commands.commandExplanations.get(i) + TextColors.Text.ANSI_RESET);
        }
-       promptText();
     }
 
     private void exitSystem() {
@@ -339,12 +337,13 @@ public class SystemInterface {
 
     private void printOptieLijst(){
         standardOpties.printOptieLijst();
-        promptText();
 
     }
 
     private void klantTypesTonen(){
+
         standardKlanten.printKlantTypes();
+
     }
 
     private void klantTypeAanmaken() throws FileNotFoundException {
@@ -383,7 +382,7 @@ public class SystemInterface {
         int index;
 
 
-        while (!finished){
+        if (!finished){
             System.out.println("Vul de naam van de nieuwe klant in.");
             String input = scanner.nextLine();
             klantNaam = input;

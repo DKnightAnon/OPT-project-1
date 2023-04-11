@@ -3,7 +3,8 @@ package Klant_types;
 public class Klant {
 
     private String klantNaam;
-    private KlantType klantSoort;
+    private KlantType klantSoort = new KlantType(0,"dummy");
+
 
     public Klant(String klantNaam, KlantType klantSoort) {
         this.klantNaam = klantNaam;
