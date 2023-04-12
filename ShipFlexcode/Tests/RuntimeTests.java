@@ -58,7 +58,9 @@ public class RuntimeTests {
 
     }
 
-    //Makes directory and file, then deletes both.
+
+
+    //Makes directory and file, then deletes both. Also checks to see if directory and file were successfully created.
     public static void makeExampleOfferteFile() throws IOException {
 
         initialize();
@@ -115,6 +117,9 @@ public class RuntimeTests {
 
     }
 
+
+
+    //Makes directory and file, then writes content to it. Also prints the file name and in which directory it was created.
     public static void makeExampleofferteFileAndWriteTextToIt() throws IOException {
         initialize();
         testOfferte.addKlant(testlKlantLijst.KlantenLijst.get(2));

@@ -49,6 +49,8 @@ public class TestClass {
     }
 
 
+
+    //Checks if a file was actually made when the corresponding method is called.
     @Test
     public void checkIfOfferteBestandIsActuallyMade_ReturnBoolean() {
         //Prepare

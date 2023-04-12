@@ -1,6 +1,6 @@
 package Klant_types;
 
-public class Klant {
+public class Klant implements EmptyChecker{
 
     private String klantNaam;
     private KlantType klantSoort = new KlantType(0, "dummy");

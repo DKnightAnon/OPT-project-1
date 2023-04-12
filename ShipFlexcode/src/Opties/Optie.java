@@ -1,8 +1,10 @@
 package Opties;
 
+import Klant_types.EmptyChecker;
+
 import java.util.ArrayList;
 
-public class Optie {
+public class Optie implements EmptyChecker {
 
     private boolean isEssentieel;
     private String naam;
@@ -93,5 +95,14 @@ public class Optie {
 
     public boolean getMiliuekorting() {
         return miliuekorting;
+    }
+
+
+    public boolean isEmpty() {
+        if (this.naam == null || this.beschrijving == null || this.prijs == 0) {
+            return true;
+        }else {
+            return false;
+        }
     }
 }
