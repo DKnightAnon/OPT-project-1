@@ -65,7 +65,12 @@ public class SystemInterface {
                 promptText();
             }
             else if (
-                input.equals(Commands.offerteMaken.offerteMakenCommand)) {
+                input.equals(Commands.offerteMaken.offerteMakenCommand)
+            ||input.equals(Commands.offerteMaken.offerteMakenCommandeLowerCase)
+            ||input.equals(Commands.offerteMaken.offerteMakenCommandJoined)
+            ||input.equals(Commands.offerteMaken.offerteMakenCommandJoinedLowerCase)
+            ||input.equals(Commands.offerteMaken.offerteMakenCommandJoinedFirstUpperCase)
+            ) {
                 huidigeOfferte.maakOfferteBestandAan();
                 WIP();
                 promptText();
@@ -204,7 +209,7 @@ public class SystemInterface {
 //        }
         }
         private void voegOptieToe(int index) {
-        huidigeOfferte.geselecteerdeOpties.add(
+        huidigeOfferte.getGeselecteerdeOpties().add(
                 standardOpties.optielijst.get(index)
         );
         System.out.println(
@@ -227,8 +232,8 @@ public class SystemInterface {
 
     }
         private void verwijderOptie(int index) {
-        System.out.println(huidigeOfferte.geselecteerdeOpties.get(index).getNaam() + "verwijderd!");
-        huidigeOfferte.geselecteerdeOpties.remove(index);
+        System.out.println(huidigeOfferte.getGeselecteerdeOpties().get(index).getNaam() + "verwijderd!");
+        huidigeOfferte.getGeselecteerdeOpties().remove(index);
         }
 
     private void help() {
@@ -246,7 +251,7 @@ public class SystemInterface {
     private void initialize(){
         Commands.initializeCommands();
         standardOpties.readFromCSV();
-        huidigeOfferte.geselecteerdeOpties.add(
+        huidigeOfferte.getGeselecteerdeOpties().add(
                 new Optie(false,
                         "placeHolder",
                         "Placeholder zodat index vanaf 1 kan beginnen",
