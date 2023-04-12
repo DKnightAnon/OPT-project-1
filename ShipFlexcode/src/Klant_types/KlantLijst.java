@@ -6,8 +6,8 @@ import java.util.ArrayList;
 public class KlantLijst {
 
 
-    ArrayList<Klant> KlantenLijst = new ArrayList<>();
-    ArrayList<KlantType> KlantTypes = new ArrayList<>();
+    public ArrayList<Klant> KlantenLijst = new ArrayList<>();
+    public ArrayList<KlantType> KlantTypes = new ArrayList<>();
     private String KlantPath = "Shipflexcode/src/CSV_Files/klanten.csv" ;
     private String klantSoortPath = "Shipflexcode/src/CSV_Files/klantSoorten.csv";
 

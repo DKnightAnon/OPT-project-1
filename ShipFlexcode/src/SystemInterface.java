@@ -64,7 +64,9 @@ public class SystemInterface {
                 optieAanmaken();
                 promptText();
             }
-            else if (input.equals(Commands.offerteMaken.offerteMakenCommand)) {
+            else if (
+                input.equals(Commands.offerteMaken.offerteMakenCommand)) {
+                huidigeOfferte.maakOfferteBestandAan();
                 WIP();
                 promptText();
             }
@@ -133,6 +135,21 @@ public class SystemInterface {
                 klantTypesTonen();
                 promptText();
             }
+            else if (
+                    input.equals(Commands.KlantToewijzen.klantToewijzenCommand)
+                  ||input.equals(Commands.KlantToewijzen.klatToewijzenCommandLowerCase)
+            ){
+                KlantToewijzen();
+                promptText();
+            }
+            else if (
+                    input.equals(Commands.KlantWeghalen.klantWeghalenCommand)
+            ||input.equals(Commands.KlantWeghalen.klantWegHalenCommandLowercase)
+            ){
+                KlantWeghalen();
+                promptText();
+            }
+
             else if (
                     input.equals(Commands.sluitApplicatie.sluitApplicatieCommand)
                  || input.equals(Commands.sluitApplicatie.sluitApplicatieCommandLowerCase)
@@ -401,6 +418,22 @@ public class SystemInterface {
         }
     }
 
+    private void KlantToewijzen(){
+
+        boolean finished = false;
+        int index;
+
+        System.out.println("Vul het klantnummer in van de klant dat u wilt toevoegen.");
+        while (!finished) {
+            index = Integer.valueOf(scanner.nextLine());
+            huidigeOfferte.addKlant(standardKlanten.KlantenLijst.get(index));
+            finished = true;
+        }
+    }
+
+    private void KlantWeghalen(){
+        huidigeOfferte.removeKlant();
+    }
 
 
 

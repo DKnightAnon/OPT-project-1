@@ -7,8 +7,8 @@ public class OptieLijst{
     Optie Navigatiesysteem = new Optie(true,"Navigatiesysteem", "Dit is een test beschrijving om te kijken hoe het reageert op meerdere characters", 50, false);
     Optie Motor = new Optie(true,"Motor", "Dit is een test beschrijving om te kijken hoe het reageert op meerdere characters", 50, true);
     Optie Roer = new Optie(true,"Roer", "Dit is een test beschrijving om te kijken hoe het reageert op meerdere characters", 50, false);
-    Optie Brandstoftank = new Optie(true,"Brandstoftank", "Dit is een test beschrijving om te kijken hoe het reageert op meerdere characters", 50, true);
-    Optie Anker = new Optie(true,"Anker", "Dit is een test beschrijving om te kijken hoe het reageert op meerdere characters", 50, false);
+    public Optie Brandstoftank = new Optie(true,"Brandstoftank", "Dit is een test beschrijving om te kijken hoe het reageert op meerdere characters", 50, true);
+    public Optie Anker = new Optie(true,"Anker", "Dit is een test beschrijving om te kijken hoe het reageert op meerdere characters", 50, false);
     Optie Airconditioning = new Optie(false,"Airconditioning", "Dit is een test beschrijving om te kijken hoe het reageert op meerdere characters",20, false);
     Optie Sonar = new Optie(false,"Sonar", "Dit is een test beschrijving om te kijken hoe het reageert op meerdere characters",20, false);
     Optie ExtraPKs = new Optie(false,"ExtraPKs", "Dit is een test beschrijving om te kijken hoe het reageert op meerdere characters",20, false);
@@ -142,6 +142,16 @@ public class OptieLijst{
         optielijst.add(nieuweOptie);
         writeToCSV();
 
+    }
+    public void nieuweOptie(boolean isEssentieel,
+                            String naam,
+                            String beschrijving,
+                            double prijs,
+                            boolean milieukorting) throws FileNotFoundException {
+        readFromCSV();
+        Optie nieuweOptie = new Optie(isEssentieel, naam, beschrijving, prijs, milieukorting);
+        optielijst.add(nieuweOptie);
+        writeToCSV();
     }
 
 }

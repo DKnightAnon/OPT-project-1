@@ -9,7 +9,11 @@ import java.util.Scanner;
 public class Offerte {
     public ArrayList<Optie> geselecteerdeOpties = new ArrayList<Optie>();
 
-    public void voegOptieToe(Scanner scanner, String scan, OptieLijst optielijst) {
+    public void voegOptieToe(Optie optie){
+        geselecteerdeOpties.add(optie);
+    }
+
+    public void voegOptieToeScanner(Scanner scanner, String scan, OptieLijst optielijst) {
         System.out.println("Welke optie wil u toevoegen?");
         scan = scanner.nextLine();
         int locatieOptie = -1;
@@ -21,8 +25,8 @@ public class Offerte {
         if (locatieOptie == -1){
             System.out.println("Deze optie bestaat niet.");
         } else {
-            geselecteerdeOpties.add(optielijst.optielijst.get(locatieOptie));
-            System.out.println("Opties.Optie toegevoegd.");
+            voegOptieToe(optielijst.optielijst.get(locatieOptie));
+            System.out.println("Optie toegevoegd.");
         }
     }
 
@@ -54,15 +58,15 @@ public class Offerte {
             System.out.println();
         }
 
-         if (geselecteerdeOpties.isEmpty()){
-             System.out.println("U heeft nog niks geselecteerd.");
-         } else {
-             System.out.println("----------------------------------------------");
-             korting = prijs - totaalprijs;
-             System.out.printf("%-33s =  €%8.2f%n", "Prijs", prijs);
-             System.out.printf("%-33s = -€%8.2f%n", "Korting", korting);
-             System.out.println("----------------------------------------------");
-             System.out.printf("%-33s =  €%8.2f%n", "Totaalprijs", totaalprijs);
-         }
+        if (geselecteerdeOpties.isEmpty()){
+            System.out.println("U heeft nog niks geselecteerd.");
+        } else {
+            System.out.println("----------------------------------------------");
+            korting = prijs - totaalprijs;
+            System.out.printf("%-33s =  €%8.2f%n", "Prijs", prijs);
+            System.out.printf("%-33s = -€%8.2f%n", "Korting", korting);
+            System.out.println("----------------------------------------------");
+            System.out.printf("%-33s =  €%8.2f%n", "Totaalprijs", totaalprijs);
+        }
     }
 }

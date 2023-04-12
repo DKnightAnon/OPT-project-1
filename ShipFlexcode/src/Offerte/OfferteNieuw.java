@@ -110,7 +110,7 @@ public class OfferteNieuw {
             prijsNaAftrekKlantKorting = prijsNaAftrekMillieuKorting;
             prijsNaAftrekKlantKorting = prijsNaAftrekKlantKorting * (1 - (geselecteerdeKlant.getKlantSoort().getKlantKorting() / 100));
 
-            System.out.printf("|%s %d |%n|%s %d |%n|%s %d |\n",
+            System.out.printf("|%192s %6.2f |%n|%192s %6.2f |%n|%192s %6.2f |\n",
                     prijsMessage,
                     prijsVoorAftrek,
                     prijsMessageMilieu,
@@ -126,6 +126,10 @@ public class OfferteNieuw {
             System.out.print("-");
         }
         System.out.println();
+    }
+
+    public void maakOfferteBestandAan(){
+
     }
 
 }

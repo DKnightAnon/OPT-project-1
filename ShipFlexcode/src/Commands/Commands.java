@@ -4,120 +4,130 @@ import java.util.ArrayList;
 
 public class Commands {
 
-    public static String commandError = "Dit commando bestaat niet.";
+    public static final String commandError = "Dit commando bestaat niet.";
 
     private class CommandExplanations{
-        private static String optieLijst = "Optie lijst - Toont een lijst met alle beschikbare opties in het systeem.";
-        private static String optieAanmaken = "Optie aanmaken - Voegt aan de hand van ingevoerde informatie een nieuwe optie toe aan het systeem.";
-        public static String offerteTonen = "Offerte tonen - Weergeeft de huidige offerte weer op het scherm.";
-        public static String offerteMaken = "Offerte maken - Maakt een offerte aan en toont het op het scherm.";
-        public static String sluitApplicatie = "Afsluiten - Sluit de applicatie af.";
-        public static String optieToevoegen = "Optie toevoegen - Voegt een optie toe aan de offerte.";
-        public static String optieVerwijderen = "Optie verwijderen - Verwijdert een optie uit de offerte.";
-        public static String KlantenTonen = "Toon klanten - Print een lijst met alle geregistreerde klanten.";
-        public static String KlantAanmaken = "Klant aanmaken - Registreert een nieuwe klant.";
-        public static String KlantTypesTonen = "Klanttypes tonen - Print een lijst met alle geregistreerde klanttypes.";
-        public static String KlantTypeAanmaken = "Klanttype aanmaken - Maakt een nieuw type klant aan.";
-        public static String KlantToewijzen = "Klant toewijzen - Wijst een klant toe aan de huidige offerte.";
+        private static final String optieLijst = "Optie lijst - Toont een lijst met alle beschikbare opties in het systeem.";
+        private static final String optieAanmaken = "Optie aanmaken - Voegt aan de hand van ingevoerde informatie een nieuwe optie toe aan het systeem.";
+        private static final String offerteTonen = "Offerte tonen - Weergeeft de huidige offerte weer op het scherm.";
+        private static final String offerteMaken = "Offerte maken - Maakt een offerte aan en toont het op het scherm.";
+        private static final String sluitApplicatie = "Afsluiten - Sluit de applicatie af.";
+        private static final String optieToevoegen = "Optie toevoegen - Voegt een optie toe aan de offerte.";
+        private static final String optieVerwijderen = "Optie verwijderen - Verwijdert een optie uit de offerte.";
+        private static final String KlantenTonen = "Toon klanten - Print een lijst met alle geregistreerde klanten.";
+        private static final String KlantAanmaken = "Klant aanmaken - Registreert een nieuwe klant.";
+        private static final String KlantTypesTonen = "Klanttypes tonen - Print een lijst met alle geregistreerde klanttypes.";
+        private static final String KlantTypeAanmaken = "Klanttype aanmaken - Maakt een nieuw type klant aan.";
+        private static final String KlantToewijzen = "Klant toewijzen - Wijst een klant toe aan de huidige offerte.";
+        private static final String KlantWeghalen = "Klant weghalen -Verwijdert de toegewezen klant van de huidige offerte.";
     }
 
     public class KlantAanmaken{
-        public static String klantAanmakenCommand = "Klant aanmaken";
-        public static String klantAanmakenCommandLowerCase = "klant aanmaken";
+        public static final String klantAanmakenCommand = "Klant aanmaken";
+        public static final String klantAanmakenCommandLowerCase = "klant aanmaken";
     }
     public class klantenTonen{
-        public static String klantTonenCommand = "Toon klanten";
-        public static String klantTonenCommandLowerCase = "toon klanten";
-        public static String klantTonenCommandJoined = "Toonklanten";
-        public static String klantTonenCommandJoinedLowerCase = "toonklanten";
+        public static final String klantTonenCommand = "Toon klanten";
+        public static final String klantTonenCommandLowerCase = "toon klanten";
+        public static final String klantTonenCommandJoined = "Toonklanten";
+        public static final String klantTonenCommandJoinedLowerCase = "toonklanten";
     }
-
-
     public class KlantTypeAanmaken{
-        public static String klantTypeAanmakenCommand = "Klanttype aanmaken";
-        public static String klantTypeAanmakenCommandLowerCase = "klanttype aanmaken";
+        public static final String klantTypeAanmakenCommand = "Klanttype aanmaken";
+        public static final String klantTypeAanmakenCommandLowerCase = "klanttype aanmaken";
     }
-
     public class KlantTypesTonen{
-        public static String klantTypesTonenCommand = "Klanttypes tonen";
-        public static String klantTypesTonenCommandLowerCase = "klanttypes tonen";
+        public static final String klantTypesTonenCommand = "Klanttypes tonen";
+        public static final String klantTypesTonenCommandLowerCase = "klanttypes tonen";
     }
 
-    public class optieLijst {
-        public static String optieLijstCommand = "Optie lijst";
-        public static String optieLijstCommandLowerCase = "optie lijst";
-        public static String optieLijstCommandJoined = "Optielijst";
-        public static String optieLijstCommandJoinedLowerCase = "optielijst";
-        public static String optieLijstCommandJoinedAllcaps = "OPTIELIJST";
-    }
-    public class optieAanmaken {
-        public static String optieAanmakenCommand = "Optie aanmaken";
-        public static String optieAanmakenCommandLowerCase = "optie aanmaken";
-        public static String optieAanmakenCommandJoined = "OptieAanmaken";
-        public static String optieAanmakenCommandJoinedLowerCase = "optieaanmaken";
-        public static String optieAanmakenCommandJoinedFirstUpperCase = "Optieaanmaken";
-        public static String optieAanmakenCommandJoinedLastUpperCase = "optieAanmaken";
-    }
 
     public class offerteTonen{
-        public static String offerteTonenCommand = "Offerte tonen";
-        public static String offerteTonenCommandLowerCase = "offerte tonen";
-        public static String offerteTonenCommandJoined = "OfferteTonen";
-        public static String offerteTonenCommandJoinedLowerCase = "offertetonen";
-        public static String offerteTonenCommandJoinedFirstUpperCase = "Offertetonen";
-        public static String offerteTonenCommandJoinedLastUpperCase = "offerteTonen";
-        public static String offerteTonenCommandAllCaps = "OFFERTE TONEN";
-        public static String offerteTonenCommandJoinedAllCaps = "OFFERTETONEN";
+        public static final String offerteTonenCommand = "Offerte tonen";
+        public static final String offerteTonenCommandLowerCase = "offerte tonen";
+        public static final String offerteTonenCommandJoined = "OfferteTonen";
+        public static final String offerteTonenCommandJoinedLowerCase = "offertetonen";
+        public static final String offerteTonenCommandJoinedFirstUpperCase = "Offertetonen";
+        public static final String offerteTonenCommandJoinedLastUpperCase = "offerteTonen";
+        public static final String offerteTonenCommandAllCaps = "OFFERTE TONEN";
+        public static final String offerteTonenCommandJoinedAllCaps = "OFFERTETONEN";
 
     }
-
     public class offerteMaken {
-        public static String offerteMakenCommand = "Offerte maken";
-        public static String offerteMakenCommandeLowerCase = "offerte maken";
-        public static String offerteMakenCommandJoined = "OfferteMaken";
-        public static String offerteMakenCommandJoinedLowerCase = "offertemaken";
-        public static String offerteMakenCommandJoinedFirstUpperCase = "Offertemaken";
+        public static final String offerteMakenCommand = "Offerte maken";
+        public static final String offerteMakenCommandeLowerCase = "offerte maken";
+        public static final String offerteMakenCommandJoined = "OfferteMaken";
+        public static final String offerteMakenCommandJoinedLowerCase = "offertemaken";
+        public static final String offerteMakenCommandJoinedFirstUpperCase = "Offertemaken";
     }
-
     public class optieVerwijderen{
-        public static String optieVerwijderenCommand = "Optie verwijderen";
-        public static String optieVerwijderenCommandLowerCase = "optie verwijderen";
-        public static String optieVerwijderenCommandLastUpperCase = "optie Verwijderen";
-        public static String optieVerwijderenCommandJoined = "Optieverwijderen";
-        public static String optieVerwijderenCommandJoinedLowerCase = "optieverwijderen";
-        public static String optieverwijderenCommandJoinedLastUpperCase = "optieVerwijderen";
+        public static final String optieVerwijderenCommand = "Optie verwijderen";
+        public static final String optieVerwijderenCommandLowerCase = "optie verwijderen";
+        public static final String optieVerwijderenCommandLastUpperCase = "optie Verwijderen";
+        public static final String optieVerwijderenCommandJoined = "Optieverwijderen";
+        public static final String optieVerwijderenCommandJoinedLowerCase = "optieverwijderen";
+        public static final String optieverwijderenCommandJoinedLastUpperCase = "optieVerwijderen";
     }
     public class optieToevoegen {
-        public static String optieToevoegenCommand = "Optie toevoegen";
-        public static String optieToevoegenCommandLowerCase = "optie toevoegen";
-        public static String optieToevoegenCommandJoined = "optietoevoegen";
-        public static String optieToevoegenCommandJoinedAllCaps = "OPTIETOEVOEGEN";
-        public static String optieToevoegenCommandJoinedFirstUpperCase = "Optietoevoegen";
-        public static String optieToevoegenCommandJoinedLastUpperCase = "optieToevoegen";
+        public static final String optieToevoegenCommand = "Optie toevoegen";
+        public static final String optieToevoegenCommandLowerCase = "optie toevoegen";
+        public static final String optieToevoegenCommandJoined = "optietoevoegen";
+        public static final String optieToevoegenCommandJoinedAllCaps = "OPTIETOEVOEGEN";
+        public static final String optieToevoegenCommandJoinedFirstUpperCase = "Optietoevoegen";
+        public static final String optieToevoegenCommandJoinedLastUpperCase = "optieToevoegen";
     }
+    public class KlantToewijzen{
+        public static final String klantToewijzenCommand = "Klant toewijzen";
+        public static final String klatToewijzenCommandLowerCase = "klant toewijzen";
+    }
+    public class KlantWeghalen{
+        public static final String klantWeghalenCommand = "Klant weghalen";
+        public static final String klantWegHalenCommandLowercase = "klant weghalen";
+    }
+
+
+
+    public class optieLijst {
+        public static final String optieLijstCommand = "Optie lijst";
+        public static final String optieLijstCommandLowerCase = "optie lijst";
+        public static final String optieLijstCommandJoined = "Optielijst";
+        public static final String optieLijstCommandJoinedLowerCase = "optielijst";
+        public static final String optieLijstCommandJoinedAllcaps = "OPTIELIJST";
+    }
+    public class optieAanmaken {
+        public static final String optieAanmakenCommand = "Optie aanmaken";
+        public static final String optieAanmakenCommandLowerCase = "optie aanmaken";
+        public static final String optieAanmakenCommandJoined = "OptieAanmaken";
+        public static final String optieAanmakenCommandJoinedLowerCase = "optieaanmaken";
+        public static final String optieAanmakenCommandJoinedFirstUpperCase = "Optieaanmaken";
+        public static final String optieAanmakenCommandJoinedLastUpperCase = "optieAanmaken";
+    }
+
+
+
     public class sluitApplicatie {
-        public static String sluitApplicatieCommand = "Afsluiten";
-        public static String sluitApplicatieCommandLowerCase = "afsluiten";
-        public static String sluitApplicatieCommandAllCaps = "AFSLUITEN";
+        public static final String sluitApplicatieCommand = "Afsluiten";
+        public static final String sluitApplicatieCommandLowerCase = "afsluiten";
+        public static final String sluitApplicatieCommandAllCaps = "AFSLUITEN";
     }
 
     public class help {
-        public static String helpCommand = "Help";
-        public static String helpCommandLowerCase = "help";
-        public static String helpCommandAllCaps = "HELP";
+        public static final String helpCommand = "Help";
+        public static final String helpCommandLowerCase = "help";
+        public static final String helpCommandAllCaps = "HELP";
     }
 
     public class Test {
-        public static String testCommand = "test";
+        public static final String testCommand = "test";
 
         public class coloredText {
-            public static String testColorTextCommand = "testcolor";
+            public static final String testColorTextCommand = "testcolor";
         }
     }
-    public static ArrayList<String> commandExplanations = new ArrayList<String>();
+    public static final ArrayList<String> commandExplanations = new ArrayList<String>();
 
 
-    public static void initializeCommands() {
+    public static final void initializeCommands() {
         commandExplanations.add(CommandExplanations.optieLijst);
         commandExplanations.add(CommandExplanations.optieAanmaken);
         commandExplanations.add(CommandExplanations.optieToevoegen);
@@ -130,6 +140,7 @@ public class Commands {
         commandExplanations.add(CommandExplanations.KlantTypeAanmaken);
         commandExplanations.add(CommandExplanations.KlantToewijzen);
         commandExplanations.add(CommandExplanations.KlantTypesTonen);
+        commandExplanations.add(CommandExplanations.KlantWeghalen);
     }
 
 }
