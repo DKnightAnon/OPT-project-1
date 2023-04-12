@@ -3,7 +3,7 @@ package Klant_types;
 public class Klant {
 
     private String klantNaam;
-    private KlantType klantSoort = new KlantType(0,"dummy");
+    private KlantType klantSoort = new KlantType(0, "dummy");
 
 
     public Klant(String klantNaam, KlantType klantSoort) {
@@ -11,7 +11,7 @@ public class Klant {
         this.klantSoort = klantSoort;
     }
 
-    public Klant(String klantNaam, String klantsoort, String KlantKorting){
+    public Klant(String klantNaam, String klantsoort, String KlantKorting) {
         this.klantNaam = klantNaam;
         this.klantSoort.setKlantSoort(klantsoort);
         this.klantSoort.setKlantKorting(Double.valueOf(KlantKorting));
@@ -33,11 +33,10 @@ public class Klant {
         this.klantSoort = klantSoort;
     }
 
-    public boolean isEmpty(){
-        if (this.klantSoort == null && this.klantNaam == null){
+    public boolean isEmpty() {
+        if (this.klantSoort == null && this.klantNaam == null) {
             return true;
-        }
-        else {
+        } else {
             return false;
         }
     }

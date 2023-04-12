@@ -14,20 +14,20 @@ import java.util.ArrayList;
 
 public class OfferteNieuw {
 
-    private Klant geselecteerdeKlant = new Klant(null,null);
+    private Klant geselecteerdeKlant = new Klant(null, null);
 
 
     private ArrayList<Optie> geselecteerdeOpties = new ArrayList<Optie>();
 
-    public void addKlant(Klant klant){
+    public void addKlant(Klant klant) {
         this.geselecteerdeKlant = klant;
     }
 
-    public void removeKlant(){
-        this.geselecteerdeKlant = new Klant(null,null);
+    public void removeKlant() {
+        this.geselecteerdeKlant = new Klant(null, null);
     }
 
-    public void printKlant(){
+    public void printKlant() {
 
         printTableHorizontalBorder();
         System.out.printf("| %-30s| %-20s| %-10s",
@@ -36,14 +36,14 @@ public class OfferteNieuw {
                 "Klant korting %",
                 " "
         );
-        for (int i = 0;i<130;i++){
+        for (int i = 0; i < 130; i++) {
             System.out.print(" ");
         }
         System.out.print("|\n");
         printTableHorizontalBorder();
-        if (geselecteerdeKlant.isEmpty()){
-            System.out.printf("|%-200s|%n"," ");
-        }else{
+        if (geselecteerdeKlant.isEmpty()) {
+            System.out.printf("|%-200s|%n", " ");
+        } else {
             System.out.printf(
                     "| %-30s| %-20s| %-145s|%n",
                     geselecteerdeKlant.getKlantNaam(),
@@ -65,7 +65,7 @@ public class OfferteNieuw {
                 "Milieukorting"
         );
         printTableHorizontalBorder();
-        if (geselecteerdeOpties.size()==1) {
+        if (geselecteerdeOpties.size() == 1) {
             System.out.printf("|%200s|\n", " ");
 
         } else {
@@ -82,10 +82,10 @@ public class OfferteNieuw {
         }
         printTableHorizontalBorder();
 
-        }
+    }
 
 
-    public void printPrijsBerekening(){
+    public void printPrijsBerekening() {
         double prijsVoorAftrek = 0;
         //Bereken totaal prijs voor korting
         for (int i = 1; i < geselecteerdeOpties.size(); i++) {
@@ -97,15 +97,14 @@ public class OfferteNieuw {
         String prijsMessageMilieu = "Prijs na aftrek millieukortingen : ";
         String prijsMessageKlant = "Prijs na aftrek klantkorintg : ";
 
-        System.out.printf("| %-199s|%n","Prijsberekening");
+        System.out.printf("| %-199s|%n", "Prijsberekening");
         printTableHorizontalBorder();
 
-        if (prijsVoorAftrek == 0){
+        if (prijsVoorAftrek == 0) {
             System.out.printf("|%200s|\n", " ");
-        } else if (geselecteerdeKlant.isEmpty())
-        {
+        } else if (geselecteerdeKlant.isEmpty()) {
             System.out.printf("|%209s|\n",
-                    TextColors.Text.ANSI_YELLOW+"Voeg eerst een klant toe!"+TextColors.Text.ANSI_RESET);
+                    TextColors.Text.ANSI_YELLOW + "Voeg eerst een klant toe!" + TextColors.Text.ANSI_RESET);
 
         } else {
             //Bereken totaalprijs na aftrek millieukorting per onderdeel
@@ -128,14 +127,14 @@ public class OfferteNieuw {
         printTableHorizontalBorder();
     }
 
-    private void printTableHorizontalBorder(){
+    private void printTableHorizontalBorder() {
         for (int i = 0; i < 202; i++) {
             System.out.print("-");
         }
         System.out.println();
     }
 
-    private void printFileTableHorizontalBorder(PrintWriter Writer){
+    private void printFileTableHorizontalBorder(PrintWriter Writer) {
         for (int i = 0; i < 202; i++) {
             Writer.print("-");
         }
@@ -143,7 +142,7 @@ public class OfferteNieuw {
     }
 
 
-    private void makeDirectoryIfNotExist(){
+    private void makeDirectoryIfNotExist() {
         String folderPath = System.getProperty("user.home") + File.separator +
                 "Documents" + File.separator +
                 "ShipFlexOffertes";
@@ -168,7 +167,7 @@ public class OfferteNieuw {
         LocalDate timestamp = LocalDate.now();
         DateTimeFormatter formatted = DateTimeFormatter.BASIC_ISO_DATE;
         String formattedDate = timestamp.format(formatted);
-        String fileName = "Offerte-"+getGeselecteerdeKlant().getKlantNaam()+"-"+formattedDate+".txt";
+        String fileName = "Offerte-" + getGeselecteerdeKlant().getKlantNaam() + "-" + formattedDate + ".txt";
         String path = System.getProperty("user.home") + File.separator +
                 "Documents" + File.separator +
                 "ShipFlexOffertes" + File.separator +
@@ -176,25 +175,25 @@ public class OfferteNieuw {
 
         PrintWriter Writer = new PrintWriter(path);
 
-            printFileTableHorizontalBorder(Writer);
+        printFileTableHorizontalBorder(Writer);
         Writer.printf("| %-30s| %-20s| %-10s",
                 "Klantnaam",
                 "Klant type",
                 "Klant korting %",
                 " "
         );
-        for (int i = 0;i<130;i++){
+        for (int i = 0; i < 130; i++) {
             Writer.print(" ");
         }
         Writer.print("|\n");
-            printFileTableHorizontalBorder(Writer);
+        printFileTableHorizontalBorder(Writer);
         Writer.printf(
                 "| %-30s| %-20s| %-145s|%n",
                 geselecteerdeKlant.getKlantNaam(),
                 geselecteerdeKlant.getKlantSoort().getKlantSoort(),
                 geselecteerdeKlant.getKlantSoort().getKlantKorting()
         );
-            printFileTableHorizontalBorder(Writer);
+        printFileTableHorizontalBorder(Writer);
         Writer.printf("|%-15s| %-20s| %-20s| %-100s| %-10s| %-25s|%n",
                 "Optie nr.",
                 "Essentiele optie",
@@ -203,7 +202,7 @@ public class OfferteNieuw {
                 "Prijs",
                 "Milieukorting"
         );
-            printFileTableHorizontalBorder(Writer);
+        printFileTableHorizontalBorder(Writer);
         for (int i = 1; i < geselecteerdeOpties.size(); i++) {
             Writer.printf("|%-15d| %-20s| %-20s| %-100s| %-10s| %-25s|%n",
                     getGeselecteerdeOpties().indexOf(geselecteerdeOpties.get(i)),
@@ -214,7 +213,7 @@ public class OfferteNieuw {
                     geselecteerdeOpties.get(i).getMiliuekorting()
             );
         }
-            printFileTableHorizontalBorder(Writer);
+        printFileTableHorizontalBorder(Writer);
 
         double prijsVoorAftrek = 0;
         //Bereken totaal prijs voor korting
@@ -227,8 +226,8 @@ public class OfferteNieuw {
         String prijsMessageMilieu = "Prijs na aftrek millieukortingen : ";
         String prijsMessageKlant = "Prijs na aftrek klantkorintg : ";
 
-        Writer.printf("| %-199s|%n","Prijsberekening");
-            printFileTableHorizontalBorder(Writer);
+        Writer.printf("| %-199s|%n", "Prijsberekening");
+        printFileTableHorizontalBorder(Writer);
         for (int i = 1; i < geselecteerdeOpties.size(); i++) {
             prijsNaAftrekMillieuKorting += geselecteerdeOpties.get(i).getPrijsMinKorting();
         }
@@ -244,19 +243,19 @@ public class OfferteNieuw {
                 prijsNaAftrekMillieuKorting,
                 prijsMessageKlant,
                 prijsNaAftrekKlantKorting);
-            printFileTableHorizontalBorder(Writer);
+        printFileTableHorizontalBorder(Writer);
 
-            Writer.flush();
-            Writer.close();
-            System.out.println(
-                    "File "+
-                    TextColors.Text.ANSI_RED+
-                    fileName+
-                    TextColors.Text.ANSI_RESET+
-                    " should have been created in folder : "+
-                    TextColors.Text.ANSI_RED+
-                    path+
-                    TextColors.Text.ANSI_RESET);
+        Writer.flush();
+        Writer.close();
+        System.out.println(
+                "File " +
+                        TextColors.Text.ANSI_RED +
+                        fileName +
+                        TextColors.Text.ANSI_RESET +
+                        " should have been created in folder : " +
+                        TextColors.Text.ANSI_RED +
+                        path +
+                        TextColors.Text.ANSI_RESET);
     }
 
 

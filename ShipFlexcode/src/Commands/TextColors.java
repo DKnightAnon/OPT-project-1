@@ -6,7 +6,7 @@ public class TextColors {
 
     public static ArrayList<String> TextColors = new ArrayList<>();
 
-    public static void initialize(){
+    public static void initialize() {
         TextColors.add(Text.ANSI_BLACK);
         TextColors.add(Text.ANSI_RED);
         TextColors.add(Text.ANSI_GREEN);
@@ -26,10 +26,10 @@ public class TextColors {
         public static String ANSI_BLUE = "\u001B[34m";
         public static String ANSI_PURPLE = "\u001B[35m";
         public static String ANSI_CYAN = "\u001B[36m";
-        public static  String ANSI_WHITE = "\u001B[37m";
+        public static String ANSI_WHITE = "\u001B[37m";
     }
 
-    public class TextBackground{
+    public class TextBackground {
         public static String ANSI_RESET = "\u001B[0m";
         public static String ANSI_BLACK = "\u001B[40m";
         public static String ANSI_RED = "\u001B[41m";
@@ -38,7 +38,7 @@ public class TextColors {
         public static String ANSI_BLUE = "\u001B[44m";
         public static String ANSI_PURPLE = "\u001B[45m";
         public static String ANSI_CYAN = "\u001B[46m";
-        public static  String ANSI_WHITE = "\u001B[47m";
+        public static String ANSI_WHITE = "\u001B[47m";
 
     }
 }

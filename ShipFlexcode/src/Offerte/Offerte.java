@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class Offerte {
     public ArrayList<Optie> geselecteerdeOpties = new ArrayList<Optie>();
 
-    public void voegOptieToe(Optie optie){
+    public void voegOptieToe(Optie optie) {
         geselecteerdeOpties.add(optie);
     }
 
@@ -17,12 +17,12 @@ public class Offerte {
         System.out.println("Welke optie wil u toevoegen?");
         scan = scanner.nextLine();
         int locatieOptie = -1;
-        for (int i = 0; i < optielijst.optielijst.size(); i++){
-            if (optielijst.optielijst.get(i).getNaam().equals(scan)){
+        for (int i = 0; i < optielijst.optielijst.size(); i++) {
+            if (optielijst.optielijst.get(i).getNaam().equals(scan)) {
                 locatieOptie = i;
             }
         }
-        if (locatieOptie == -1){
+        if (locatieOptie == -1) {
             System.out.println("Deze optie bestaat niet.");
         } else {
             voegOptieToe(optielijst.optielijst.get(locatieOptie));
@@ -30,25 +30,25 @@ public class Offerte {
         }
     }
 
-    public void maakOfferte(){
+    public void maakOfferte() {
         double prijs = 0;
         double korting = 0;
         double totaalprijs = 0;
 
         for (int i = 0; i < geselecteerdeOpties.size(); i++) {
-            if(geselecteerdeOpties.get(i).getIsEssentieel()){
-                System.out.printf("%-16s","Essentieel");
+            if (geselecteerdeOpties.get(i).getIsEssentieel()) {
+                System.out.printf("%-16s", "Essentieel");
             } else {
-                System.out.printf("%-16s","Niet essentieel");
+                System.out.printf("%-16s", "Niet essentieel");
             }
-            System.out.printf("%-18s = €%8.2f%n", geselecteerdeOpties.get(i).getNaam() , geselecteerdeOpties.get(i).getPrijs());
+            System.out.printf("%-18s = €%8.2f%n", geselecteerdeOpties.get(i).getNaam(), geselecteerdeOpties.get(i).getPrijs());
 
             prijs += geselecteerdeOpties.get(i).getPrijs();
             totaalprijs += geselecteerdeOpties.get(i).getPrijsMinKorting();
 
             System.out.printf("%-16s", "Korting:");
             if (geselecteerdeOpties.get(i).getMiliuekorting()) {
-                System.out.printf("%.0f%1s Miliuekorting%n",geselecteerdeOpties.get(i).getPercentageMiliuekorting(), "%");
+                System.out.printf("%.0f%1s Miliuekorting%n", geselecteerdeOpties.get(i).getPercentageMiliuekorting(), "%");
             } else {
                 System.out.println("Nee");
             }
@@ -58,7 +58,7 @@ public class Offerte {
             System.out.println();
         }
 
-        if (geselecteerdeOpties.isEmpty()){
+        if (geselecteerdeOpties.isEmpty()) {
             System.out.println("U heeft nog niks geselecteerd.");
         } else {
             System.out.println("----------------------------------------------");

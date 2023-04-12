@@ -29,7 +29,7 @@ public class SystemInterface {
 
     public void Runtime() throws FileNotFoundException {
 
-        System.out.printf(welcomeMessage+"\n");
+        System.out.printf(welcomeMessage + "\n");
         initialize();
         promptText();
         while (running) {
@@ -37,160 +37,144 @@ public class SystemInterface {
 
             if (
                     input.equals(Commands.help.helpCommand)
-                 || input.equals(Commands.help.helpCommandLowerCase)
-                 || input.equals(Commands.help.helpCommandAllCaps)
-            ){
+                            || input.equals(Commands.help.helpCommandLowerCase)
+                            || input.equals(Commands.help.helpCommandAllCaps)
+            ) {
                 help();
                 promptText();
-            }
-            else if (
-                   input.equals(Commands.optieLijst.optieLijstCommand)
-                || input.equals(Commands.optieLijst.optieLijstCommandJoined)
-                || input.equals(Commands.optieLijst.optieLijstCommandLowerCase)
-                || input.equals(Commands.optieLijst.optieLijstCommandJoinedLowerCase)
-                || input.equals(Commands.optieLijst.optieLijstCommandJoinedAllcaps)
-            ){
+            } else if (
+                    input.equals(Commands.optieLijst.optieLijstCommand)
+                            || input.equals(Commands.optieLijst.optieLijstCommandJoined)
+                            || input.equals(Commands.optieLijst.optieLijstCommandLowerCase)
+                            || input.equals(Commands.optieLijst.optieLijstCommandJoinedLowerCase)
+                            || input.equals(Commands.optieLijst.optieLijstCommandJoinedAllcaps)
+            ) {
                 printOptieLijst();
                 promptText();
-            }
-            else if (
-                   input.equals(Commands.optieAanmaken.optieAanmakenCommand)
-                || input.equals(Commands.optieAanmaken.optieAanmakenCommandJoined)
-                || input.equals(Commands.optieAanmaken.optieAanmakenCommandLowerCase)
-                || input.equals(Commands.optieAanmaken.optieAanmakenCommandJoinedLowerCase)
-                || input.equals(Commands.optieAanmaken.optieAanmakenCommandJoinedFirstUpperCase)
-                || input.equals(Commands.optieAanmaken.optieAanmakenCommandJoinedLastUpperCase)
-            ){
+            } else if (
+                    input.equals(Commands.optieAanmaken.optieAanmakenCommand)
+                            || input.equals(Commands.optieAanmaken.optieAanmakenCommandJoined)
+                            || input.equals(Commands.optieAanmaken.optieAanmakenCommandLowerCase)
+                            || input.equals(Commands.optieAanmaken.optieAanmakenCommandJoinedLowerCase)
+                            || input.equals(Commands.optieAanmaken.optieAanmakenCommandJoinedFirstUpperCase)
+                            || input.equals(Commands.optieAanmaken.optieAanmakenCommandJoinedLastUpperCase)
+            ) {
                 optieAanmaken();
                 promptText();
-            }
-            else if (
-                input.equals(Commands.offerteMaken.offerteMakenCommand)
-            ||input.equals(Commands.offerteMaken.offerteMakenCommandeLowerCase)
-            ||input.equals(Commands.offerteMaken.offerteMakenCommandJoined)
-            ||input.equals(Commands.offerteMaken.offerteMakenCommandJoinedLowerCase)
-            ||input.equals(Commands.offerteMaken.offerteMakenCommandJoinedFirstUpperCase)
+            } else if (
+                    input.equals(Commands.offerteMaken.offerteMakenCommand)
+                            || input.equals(Commands.offerteMaken.offerteMakenCommandeLowerCase)
+                            || input.equals(Commands.offerteMaken.offerteMakenCommandJoined)
+                            || input.equals(Commands.offerteMaken.offerteMakenCommandJoinedLowerCase)
+                            || input.equals(Commands.offerteMaken.offerteMakenCommandJoinedFirstUpperCase)
             ) {
                 huidigeOfferte.maakOfferteBestandAan();
                 WIP();
                 promptText();
-            }
-            else if (
-                  input.equals(Commands.optieVerwijderen.optieVerwijderenCommand)
-                ||input.equals(Commands.optieVerwijderen.optieVerwijderenCommandLowerCase)
-                ||input.equals(Commands.optieVerwijderen.optieVerwijderenCommandLastUpperCase)
-                ||input.equals(Commands.optieVerwijderen.optieVerwijderenCommandJoined)
-                ||input.equals(Commands.optieVerwijderen.optieVerwijderenCommandJoinedLowerCase)
-                ||input.equals(Commands.optieVerwijderen.optieverwijderenCommandJoinedLastUpperCase)
-                    )
-            {
+            } else if (
+                    input.equals(Commands.optieVerwijderen.optieVerwijderenCommand)
+                            || input.equals(Commands.optieVerwijderen.optieVerwijderenCommandLowerCase)
+                            || input.equals(Commands.optieVerwijderen.optieVerwijderenCommandLastUpperCase)
+                            || input.equals(Commands.optieVerwijderen.optieVerwijderenCommandJoined)
+                            || input.equals(Commands.optieVerwijderen.optieVerwijderenCommandJoinedLowerCase)
+                            || input.equals(Commands.optieVerwijderen.optieverwijderenCommandJoinedLastUpperCase)
+            ) {
                 verwijderOptieVanOfferte();
                 promptText();
-            }
-            else if (
-                  input.equals(Commands.optieToevoegen.optieToevoegenCommand)
-                ||input.equals(Commands.optieToevoegen.optieToevoegenCommandLowerCase)
-                ||input.equals(Commands.optieToevoegen.optieToevoegenCommandJoined)
-                ||input.equals(Commands.optieToevoegen.optieToevoegenCommandJoinedAllCaps)
-                ||input.equals(Commands.optieToevoegen.optieToevoegenCommandJoinedFirstUpperCase)
-                ||input.equals(Commands.optieToevoegen.optieToevoegenCommandJoinedLastUpperCase)
+            } else if (
+                    input.equals(Commands.optieToevoegen.optieToevoegenCommand)
+                            || input.equals(Commands.optieToevoegen.optieToevoegenCommandLowerCase)
+                            || input.equals(Commands.optieToevoegen.optieToevoegenCommandJoined)
+                            || input.equals(Commands.optieToevoegen.optieToevoegenCommandJoinedAllCaps)
+                            || input.equals(Commands.optieToevoegen.optieToevoegenCommandJoinedFirstUpperCase)
+                            || input.equals(Commands.optieToevoegen.optieToevoegenCommandJoinedLastUpperCase)
             ) {
                 voegOptieToeAanOfferte();
                 promptText();
-            }
-            else if (
+            } else if (
                     input.equals(Commands.offerteTonen.offerteTonenCommand)
-                ||input.equals(Commands.offerteTonen.offerteTonenCommandJoined)
-                ||input.equals(Commands.offerteTonen.offerteTonenCommandLowerCase)
-                ||input.equals(Commands.offerteTonen.offerteTonenCommandAllCaps)
-                ||input.equals(Commands.offerteTonen.offerteTonenCommandJoinedLowerCase)
-                ||input.equals(Commands.offerteTonen.offerteTonenCommandJoinedFirstUpperCase)
-                ||input.equals(Commands.offerteTonen.offerteTonenCommandJoinedLastUpperCase)
+                            || input.equals(Commands.offerteTonen.offerteTonenCommandJoined)
+                            || input.equals(Commands.offerteTonen.offerteTonenCommandLowerCase)
+                            || input.equals(Commands.offerteTonen.offerteTonenCommandAllCaps)
+                            || input.equals(Commands.offerteTonen.offerteTonenCommandJoinedLowerCase)
+                            || input.equals(Commands.offerteTonen.offerteTonenCommandJoinedFirstUpperCase)
+                            || input.equals(Commands.offerteTonen.offerteTonenCommandJoinedLastUpperCase)
             ) {
                 toonOfferte();
                 promptText();
-            }
-            else if (
+            } else if (
                     input.equals(Commands.klantenTonen.klantTonenCommand)
-                ||input.equals(Commands.klantenTonen.klantTonenCommandLowerCase)
-                ||input.equals(Commands.klantenTonen.klantTonenCommandJoined)
-                ||input.equals(Commands.klantenTonen.klantTonenCommandJoinedLowerCase)
-            ){
+                            || input.equals(Commands.klantenTonen.klantTonenCommandLowerCase)
+                            || input.equals(Commands.klantenTonen.klantTonenCommandJoined)
+                            || input.equals(Commands.klantenTonen.klantTonenCommandJoinedLowerCase)
+            ) {
                 standardKlanten.printKlantenLijst();
                 promptText();
-            }
-            else if (
+            } else if (
                     input.equals(Commands.KlantAanmaken.klantAanmakenCommand)
-                ||input.equals(Commands.KlantAanmaken.klantAanmakenCommandLowerCase)
-            ){
+                            || input.equals(Commands.KlantAanmaken.klantAanmakenCommandLowerCase)
+            ) {
                 klantAanmaken();
                 promptText();
-            }
-            else if (
+            } else if (
                     input.equals(Commands.KlantTypeAanmaken.klantTypeAanmakenCommand)
-                ||input.equals(Commands.KlantTypeAanmaken.klantTypeAanmakenCommandLowerCase)
-            ){
+                            || input.equals(Commands.KlantTypeAanmaken.klantTypeAanmakenCommandLowerCase)
+            ) {
                 klantTypeAanmaken();
                 promptText();
-            }
-            else if (
+            } else if (
                     input.equals(Commands.KlantTypesTonen.klantTypesTonenCommand)
-                    ||input.equals(Commands.KlantTypesTonen.klantTypesTonenCommandLowerCase)
+                            || input.equals(Commands.KlantTypesTonen.klantTypesTonenCommandLowerCase)
             ) {
                 klantTypesTonen();
                 promptText();
-            }
-            else if (
+            } else if (
                     input.equals(Commands.KlantToewijzen.klantToewijzenCommand)
-                  ||input.equals(Commands.KlantToewijzen.klatToewijzenCommandLowerCase)
-            ){
+                            || input.equals(Commands.KlantToewijzen.klatToewijzenCommandLowerCase)
+            ) {
                 KlantToewijzen();
                 promptText();
-            }
-            else if (
+            } else if (
                     input.equals(Commands.KlantWeghalen.klantWeghalenCommand)
-            ||input.equals(Commands.KlantWeghalen.klantWegHalenCommandLowercase)
-            ){
+                            || input.equals(Commands.KlantWeghalen.klantWegHalenCommandLowercase)
+            ) {
                 KlantWeghalen();
                 promptText();
-            }
-
-            else if (
+            } else if (
                     input.equals(Commands.sluitApplicatie.sluitApplicatieCommand)
-                 || input.equals(Commands.sluitApplicatie.sluitApplicatieCommandLowerCase)
-                 || input.equals(Commands.sluitApplicatie.sluitApplicatieCommandAllCaps)
+                            || input.equals(Commands.sluitApplicatie.sluitApplicatieCommandLowerCase)
+                            || input.equals(Commands.sluitApplicatie.sluitApplicatieCommandAllCaps)
             ) {
                 exitSystem();
-            }else if (input.equals(Commands.Test.testCommand)) {
+            } else if (input.equals(Commands.Test.testCommand)) {
                 AvailableTests();
                 promptText();
-            }
-            else if (input.equals(Commands.Test.coloredText.testColorTextCommand)){
+            } else if (input.equals(Commands.Test.coloredText.testColorTextCommand)) {
                 testColoredTextPrint();
                 promptText();
-            }
-            else {
+            } else {
                 commandError();
                 promptText();
-                }
             }
-
         }
 
-    private void toonOfferte(){
+    }
+
+    private void toonOfferte() {
         huidigeOfferte.printKlant();
         huidigeOfferte.printGeselecteerdeOpties();
         huidigeOfferte.printPrijsBerekening();
 
     }
-    private void voegOptieToeAanOfferte(){
+
+    private void voegOptieToeAanOfferte() {
         boolean optiesToevoegenFinished = false;
         System.out.println("Voer de optienummer in van de optie dat u wilt toevoegen aan de offerte.");
-            while (!optiesToevoegenFinished) {
-                int index = Integer.valueOf(scanner.nextLine());
-                voegOptieToe(index);
-                optiesToevoegenFinished = true;
-            }
+        while (!optiesToevoegenFinished) {
+            int index = Integer.valueOf(scanner.nextLine());
+            voegOptieToe(index);
+            optiesToevoegenFinished = true;
+        }
 ////        while (!optiesToevoegenFinished) {
 //            int index = scanner.nextInt();
 //            voegOptieToe(index);
@@ -207,8 +191,9 @@ public class SystemInterface {
 ////                optiesToevoegenFinished = true;
 ////            }
 //        }
-        }
-        private void voegOptieToe(int index) {
+    }
+
+    private void voegOptieToe(int index) {
         huidigeOfferte.getGeselecteerdeOpties().add(
                 standardOpties.optielijst.get(index)
         );
@@ -216,7 +201,8 @@ public class SystemInterface {
                 standardOpties.optielijst.get(index).getNaam()
         );
     }
-    private void verwijderOptieVanOfferte(){
+
+    private void verwijderOptieVanOfferte() {
         boolean optiesVerwijderenFinished = false;
         System.out.println("Voer de optienummer in van de optie dat u wilt verwijderen van de offerte.\n"
                 + TextColors.Text.ANSI_YELLOW
@@ -231,16 +217,17 @@ public class SystemInterface {
         }
 
     }
-        private void verwijderOptie(int index) {
+
+    private void verwijderOptie(int index) {
         System.out.println(huidigeOfferte.getGeselecteerdeOpties().get(index).getNaam() + "verwijderd!");
         huidigeOfferte.getGeselecteerdeOpties().remove(index);
-        }
+    }
 
     private void help() {
         System.out.println("U kunt kiezen uit de volgende commando's :");
-       for (int i = 0;i<commands.commandExplanations.size();i++) {
-           System.out.println(TextColors.Text.ANSI_PURPLE + commands.commandExplanations.get(i) + TextColors.Text.ANSI_RESET);
-       }
+        for (int i = 0; i < commands.commandExplanations.size(); i++) {
+            System.out.println(TextColors.Text.ANSI_PURPLE + commands.commandExplanations.get(i) + TextColors.Text.ANSI_RESET);
+        }
     }
 
     private void exitSystem() {
@@ -248,7 +235,7 @@ public class SystemInterface {
         //Status of 0 indicates successful termination.
     }
 
-    private void initialize(){
+    private void initialize() {
         Commands.initializeCommands();
         standardOpties.readFromCSV();
         huidigeOfferte.getGeselecteerdeOpties().add(
@@ -284,91 +271,90 @@ public class SystemInterface {
             if (input.equals("j")) {
                 essentieel = "true";
 
-                        System.out.println("Wat is de naam van deze optie?");
-                        String input1 = scanner.nextLine();
+                System.out.println("Wat is de naam van deze optie?");
+                String input1 = scanner.nextLine();
 
-                        if (!input1.equals("")) {
-                            naam = input1;
-                        }
+                if (!input1.equals("")) {
+                    naam = input1;
+                }
 
-                        System.out.println("Wat is de beschrijving voor deze optie?");
-                        String input2 = scanner.nextLine();
+                System.out.println("Wat is de beschrijving voor deze optie?");
+                String input2 = scanner.nextLine();
 
-                        if (!input2.isEmpty()) {
-                            beschrijving = input2;
-                        }
+                if (!input2.isEmpty()) {
+                    beschrijving = input2;
+                }
 
 
-                        System.out.println("Voer de prijs van de nieuwe optie in : " +
-                                TextColors.Text.ANSI_YELLOW +
-                                "(Heel getal of een decimaal getal waarmee de decimalen achter een ' . '(punt)  staan) " +
-                                TextColors.Text.ANSI_RESET
-                        );
-                        String input3 = scanner.nextLine();
-                        if (!input3.isEmpty()) {
-                            prijs = input3;
-                        }
+                System.out.println("Voer de prijs van de nieuwe optie in : " +
+                        TextColors.Text.ANSI_YELLOW +
+                        "(Heel getal of een decimaal getal waarmee de decimalen achter een ' . '(punt)  staan) " +
+                        TextColors.Text.ANSI_RESET
+                );
+                String input3 = scanner.nextLine();
+                if (!input3.isEmpty()) {
+                    prijs = input3;
+                }
 
-                        System.out.println("Heeft deze optie milieukorting? (j/n)");
-                        String input4 = scanner.nextLine();
-                        if (input4.equals("j")) {
-                            korting = "true";
-                        }else {
-                            korting = "false";
-                        }
+                System.out.println("Heeft deze optie milieukorting? (j/n)");
+                String input4 = scanner.nextLine();
+                if (input4.equals("j")) {
+                    korting = "true";
+                } else {
+                    korting = "false";
+                }
 
                 standardOpties.nieuweOptie(essentieel, naam, beschrijving, prijs, korting);
-                        finished = true;
+                finished = true;
             } else {
                 essentieel = "false";
-                        System.out.println("Wat is de naam van deze optie?");
-                        String input1 = scanner.nextLine();
+                System.out.println("Wat is de naam van deze optie?");
+                String input1 = scanner.nextLine();
 
-                        if (!input1.equals("")) {
-                            naam = input1;
-                        }
-
-
-                        System.out.println("Wat is de beschrijving voor deze optie?");
-                        String input2 = scanner.nextLine();
-                        if (!input2.isEmpty()) {
-                            beschrijving = input2;
-                        }
+                if (!input1.equals("")) {
+                    naam = input1;
+                }
 
 
-                        System.out.println("Voer de prijs van de nieuwe optie in : (Heel getal of een decimaal getal waarmee de decimalen achter een ' . '(punt)  staan) ");
-                        String input3 = scanner.nextLine();
-                        if (!input3.isEmpty()) {
-                            prijs = input3;
-                        }
+                System.out.println("Wat is de beschrijving voor deze optie?");
+                String input2 = scanner.nextLine();
+                if (!input2.isEmpty()) {
+                    beschrijving = input2;
+                }
 
 
-                        System.out.println("Heeft deze optie milieukorting? (j/n)");
-                        String input4 = scanner.nextLine();
-                        if (input4.equals("j")) {
-                            korting = "true";
-                        }else {
-                            korting = "false";
-                        }
+                System.out.println("Voer de prijs van de nieuwe optie in : (Heel getal of een decimaal getal waarmee de decimalen achter een ' . '(punt)  staan) ");
+                String input3 = scanner.nextLine();
+                if (!input3.isEmpty()) {
+                    prijs = input3;
+                }
+
+
+                System.out.println("Heeft deze optie milieukorting? (j/n)");
+                String input4 = scanner.nextLine();
+                if (input4.equals("j")) {
+                    korting = "true";
+                } else {
+                    korting = "false";
+                }
                 standardOpties.nieuweOptie(essentieel, naam, beschrijving, prijs, korting);
-                        finished = true;
+                finished = true;
             }
-
 
 
         }
         System.out.println(
-                TextColors.Text.ANSI_YELLOW+
-                "Optie hoort aangemaakt te zijn. U kunt nu verder met andere commands."+
-                TextColors.Text.ANSI_RESET);
+                TextColors.Text.ANSI_YELLOW +
+                        "Optie hoort aangemaakt te zijn. U kunt nu verder met andere commands." +
+                        TextColors.Text.ANSI_RESET);
 
     }
 
-    private void printOptieLijst(){
+    private void printOptieLijst() {
         standardOpties.printOptieLijst();
     }
 
-    private void klantTypesTonen(){
+    private void klantTypesTonen() {
         standardKlanten.printKlantTypes();
     }
 
@@ -383,7 +369,7 @@ public class SystemInterface {
                 TextColors.Text.ANSI_RESET
         );
 
-        while (!finished){
+        while (!finished) {
             String input = scanner.nextLine();
             klantsoort = input;
 
@@ -395,7 +381,7 @@ public class SystemInterface {
             input = scanner.nextLine();
             klantkorting = Double.valueOf(input);
 
-            standardKlanten.nieuweKlantSoort(klantkorting,klantsoort);
+            standardKlanten.nieuweKlantSoort(klantkorting, klantsoort);
             finished = true;
         }
 
@@ -408,7 +394,7 @@ public class SystemInterface {
         int index;
 
         System.out.println("Vul de naam van de nieuwe klant in.");
-        while (!finished){
+        while (!finished) {
 
             String input = scanner.nextLine();
             klantNaam = input;
@@ -423,7 +409,7 @@ public class SystemInterface {
         }
     }
 
-    private void KlantToewijzen(){
+    private void KlantToewijzen() {
 
         boolean finished = false;
         int index;
@@ -436,30 +422,30 @@ public class SystemInterface {
         }
     }
 
-    private void KlantWeghalen(){
+    private void KlantWeghalen() {
         huidigeOfferte.removeKlant();
     }
 
-
-
-    private void WIP(){
+    private void WIP() {
         System.out.println("Dit moet nog afgemaakt worden.");
     }
-    private void commandError(){
+
+    private void commandError() {
         System.out.println(commands.commandError);
     }
 
-    private void promptText(){
+    private void promptText() {
         String prompt = "Vul een command in.";
         System.out.println(
-                TextColors.Text.ANSI_BLUE+
-                prompt+
-                TextColors.Text.ANSI_RESET
+                TextColors.Text.ANSI_BLUE +
+                        prompt +
+                        TextColors.Text.ANSI_RESET
         );
     }
+
     private void testColoredTextPrint() {
         TextColors.initialize();
-        for (int i = 0;i<TextColors.TextColors.size();i++){
+        for (int i = 0; i < TextColors.TextColors.size(); i++) {
             System.out.println(
                     TextColors.TextColors.get(i) +
                             "This text is colored!" +
@@ -468,7 +454,8 @@ public class SystemInterface {
         }
 
     }
-    private void AvailableTests(){
+
+    private void AvailableTests() {
         boolean testFinished = false;
         ArrayList<String> availableTests = new ArrayList<>();
         availableTests.add("placeholder, index of 0");
@@ -476,20 +463,20 @@ public class SystemInterface {
 
 
         System.out.println("Kies een test om te runnen.");
-        for (int i = 1;i<availableTests.size();i++) {
+        for (int i = 1; i < availableTests.size(); i++) {
             System.out.println(
-                TextColors.Text.ANSI_PURPLE+
-                String.valueOf(availableTests.indexOf(availableTests.get(i)))+
-                ". "+
-                availableTests.get(i)+
-                TextColors.Text.ANSI_RESET);
+                    TextColors.Text.ANSI_PURPLE +
+                            String.valueOf(availableTests.indexOf(availableTests.get(i))) +
+                            ". " +
+                            availableTests.get(i) +
+                            TextColors.Text.ANSI_RESET);
         }
         while (!testFinished) {
             int chosenTest = scanner.nextInt();
 
             if (chosenTest == 1) {
                 testColoredTextPrint();
-                testFinished=true;
+                testFinished = true;
             }
 
         }

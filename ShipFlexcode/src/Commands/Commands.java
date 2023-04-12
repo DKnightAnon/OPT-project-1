@@ -6,7 +6,7 @@ public class Commands {
 
     public static final String commandError = "Dit commando bestaat niet.";
 
-    private class CommandExplanations{
+    private class CommandExplanations {
         private static final String optieLijst = "Optie lijst - Toont een lijst met alle beschikbare opties in het systeem.";
         private static final String optieAanmaken = "Optie aanmaken - Voegt aan de hand van ingevoerde informatie een nieuwe optie toe aan het systeem.";
         private static final String offerteTonen = "Offerte tonen - Weergeeft de huidige offerte weer op het scherm.";
@@ -22,27 +22,30 @@ public class Commands {
         private static final String KlantWeghalen = "Klant weghalen -Verwijdert de toegewezen klant van de huidige offerte.";
     }
 
-    public class KlantAanmaken{
+    public class KlantAanmaken {
         public static final String klantAanmakenCommand = "Klant aanmaken";
         public static final String klantAanmakenCommandLowerCase = "klant aanmaken";
     }
-    public class klantenTonen{
+
+    public class klantenTonen {
         public static final String klantTonenCommand = "Toon klanten";
         public static final String klantTonenCommandLowerCase = "toon klanten";
         public static final String klantTonenCommandJoined = "Toonklanten";
         public static final String klantTonenCommandJoinedLowerCase = "toonklanten";
     }
-    public class KlantTypeAanmaken{
+
+    public class KlantTypeAanmaken {
         public static final String klantTypeAanmakenCommand = "Klanttype aanmaken";
         public static final String klantTypeAanmakenCommandLowerCase = "klanttype aanmaken";
     }
-    public class KlantTypesTonen{
+
+    public class KlantTypesTonen {
         public static final String klantTypesTonenCommand = "Klanttypes tonen";
         public static final String klantTypesTonenCommandLowerCase = "klanttypes tonen";
     }
 
 
-    public class offerteTonen{
+    public class offerteTonen {
         public static final String offerteTonenCommand = "Offerte tonen";
         public static final String offerteTonenCommandLowerCase = "offerte tonen";
         public static final String offerteTonenCommandJoined = "OfferteTonen";
@@ -53,6 +56,7 @@ public class Commands {
         public static final String offerteTonenCommandJoinedAllCaps = "OFFERTETONEN";
 
     }
+
     public class offerteMaken {
         public static final String offerteMakenCommand = "Offerte maken";
         public static final String offerteMakenCommandeLowerCase = "offerte maken";
@@ -60,7 +64,8 @@ public class Commands {
         public static final String offerteMakenCommandJoinedLowerCase = "offertemaken";
         public static final String offerteMakenCommandJoinedFirstUpperCase = "Offertemaken";
     }
-    public class optieVerwijderen{
+
+    public class optieVerwijderen {
         public static final String optieVerwijderenCommand = "Optie verwijderen";
         public static final String optieVerwijderenCommandLowerCase = "optie verwijderen";
         public static final String optieVerwijderenCommandLastUpperCase = "optie Verwijderen";
@@ -68,6 +73,7 @@ public class Commands {
         public static final String optieVerwijderenCommandJoinedLowerCase = "optieverwijderen";
         public static final String optieverwijderenCommandJoinedLastUpperCase = "optieVerwijderen";
     }
+
     public class optieToevoegen {
         public static final String optieToevoegenCommand = "Optie toevoegen";
         public static final String optieToevoegenCommandLowerCase = "optie toevoegen";
@@ -76,15 +82,16 @@ public class Commands {
         public static final String optieToevoegenCommandJoinedFirstUpperCase = "Optietoevoegen";
         public static final String optieToevoegenCommandJoinedLastUpperCase = "optieToevoegen";
     }
-    public class KlantToewijzen{
+
+    public class KlantToewijzen {
         public static final String klantToewijzenCommand = "Klant toewijzen";
         public static final String klatToewijzenCommandLowerCase = "klant toewijzen";
     }
-    public class KlantWeghalen{
+
+    public class KlantWeghalen {
         public static final String klantWeghalenCommand = "Klant weghalen";
         public static final String klantWegHalenCommandLowercase = "klant weghalen";
     }
-
 
 
     public class optieLijst {
@@ -94,6 +101,7 @@ public class Commands {
         public static final String optieLijstCommandJoinedLowerCase = "optielijst";
         public static final String optieLijstCommandJoinedAllcaps = "OPTIELIJST";
     }
+
     public class optieAanmaken {
         public static final String optieAanmakenCommand = "Optie aanmaken";
         public static final String optieAanmakenCommandLowerCase = "optie aanmaken";
@@ -102,7 +110,6 @@ public class Commands {
         public static final String optieAanmakenCommandJoinedFirstUpperCase = "Optieaanmaken";
         public static final String optieAanmakenCommandJoinedLastUpperCase = "optieAanmaken";
     }
-
 
 
     public class sluitApplicatie {
@@ -124,6 +131,7 @@ public class Commands {
             public static final String testColorTextCommand = "testcolor";
         }
     }
+
     public static final ArrayList<String> commandExplanations = new ArrayList<String>();
 
 

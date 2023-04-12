@@ -12,7 +12,9 @@ import java.io.FileNotFoundException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class TestClass {
     @Test
     public void testVoegAlleOptiesToeAanLijst() {
@@ -23,17 +25,19 @@ public class TestClass {
         //Assert
         assertEquals(8, optielijstTest.optielijst.size());
     }
+
     @Test
     public void testMaakOptieAan() throws FileNotFoundException {
         //Arrange
         OptieLijst optielijstTest = new OptieLijst();
         //Act
-        optielijstTest.nieuweOptie(true,"Anker", "Dit is een test beschrijving om te kijken hoe het reageert op meerdere characters", 50, false);
+        optielijstTest.nieuweOptie(true, "Anker", "Dit is een test beschrijving om te kijken hoe het reageert op meerdere characters", 50, false);
         //Assert
         assertEquals(1, optielijstTest.optielijst.size());
     }
+
     @Test
-    public void testVoegOptieToe(){
+    public void testVoegOptieToe() {
         //Arrange
         Offerte offerteTest = new Offerte();
         OptieLijst optielijstTest = new OptieLijst();
@@ -45,9 +49,8 @@ public class TestClass {
     }
 
 
-
     @Test
-    public void checkIfOfferteBestandIsActuallyMade_ReturnBoolean(){
+    public void checkIfOfferteBestandIsActuallyMade_ReturnBoolean() {
         //Prepare
         boolean fileMade = true;
         boolean folderMade = true;
@@ -77,7 +80,7 @@ public class TestClass {
         String path = System.getProperty("user.home") + File.separator +
                 "Documents" + File.separator +
                 "ShipFlexOffertes" + File.separator +
-                "Offerte-"+testOfferte.getGeselecteerdeKlant().getKlantNaam()+"-"+formattedDate+".txt";
+                "Offerte-" + testOfferte.getGeselecteerdeKlant().getKlantNaam() + "-" + formattedDate + ".txt";
         String folderPath = System.getProperty("user.home") + File.separator +
                 "Documents" + File.separator +
                 "ShipFlexOffertes";
@@ -88,8 +91,8 @@ public class TestClass {
 
 
         //Assert
-        Assertions.assertEquals(folderMade,offerteFolder.exists());
-        Assertions.assertEquals(fileMade,offerte.exists());
+        Assertions.assertEquals(folderMade, offerteFolder.exists());
+        Assertions.assertEquals(fileMade, offerte.exists());
     }
 
 }

@@ -10,20 +10,20 @@ public class KlantLijst {
     public ArrayList<KlantType> KlantTypes = new ArrayList<>();
     private String KlantPath =
             "Shipflexcode" +
-            File.separator+
-            "src" +
-            File.separator+
-            "CSV_Files" +
-            File.separator+
-            "klanten.csv" ;
+                    File.separator +
+                    "src" +
+                    File.separator +
+                    "CSV_Files" +
+                    File.separator +
+                    "klanten.csv";
     private String klantSoortPath =
             "Shipflexcode" +
-            File.separator+
-            "src" +
-            File.separator+
-            "CSV_Files" +
-            File.separator+
-            "klantSoorten.csv";
+                    File.separator +
+                    "src" +
+                    File.separator +
+                    "CSV_Files" +
+                    File.separator +
+                    "klantSoorten.csv";
 
 
     public void writeToCSV() throws FileNotFoundException {
@@ -31,12 +31,12 @@ public class KlantLijst {
         writeToKlantSoort();
     }
 
-    public void readFromCSV(){
+    public void readFromCSV() {
         readFromKlantLijst();
         readFromKlantSoort();
     }
 
-    private void readFromKlantLijst(){
+    private void readFromKlantLijst() {
         BufferedReader reader = null;
         String line = "";
         try {
@@ -44,10 +44,10 @@ public class KlantLijst {
             KlantenLijst.clear();
             while ((line = reader.readLine()) != null) {
                 String[] row = line.split(",");
-                KlantenLijst.add(new Klant(row[0],row[1],row[2]));
+                KlantenLijst.add(new Klant(row[0], row[1], row[2]));
             }
 
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
@@ -61,20 +61,21 @@ public class KlantLijst {
             KlantTypes.clear();
             while ((line = reader.readLine()) != null) {
                 String[] row = line.split(",");
-                KlantTypes.add(new KlantType(row[0],row[1]));
+                KlantTypes.add(new KlantType(row[0], row[1]));
             }
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
+
     private void writeToKlantLijst() throws FileNotFoundException {
         StringBuilder builder = new StringBuilder();
 
         File csv = new File(KlantPath);
         PrintWriter pw = new PrintWriter(csv);
 
-        try{
-            for (int i = 0;i<KlantenLijst.size();i++){
+        try {
+            for (int i = 0; i < KlantenLijst.size(); i++) {
                 builder.append(KlantenLijst.get(i).getKlantNaam());
                 builder.append(",");
                 builder.append(KlantenLijst.get(i).getKlantSoort().getKlantSoort());
@@ -86,7 +87,7 @@ public class KlantLijst {
             pw.flush();
             pw.close();
 
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -98,7 +99,7 @@ public class KlantLijst {
         PrintWriter pw = new PrintWriter(csv);
 
         try {
-            for (int i = 0; i<KlantTypes.size();i++){
+            for (int i = 0; i < KlantTypes.size(); i++) {
                 builder.append(KlantTypes.get(i).getKlantSoort());
                 builder.append(",");
                 builder.append(KlantTypes.get(i).getKlantKorting());
@@ -108,14 +109,14 @@ public class KlantLijst {
             pw.flush();
             pw.close();
 
-        }catch (Exception e) {
+        } catch (Exception e) {
 
         }
 
     }
 
     public void nieuweKlant(String naam, int Index) throws FileNotFoundException {
-        Klant nieuweKlant = new Klant(naam,KlantTypes.get(Index));
+        Klant nieuweKlant = new Klant(naam, KlantTypes.get(Index));
         readFromKlantLijst();
         KlantenLijst.add(nieuweKlant);
         writeToCSV();
@@ -129,10 +130,10 @@ public class KlantLijst {
 
     }
 
-    public void printKlantenLijst(){
+    public void printKlantenLijst() {
         readFromCSV();
 
-        for (int i = 0; i<92;i++){
+        for (int i = 0; i < 92; i++) {
             System.out.print("-");
         }
         System.out.println();
@@ -142,17 +143,17 @@ public class KlantLijst {
                 "Klant type",
                 "Klant korting in %"
         );
-        for (int i = 0; i<92;i++){
+        for (int i = 0; i < 92; i++) {
             System.out.print("-");
         }
         System.out.println();
-        if (KlantenLijst.isEmpty()){
+        if (KlantenLijst.isEmpty()) {
             System.out.print("|");
-            for (int i = 0;i<90;i++){
+            for (int i = 0; i < 90; i++) {
                 System.out.print(" ");
             }
             System.out.println("|");
-        }else {
+        } else {
             for (int i = 0; i < KlantenLijst.size(); i++) {
                 System.out.printf(
                         "| %-15s| %-30s| %-20s| %-18s|\n",
@@ -163,16 +164,16 @@ public class KlantLijst {
                 );
             }
         }
-        for (int i = 0; i<92;i++){
+        for (int i = 0; i < 92; i++) {
             System.out.print("-");
         }
         System.out.println();
 
     }
 
-    public void printKlantTypes(){
+    public void printKlantTypes() {
 
-        for (int i = 0;i<57;i++){
+        for (int i = 0; i < 57; i++) {
             System.out.print("-");
         }
         System.out.println();
@@ -181,30 +182,30 @@ public class KlantLijst {
                 "Klant type",
                 "Klant korting %"
         );
-        for (int i = 0;i<57;i++){
+        for (int i = 0; i < 57; i++) {
             System.out.print("-");
         }
         System.out.println();
-        if (KlantTypes.isEmpty()){
+        if (KlantTypes.isEmpty()) {
             System.out.print("|");
-            for (int i = 0;i<55;i++){
+            for (int i = 0; i < 55; i++) {
                 System.out.print(" ");
             }
             System.out.println("|");
-            for (int i = 0;i<57;i++){
+            for (int i = 0; i < 57; i++) {
                 System.out.print("-");
             }
             System.out.println();
-        }else {
-            for (int i = 1; i<KlantTypes.size();i++) {
+        } else {
+            for (int i = 1; i < KlantTypes.size(); i++) {
                 System.out.printf(
                         "| %-15d| %-20s| %-15s|\n",
                         KlantTypes.indexOf(KlantTypes.get(i)),
                         KlantTypes.get(i).getKlantSoort(),
                         KlantTypes.get(i).getKlantKorting()
-                        );
+                );
             }
-            for (int i = 0;i<57;i++){
+            for (int i = 0; i < 57; i++) {
                 System.out.print("-");
             }
             System.out.println();

@@ -15,7 +15,7 @@ public class RuntimeTests {
     static KlantLijst testlKlantLijst = new KlantLijst();
     static OfferteNieuw testOfferte = new OfferteNieuw();
 
-    public static void initialize(){
+    public static void initialize() {
         Commands.initializeCommands();
         testlijst.readFromCSV();
         testOfferte.getGeselecteerdeOpties().add(
@@ -28,7 +28,7 @@ public class RuntimeTests {
         testlKlantLijst.readFromCSV();
     }
 
-    public static void testOfferteNieuwBorderLines(){
+    public static void testOfferteNieuwBorderLines() {
         initialize();
         testOfferte.addKlant(testlKlantLijst.KlantenLijst.get(2));
         testlijst.readFromCSV();
@@ -49,7 +49,7 @@ public class RuntimeTests {
         String path = System.getProperty("user.home") + File.separator +
                 "Documents" + File.separator +
                 "ShipFlexOffertes" + File.separator +
-                "Offerte"+testOfferte.getGeselecteerdeKlant().getKlantNaam()+formattedDate+".txt";
+                "Offerte" + testOfferte.getGeselecteerdeKlant().getKlantNaam() + formattedDate + ".txt";
         String folderPath = System.getProperty("user.home") + File.separator +
                 "Documents" + File.separator +
                 "ShipFlexOffertes";
@@ -70,7 +70,7 @@ public class RuntimeTests {
         String path = System.getProperty("user.home") + File.separator +
                 "Documents" + File.separator +
                 "ShipFlexOffertes" + File.separator +
-                "Offerte-"+testOfferte.getGeselecteerdeKlant().getKlantNaam()+"-"+formattedDate+".txt";
+                "Offerte-" + testOfferte.getGeselecteerdeKlant().getKlantNaam() + "-" + formattedDate + ".txt";
         String folderPath = System.getProperty("user.home") + File.separator +
                 "Documents" + File.separator +
                 "ShipFlexOffertes";
@@ -78,37 +78,37 @@ public class RuntimeTests {
         File offerte = new File(path);
         File offerteFolder = new File(folderPath);
 
-        if (!offerteFolder.exists()){
+        if (!offerteFolder.exists()) {
             offerteFolder.mkdirs();
-            if (offerteFolder.exists()){
+            if (offerteFolder.exists()) {
                 System.out.println("Successfully made the folder!");
-            }else if (!offerteFolder.exists()){
+            } else if (!offerteFolder.exists()) {
                 System.out.println("Unable to make folder...");
             }
         }
 
-        if (!offerte.exists()){
+        if (!offerte.exists()) {
             offerte.createNewFile();
-            if (offerte.exists()){
+            if (offerte.exists()) {
                 System.out.println("File sucessfully made!");
-            }else if (!offerte.exists()){
+            } else if (!offerte.exists()) {
                 System.out.println("Unable to create file...");
             }
         }
 
-        if (offerte.exists()){
-            if(offerte.delete()){
+        if (offerte.exists()) {
+            if (offerte.delete()) {
                 System.out.println("Sucessfully deleted file!");
-            }else if (!offerte.delete()){
+            } else if (!offerte.delete()) {
                 System.out.println("Unable to delete file...");
             }
 
         }
 
-        if (offerteFolder.exists()){
-            if (offerteFolder.delete()){
+        if (offerteFolder.exists()) {
+            if (offerteFolder.delete()) {
                 System.out.println("Successfully deleted folder!");
-            }else if (!offerteFolder.delete()){
+            } else if (!offerteFolder.delete()) {
                 System.out.println("Unable to delete folder...");
             }
         }
@@ -116,10 +116,10 @@ public class RuntimeTests {
     }
 
     public static void makeExampleofferteFileAndWriteTextToIt() throws IOException {
-            initialize();
-            testOfferte.addKlant(testlKlantLijst.KlantenLijst.get(2));
-            testlijst.readFromCSV();
-            testOfferte.getGeselecteerdeOpties().add(testlijst.optielijst.get(2));
+        initialize();
+        testOfferte.addKlant(testlKlantLijst.KlantenLijst.get(2));
+        testlijst.readFromCSV();
+        testOfferte.getGeselecteerdeOpties().add(testlijst.optielijst.get(2));
         LocalDate timestamp = LocalDate.now();
         DateTimeFormatter formatted = DateTimeFormatter.BASIC_ISO_DATE;
         String formattedDate = timestamp.format(formatted);
@@ -127,7 +127,7 @@ public class RuntimeTests {
         String path = System.getProperty("user.home") + File.separator +
                 "Documents" + File.separator +
                 "ShipFlexOffertes" + File.separator +
-                "Offerte-"+testOfferte.getGeselecteerdeKlant().getKlantNaam()+"-"+formattedDate+".txt";
+                "Offerte-" + testOfferte.getGeselecteerdeKlant().getKlantNaam() + "-" + formattedDate + ".txt";
         String folderPath = System.getProperty("user.home") + File.separator +
                 "Documents" + File.separator +
                 "ShipFlexOffertes";
@@ -135,20 +135,20 @@ public class RuntimeTests {
         File offerte = new File(path);
         File offerteFolder = new File(folderPath);
 
-        if (!offerteFolder.exists()){
+        if (!offerteFolder.exists()) {
             offerteFolder.mkdirs();
-            if (offerteFolder.exists()){
+            if (offerteFolder.exists()) {
                 System.out.println("Successfully made the folder!");
-            }else if (!offerteFolder.exists()){
+            } else if (!offerteFolder.exists()) {
                 System.out.println("Unable to make folder...");
             }
         }
 
-        if (!offerte.exists()){
+        if (!offerte.exists()) {
             offerte.createNewFile();
-            if (offerte.exists()){
+            if (offerte.exists()) {
                 System.out.println("File sucessfully made!");
-            }else if (!offerte.exists()){
+            } else if (!offerte.exists()) {
                 System.out.println("Unable to create file...");
             }
         }
@@ -157,7 +157,7 @@ public class RuntimeTests {
 
     }
 
-    public static void main (String[] args) throws IOException {
+    public static void main(String[] args) throws IOException {
 
 //        testOfferteNieuwBorderLines();
 //        printExampleOfferteDocumentPath();
