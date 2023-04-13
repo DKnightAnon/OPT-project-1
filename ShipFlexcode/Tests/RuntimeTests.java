@@ -119,8 +119,19 @@ public class RuntimeTests {
 
 
 
-    //Makes directory and file, then writes content to it. Also prints the file name and in which directory it was created.
+    private static String userDocumentsFolder(){
+        String documents = null;
+        if (System.getProperty("user.language").equals("nl")){
+            documents = "Documenten";
+        }
+        if (System.getProperty("user.language").equals("en")){
+            documents = "Documents";
+        }
+        return documents;
+    }    //Makes directory and file, then writes content to it. Also prints the file name and in which directory it was created.
     public static void makeExampleofferteFileAndWriteTextToIt() throws IOException {
+
+
         initialize();
         testOfferte.addKlant(testlKlantLijst.KlantenLijst.get(2));
         testlijst.readFromCSV();
@@ -130,11 +141,11 @@ public class RuntimeTests {
         String formattedDate = timestamp.format(formatted);
         //int fileNumber;
         String path = System.getProperty("user.home") + File.separator +
-                "Documents" + File.separator +
+                userDocumentsFolder() + File.separator +
                 "ShipFlexOffertes" + File.separator +
                 "Offerte-" + testOfferte.getGeselecteerdeKlant().getKlantNaam() + "-" + formattedDate + ".txt";
         String folderPath = System.getProperty("user.home") + File.separator +
-                "Documents" + File.separator +
+                userDocumentsFolder() + File.separator +
                 "ShipFlexOffertes";
 
         File offerte = new File(path);
