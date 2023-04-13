@@ -164,9 +164,9 @@ public class RuntimeTests {
 
     public static void main(String[] args) throws IOException {
 
-//        testOfferteNieuwBorderLines();
-//        printExampleOfferteDocumentPath();
-//        makeExampleOfferteFile();
+        testOfferteNieuwBorderLines();
+        printExampleOfferteDocumentPath();
+        makeExampleOfferteFile();
         makeExampleofferteFileAndWriteTextToIt();
     }
 }
