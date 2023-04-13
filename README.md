@@ -32,6 +32,15 @@ Deze foutmelding gaat over de manier hoe Windows omgaat met line-endings. Met bo
 In het geval dat je een foutmelding krijgt waarin staat dat je geen toegang hebt tot de repo(Dit gebeurt meestal als je iets probeert te pushen), stuur mij dan een bericht. Deze foutmelding betekent namelijk dat je geen collaborator bent, en dat ik je toestemming moet geven om dingen te wijzigen in de repository. Om write-access te krijgen moet je toegevoegd worden als een collaborator. Je krijgt hiervoor een invite dat je moet accepteren.
 
 Als je een merge conflict hebt betekent het dat in een van de bestanden die je wilt mergen een verschil is tussen de base versie(het bestand op github) de lokale versie(die jij hebt aangemaakt) en de inkomende versie die je wilt mergen(van een andere branch). Als het goed is kun je dit bestand dan openen met IntelliJ als het een java file is, en zal IntelliJ ook aangeven dat er een conflict is. Je krijgt dan beide versies te zien van het bestand. Maak veranderingen aan en sla het op, en voer dan het git add command uit. Hiermee hoor je de merge opgelost te hebben.
+
+In het geval dat je de volgende warning krijgt in git :
+"warning: in the working copy of 'out/production/OPT-project-1/CSV_Files/opties.csv', LF will be replaced by CRLF the next time Git touches it"
+betekent het dat het teken waarmee het einde van een regel door git verandert zal worden. LF staat voor 'line feed', en CRLF staat voor 'carriage return line feed'. Dit is pas van belang wanneer je developers hebt die niet op een windows systeem werken.
+
+Als je met alleen windows computer aan een project werkt kun je deze waarschuwing uitzetten met het volgende command : "git config core.autocrlf true"
+
+Als je op een Mac of Linux systeem werkt, gebruik dan het volgende command : '$ git config --global core.autocrlf input'
+
   
 # Pull-requests aanmaken nadat je iets hebt gepusht naar Github
 
@@ -41,29 +50,7 @@ Nadat je iets hebt gepusht met het git push command vanuit de branch dat je op j
 
 Voor dit project moet er een applicatie gemaakt worden voor scheepsbouwers. Deze opdracht komt voor uit een behoefte van de opdrachtgever om het genereren van offertes te stroomlijnen. Deze applicatie moet (kennelijk) een CLI(Command Line Interface) applicatie zijn.
 
-# Sprint planning
 
-Sprint 0/1(Huidig)
-  - Einddatum 19/3/2022
-  - User story 3 : “ Als scheepsbouwer wil ik de mogelijkheid hebben om verschillende klanttypes te selecteren, zodat ik de juiste kortingen kan toepassen en de prijs nauwkeuriger kan bepalen.”
-
-    • Er zijn verschillende klanttypes beschikbaar voor de scheepsbouwer, zoals particulieren, bedrijven en overheden.
-
-
-    • De klanttypes zijn gemakkelijk te selecteren en te wijzigen in de applicatie.
-
-
-    • Elk klanttype heeft zijn eigen kortingen, die nauwkeurig worden berekend en toegepast op de offerte.
-
-
-  - Item 2 : User story 1 - “ Als scheepsbouwer wil ik een overzichtelijke lijst van essentiële en extra opties, zodat ik snel en gemakkelijk een offerte op maat kan maken voor mijn klant.” 
-  
-    • Er is een optie voor milieu-kortingen per onderdeel beschikbaar voor de scheepsbouwer.
-    
-    • De optie is duidelijk omschreven en gemakkelijk te vinden in de applicatie.
-    
-    • De kortingen worden nauwkeurig berekend en toegepast op de offerte. 
-    
 # Veelgebruikte git commands
 git init // repository initializeren
 
@@ -84,3 +71,15 @@ git checkout -b jasdk // nieuwe branch genaamd jasdk aanmaken
 git checkout offerte // overgaan naar een bestaande branch offerte
 
 git push origin offerte // branch offerte doorsturen naar github
+
+# Afbeeldingen van de applicatie in werking
+
+Applicatie start
+![Start](https://user-images.githubusercontent.com/127386817/230741076-76257ac5-6a7e-4fd6-8c78-c45f7be92ead.jpg)
+
+Uitleg van de beschikbare commands
+![Uitleg commands](https://user-images.githubusercontent.com/127386817/230741084-0387310c-03f2-4e47-871a-d50ffdf0dab5.jpg)
+
+Optielijst command
+![Optielijst](https://user-images.githubusercontent.com/127386817/230741081-e7b116a6-59c5-4637-825c-c01e95d07a54.jpg)
+
