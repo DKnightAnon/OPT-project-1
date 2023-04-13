@@ -1,9 +1,5 @@
-
-import Offerte.Offerte;
-import Opties.OptieLijst;
-
 import java.io.FileNotFoundException;
-import java.util.Scanner;
+
 
 public class Main {
 

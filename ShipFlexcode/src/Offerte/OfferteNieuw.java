@@ -141,13 +141,23 @@ public class OfferteNieuw {
         Writer.println();
     }
 
+    private String userDocumentsFolder(){
+        String documents = null;
+        if (System.getProperty("user.language").equals("nl")){
+            documents = "Documenten";
+        }
+        if (System.getProperty("user.language").equals("en")){
+            documents = "Documents";
+        }
+        return documents;
+    }
 
     private void makeDirectoryIfNotExist() {
         String folderPath = System.getProperty("user.home") + File.separator +
-                "Documents" + File.separator +
+                userDocumentsFolder() + File.separator +
                 "ShipFlexOffertes";
         File customDir = new File(folderPath);
-
+        
         if (customDir.exists()) {
             System.out.println(customDir + " already exists");
         } else if (customDir.mkdirs()) {
