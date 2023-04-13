@@ -6,16 +6,43 @@ import Opties.Optie;
 import Opties.OptieLijst;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import Commands.TextColors;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class TestClass {
+
+    @Test
+    public void testTextColors(){
+        // dit test of je de kleur moet resetten voordat je hem verandert & of een if statement werkt met dezelfde variabele waar alleen de kleur anders is
+        TextColors.initialize();
+        String testgeel = TextColors.Text.ANSI_YELLOW+"Testgeel\n";
+        String testblauw = TextColors.Text.ANSI_BLUE+"TestBlauw\n";
+        String testwit = TextColors.Text.ANSI_RESET+"Testwit/reset\n";
+        boolean kleurklopt = false;
+        if(testgeel.equals(TextColors.Text.ANSI_YELLOW+"Testgeel\n")){
+            kleurklopt = true;
+        }
+
+        System.out.println("Voer de optienummer in van de optie dat u wilt verwijderen van de offerte.\n"
+                + TextColors.Text.ANSI_YELLOW
+                + "     Let erop dat u het optienummer kiest dat vermeldt staat in de offerte.\n"
+                + testwit
+                + testblauw
+                + testgeel);
+        System.out.println(kleurklopt);
+
+        assertTrue(kleurklopt);
+
+    }
     @Test
     public void testVoegAlleOptiesToeAanLijst() {
         //Arrange
