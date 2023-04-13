@@ -9,21 +9,9 @@ public class KlantLijst {
     public ArrayList<Klant> KlantenLijst = new ArrayList<>();
     public ArrayList<KlantType> KlantTypes = new ArrayList<>();
     private String KlantPath =
-            "Shipflexcode" +
-                    File.separator +
-                    "src" +
-                    File.separator +
-                    "CSV_Files" +
-                    File.separator +
-                    "klanten.csv";
+            "ShipFlexcode/src/CSV_Files/klanten.csv";
     private String klantSoortPath =
-            "Shipflexcode" +
-                    File.separator +
-                    "src" +
-                    File.separator +
-                    "CSV_Files" +
-                    File.separator +
-                    "klantSoorten.csv";
+            "ShipFlexcode/src/CSV_Files/klantSoorten.csv";
 
 
     public void writeToCSV() throws FileNotFoundException {
