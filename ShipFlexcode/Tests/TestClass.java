@@ -43,6 +43,8 @@ public class TestClass {
         assertTrue(kleurklopt);
 
     }
+
+    //Dit is gemaakt door david.
     @Test
     public void testVoegAlleOptiesToeAanLijst() {
         //Arrange
@@ -53,6 +55,8 @@ public class TestClass {
         assertEquals(8, optielijstTest.optielijst.size());
     }
 
+
+    //Dit is gemaakt door david.
     @Test
     public void testMaakOptieAan() throws FileNotFoundException {
         //Arrange
@@ -63,6 +67,7 @@ public class TestClass {
         assertEquals(1, optielijstTest.optielijst.size());
     }
 
+    //Dit is gemaakt door david.
     @Test
     public void testVoegOptieToe() {
         //Arrange

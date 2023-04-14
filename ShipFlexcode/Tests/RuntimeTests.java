@@ -28,6 +28,7 @@ public class RuntimeTests {
         testlKlantLijst.readFromCSV();
     }
 
+    //Kleine testofferte om te checken of de tabel goed wordt geprint. Moet handmatig nagekeken worden.
     public static void testOfferteNieuwBorderLines() {
         initialize();
         testOfferte.addKlant(testlKlantLijst.KlantenLijst.get(2));
@@ -119,6 +120,7 @@ public class RuntimeTests {
 
 
 
+    //Not a test, but returns variables for a filepath. Dynamically changes the filepath according to the user computer's language settings. Currently support English and Dutch.
     private static String userDocumentsFolder(){
         String documents = null;
         if (System.getProperty("user.language").equals("nl")){
@@ -128,7 +130,9 @@ public class RuntimeTests {
             documents = "Documents";
         }
         return documents;
-    }    //Makes directory and file, then writes content to it. Also prints the file name and in which directory it was created.
+    }
+
+    //Makes directory and file, then writes content to it. Also prints the file name and in which directory it was created.
     public static void makeExampleofferteFileAndWriteTextToIt() throws IOException {
 
         initialize();
